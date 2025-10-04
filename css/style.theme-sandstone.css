@@ -1,0 +1,99 @@
+
+/* =====================================================
+   THEME: Sandstone Bookshop — warm beige / brown
+   Classic bookstore vibe, light mode
+   ===================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
+
+:root{
+  --sand-50:#faf6ef;
+  --sand-100:#f5efe3;
+  --sand-200:#e8dcc3;
+  --sand-300:#d9c3a1;
+  --sand-400:#c7a87a;
+  --brown-600:#7a5a3a;
+  --brown-700:#5f472d;
+  --ink:#3d3329;
+  --muted:#6a5f52;
+  --accent:#b6803a;
+  --accent-2:#965f18;
+  --card:#ffffff;
+  --ring:rgba(150,95,24,.25);
+  --radius:14px;
+  --shadow:0 10px 30px rgba(90,60,30,.12);
+}
+
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--sand-50), var(--sand-100));
+}
+img{ max-width:100%; display:block }
+.container{ max-width:1200px; margin:0 auto; padding:20px }
+section{ padding-block:24px }
+a{ color: var(--accent-2); text-decoration:none }
+a:hover{ text-decoration: underline }
+
+/* Header */
+.header{ background: linear-gradient(90deg, var(--brown-700), var(--brown-600)); color:#fff; padding:14px 0; position:sticky; top:0; z-index:50; box-shadow:var(--shadow) }
+.header .inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; max-width:1200px; margin:0 auto; padding:0 20px }
+.logo{ display:flex; align-items:center; gap:12px }
+.logo img{ width:76px; height:76px; border-radius:12px; object-fit:cover }
+.logo h1{ font-size:22px; font-weight:800 }
+.nav{ display:flex; gap:10px; align-items:center }
+.nav a{ color:#fff; padding:8px 12px; border-radius:10px }
+.nav a:hover{ background:rgba(255,255,255,.14) }
+
+/* Search */
+.search{ display:flex; gap:8px; align-items:center }
+.search input{ padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,.2); width:240px }
+.search input:focus{ outline:none; border-color:#fff; box-shadow:0 0 0 3px rgba(255,255,255,.25) }
+.search button{ background:#fff; color:var(--brown-700); padding:10px 14px; border:0; border-radius:10px; font-weight:800; cursor:pointer }
+
+/* Category */
+.category{ display:flex; gap:10px; padding:14px 0; overflow:auto; align-items:center }
+.category a{ background: var(--sand-200); color:var(--brown-700); padding:8px 14px; border-radius:999px; border:1px solid var(--sand-300) }
+
+/* Slider */
+.slider{ max-width:1200px; margin:22px auto; border-radius:14px; overflow:hidden; position:relative; box-shadow:var(--shadow) }
+.slide{ min-width:100%; height:360px; object-fit:cover; filter: contrast(1.02) saturate(1.02) }
+
+/* Grid & Cards */
+.grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:18px }
+.card{ background: var(--card); padding:14px; border-radius: var(--radius); border:1px solid var(--sand-200); box-shadow: var(--shadow); display:flex; flex-direction:column; gap:10px }
+.card:hover{ border-color: var(--sand-300) }
+.card img{ width:100%; height:300px; border-radius:10px; object-fit:cover }
+.card h3{ font-size:17px; color: var(--ink) }
+.price{ color: var(--accent-2); font-weight:800 }
+.rating{ color:#d19c2c }
+
+/* Detail & Info */
+.detail{ display:flex; gap:24px; align-items:flex-start; margin-top:12px }
+.detail img{ width:380px; height:540px; object-fit:cover; border-radius:14px }
+.info{ background:#fff; border:1px solid var(--sand-200); padding:18px; border-radius:14px; box-shadow:var(--shadow); flex:1 }
+
+/* Form */
+.form{ background:#fff; border:1px solid var(--sand-200); padding:20px; border-radius:14px; box-shadow:var(--shadow) }
+.form .row{ display:flex; gap:12px; margin-bottom:10px; flex-wrap:wrap }
+.form input, .form select, .form textarea{ width:100%; padding:12px; border-radius:10px; border:1px solid var(--sand-300) }
+.form input:focus, .form select:focus, .form textarea:focus{ outline:none; border-color: var(--accent-2); box-shadow:0 0 0 3px var(--ring) }
+
+/* Table */
+.table{ width:100%; border-collapse:collapse; background:#fff; border-radius:14px; box-shadow:var(--shadow); overflow:hidden; border:1px solid var(--sand-200) }
+.table th, .table td{ padding:12px; border-bottom:1px solid var(--sand-200); text-align:left }
+.table thead th{ background: var(--sand-100); color: var(--brown-700) }
+
+/* Footer */
+.footer{ background: var(--brown-700); color:#fff; padding:32px 20px; margin-top:36px; border-top:4px solid var(--accent-2) }
+.footer .grid{ display:flex; gap:20px; max-width:1200px; margin:0 auto; flex-wrap:wrap }
+.footer a{ color:#fff }
+
+@media (max-width:900px){
+  .header .inner{ flex-direction:column; align-items:flex-start; gap:12px }
+  .detail{ flex-direction:column }
+  .detail img{ width:100%; height:auto }
+  .search input{ width:160px }
+}

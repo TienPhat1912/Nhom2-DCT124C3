@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Green Bookstore</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='home.html'">
+          <img src="img/logo.png" />
+          <h1>Green Bookstore</h1>
+        </div>
+        <nav class="nav">
+          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
+          ><a href="cart.html">Cart</a
+          ><a href="userinfo.html">Cao Thai Phuong Thanh</a
+          ><a href="home.html">Log out</a>
+        </nav>
+        <div class="search">
+          <input id="s" placeholder="Search books..." /><button
+            onclick="location.href='shop1.html'"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="slider">
+      <div class="slides"><img class="slide" src="img/banner.jpg" /></div>
+    </div>
+    <main class="container">
+      <section class="section">
+        <h2>Featured Vietnamese Novels</h2>
+        <div class="grid">
+          <div class="card">
+            <img src="img/sodod.jpg" />
+            <h3>Số Đỏ</h3>
+            <div class="price">₫120,000</div>
+            <div class="rating">★★★★★</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/noibuon.jpg" />
+            <h3>Nỗi Buồn Chiến Tranh</h3>
+            <div class="price">₫150,000</div>
+            <div class="rating">★★★★☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="grid container">
+        <div>
+          <h3>Green Bookstore</h3>
+          <p>Nhà sách chuyên các tác phẩm văn học Việt Nam.</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Email: support@greenbookstore.vn</p>
+          <p>Phone: +84 123 456 789</p>
+        </div>
+        <div>
+          <h3>Follow</h3>
+          <p><a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+        </div>
+      </div>
+      <div
+        style="
+          text-align: center;
+          padding-top: 12px;
+          color: rgba(255, 255, 255, 0.8);
+        "
+      >
+        © 2025 Green Bookstore
+      </div>
+    </footer>
+  </body>
+</html>

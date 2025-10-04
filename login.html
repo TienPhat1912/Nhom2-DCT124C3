@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='home.html'">
+          <img src="img/logo.png" />
+          <h1>Green Bookstore</h1>
+        </div>
+        <nav class="nav">
+          <a href="home.html">Home</a><a href="shop1guess.html">Shop</a
+          ><a href="cartguess.html">Cart</a><a href="register.html">Register</a>
+        </nav>
+        <div class="search">
+          <input placeholder="Search..." /><button
+            onclick="location.href='shop1guess.html'"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="form">
+        <h2>Login</h2>
+        <div class="row"><input placeholder="Email" required /></div>
+        <div class="row">
+          <input placeholder="Password" type="password" required />
+        </div>
+        <div style="margin-top: 8px">
+          <button class="btn" onclick="location.href='home_loggedin.html'">
+            Login
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

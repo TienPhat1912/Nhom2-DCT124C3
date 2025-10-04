@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='home.html'">
+          <img src="img/logo.png" />
+          <h1>Green Bookstore</h1>
+        </div>
+        <nav class="nav">
+          <a href="home.html">Home</a><a href="shop1guess.html">Shop</a
+          ><a href="cartguess.html">Cart</a><a href="login.html">Login</a>
+        </nav>
+        <div class="search">
+          <!-- <input placeholder="Search..." /><button
+            onclick="location.href='shop1.html'"
+          >
+            Search
+          </button>
+        </div> -->
+      </div>
+    </header>
+    <main class="container">
+      <div class="form">
+        <h2>Create account</h2>
+        <div class="row"><input placeholder="First name" required /></div>
+        <div class="row"><input placeholder="Last name" required /></div>
+        <div class="row">
+          <label>Birth</label><input type="date" required />
+        </div>
+        <div class="row"><input placeholder="Phone number" required /></div>
+        <div class="row"><input placeholder="Email" required /></div>
+        <div class="row">
+          <label>Receive OTP via</label
+          ><select>
+            <option>SMS</option>
+            <option>Email</option>
+          </select>
+        </div>
+        <div class="row">
+          <input placeholder="Password" type="password" required />
+        </div>
+        <div class="row">
+          <input placeholder="Confirm password" type="password" required />
+        </div>
+        <div class="row"><input placeholder="OTP" /></div>
+        <div style="display: flex; gap: 8px; margin-top: 8px">
+          <button
+            class="btn"
+            onclick="alert('OTP has been sent successfully!')"
+          >
+            Send OTP</button
+          ><button
+            class="btn"
+            onclick="alert('Registered!');location.href='home_loggedin.html'"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

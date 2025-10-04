@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="img/logo.png" />
+          <h1>Store Admin</h1>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="form">
+        <h2>Edit Product</h2>
+        <div class="row"><input value="P001" /></div>
+        <div class="row"><input value="Book 1" /></div>
+        <div class="row">
+          <select>
+            <option>Novel</option>
+            <option>Science</option>
+          </select>
+        </div>
+        <div class="row"><input value="Author A" /></div>
+        <div class="row"><input value="2020" /></div>
+        <div class="row"><input value="Publisher X" /></div>
+        <div class="row">
+          <select>
+            <option>All ages</option>
+            <option>18+</option>
+          </select>
+        </div>
+        <div class="row"><input value="Vietnam" /></div>
+        <div class="row"><textarea>Description here...</textarea></div>
+        <div class="row"><input value="150000" /></div>
+        <div class="row"><input value="12" /></div>
+        <button
+          class="btn"
+          onclick="alert('Updated'); location.href='products.html'"
+        >
+          Update
+        </button>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="img/logo.png" />
+          <h1>Store Admin</h1>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="form">
+        <h2>Add Product</h2>
+        <div class="row"><input placeholder="Product ID" /></div>
+        <div class="row"><input placeholder="Product Name" /></div>
+        <div class="row">
+          <select>
+            <option>Novel</option>
+            <option>Science</option>
+          </select>
+        </div>
+        <div class="row"><input placeholder="Author" /></div>
+        <div class="row"><input placeholder="Year" /></div>
+        <div class="row"><input placeholder="Publisher" /></div>
+        <div class="row">
+          <select>
+            <option>All ages</option>
+            <option>18+</option>
+          </select>
+        </div>
+        <div class="row"><input placeholder="Origin" /></div>
+        <div class="row"><textarea placeholder="Description"></textarea></div>
+        <div class="row"><input placeholder="Price" /></div>
+        <div class="row"><input placeholder="Stock" /></div>
+        <button
+          class="btn"
+          onclick="alert('Product added'); location.href='products.html'"
+        >
+          Add
+        </button>
+      </div>
+    </main>
+  </body>
+</html>

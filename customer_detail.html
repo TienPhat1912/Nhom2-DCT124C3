@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Detail</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="img/logo.png" />
+          <h1>Store Admin</h1>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <h2>Customer Detail</h2>
+      <div class="form">
+        <img
+          src="img/avatar.png"
+          style="width: 120px; height: 120px; border-radius: 50%"
+        />
+        <p>ID: C001</p>
+        <p>First Name: John</p>
+        <p>Last Name: Doe</p>
+        <p>Birth: 1990-01-01</p>
+        <p>Email: john@example.com</p>
+        <p>Phone: 0901234567</p>
+      </div>
+      <h3>Orders</h3>
+      <table class="table">
+        <tr>
+          <th>Order ID</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>O001</td>
+          <td>2025-09-01</td>
+          <td><a class="btn" href="order_detail.html">Detail</a></td>
+        </tr>
+        <tr>
+          <td>O002</td>
+          <td>2025-09-10</td>
+          <td><a class="btn" href="order_detail2.html">Detail</a></td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>
