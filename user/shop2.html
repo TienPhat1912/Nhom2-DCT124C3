@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Shop</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
         <div class="logo" onclick="location.href='home.html'">
-          <img src="img/logo.png" />
+          <img src="../img/logo.png" />
           <h1>Green Bookstore</h1>
         </div>
         <nav class="nav">
@@ -30,32 +30,62 @@
     </header>
     <div class="container">
       <div class="category">
-        <a href="shop1.html">Tiểu thuyết</a><a href="shop2.html">Khoa học</a>
-        <a href="shop1.html">Lịch sử</a><a href="shop2.html">Tâm lý</a>
-        <a href="shop1.html">Giáo dục</a><a href="shop2.html">Tài liệu</a>
-        <a href="shop1.html">Tham khảo</a><a href="shop1.html">Hướng dẫn</a>
-        <a href="shop2.html">Manga</a><a href="shop1.html">light novel</a>
-        <a href="shop2.html">Đam mỹ</a>
+        <a href="shop1.html">Novel</a><a href="shop2.html">Science</a>
+        <a href="shop1.html">History</a><a href="shop2.html">Psychology</a>
+        <a href="shop1.html">Education</a><a href="shop2.html">Documents</a>
+        <a href="shop1.html">Reference</a><a href="shop1.html">Guides</a>
+        <a href="shop2.html">Manga</a><a href="shop1.html">Light Novel</a>
       </div>
       <section class="section">
         <h2>Filter</h2>
         <div class="filter">
           <select>
-            <option>Mức giá</option>
-            <option>Dưới ₫100k</option></select
-          ><select>
-            <option>Thể loại</option>
-            <option>Tiểu thuyết</option></select
-          ><select>
-            <option>Nhà xuất bản</option>
-            <option>NXB Trẻ</option></select
-          ><select>
-            <option>Xuất xứ</option>
-            <option>Việt Nam</option></select
-          ><select>
-            <option>Màu bìa</option>
-            <option>Đỏ</option></select
-          ><button class="btn" onclick="alert('Filtered!');location.reload();">
+            <option>Sort by</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Rating: Low to High</option>
+            <option>Rating: High to Low</option>
+            <option>Newest</option>
+            <option>Oldest</option>
+          </select>
+          <select>
+            <option>Price</option>
+            <option>Under ₫100k</option>
+            <option>₫100k-₫200k</option>
+            <option>₫200k-₫300k</option>
+            <option>Over ₫300k</option>
+          </select>
+          <select>
+            <option>Publisher</option>
+            <option>NXB Trẻ</option>
+            <option>NXB Kim Đồng</option>
+            <option>NXB Văn Học</option>
+            <option>NXB Giáo Dục</option>
+            <option>NXB Tổng Hợp TP.HCM</option>
+            <option>NXB Phụ Nữ</option>
+            <option>NXB Lao Động</option>
+            <option>NXB Thế Giới</option>
+            <option>NXB Văn Hóa - Văn Nghệ</option>
+          </select>
+          <select>
+            <option>Origin</option>
+            <option>Việt Nam</option>
+            <option>Nhật Bản</option>
+            <option>Hàn Quốc</option>
+            <option>Trung Quốc</option>
+            <option>Mỹ</option>
+            <opt>Anh</option>
+          </select>
+          <select>
+            <option>Color</option>
+            <option>Red</option>
+            <option>Green</option>
+            <option>Blue</option>
+            <option>Yellow</option>
+            <option>Black</option>
+            <option>White</option>
+          </select>
+          <button class="btn" onclick="alert('Filtered!');location.reload();">
             Filter
           </button>
         </div>

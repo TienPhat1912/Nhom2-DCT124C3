@@ -583,21 +583,21 @@ a:hover {
   }
 }
 
-.container {
+.acontainer {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
   text-align: center;
 }
 
-.grid {
+.agrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 30px;
 }
 
-.card {
+.acard {
   position: relative;
   display: flex;
   align-items: end;
@@ -612,7 +612,7 @@ a:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card::before {
+.acard::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -620,29 +620,29 @@ a:hover {
   transition: opacity 0.3s;
 }
 
-.card:hover {
+.acard:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
-.card:hover::before {
+.acard:hover::before {
   opacity: 0.8;
 }
 
-.card .overlay {
+.acard .overlay {
   position: relative;
   padding: 20px;
   z-index: 1;
   text-align: left;
 }
 
-.card h3 {
+.acard h3 {
   font-size: 1.8rem;
   margin-bottom: 8px;
   font-weight: 700;
 }
 
-.card p {
+.acard p {
   font-size: 0.95rem;
   opacity: 0.9;
 }
