@@ -18,18 +18,62 @@
     </header>
     <main class="container">
       <h2>Customer Detail</h2>
-      <div class="form">
+      <div class="form" style="display: flex; align-items: center; gap: 32px">
         <img
           src="../img/avatar.png"
-          style="width: 120px; height: 120px; border-radius: 50%"
+          style="
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+          "
         />
-        <p>ID: C001</p>
-        <p>First Name: John</p>
-        <p>Last Name: Doe</p>
-        <p>Birth: 1990-01-01</p>
-        <p>Email: john@example.com</p>
-        <p>Phone: 0901234567</p>
+        <div>
+          <p>ID: C001</p>
+          <p>First Name: Cao</p>
+          <p>Last Name: Thai Phuong Thanh</p>
+          <p>Birth: 1990-01-01</p>
+          <p>Email: thanhcao@gmail.com</p>
+          <p>Phone: 0909 022 966</p>
+          <p>Address: 273, An Duong Vuong, District 5, Ho Chi Minh City</p>
+        </div>
       </div>
+      <h3>Password</h3>
+
+      <div class="form">
+        <p>
+          Password:
+          <span id="password" style="letter-spacing: 2px">••••••••</span>
+          <button class="btn" type="button" onclick="togglePassword()">
+            View
+          </button>
+        </p>
+        <script>
+          function togglePassword() {
+            const pwdSpan = document.getElementById("password");
+            if (pwdSpan.textContent === "••••••••") {
+              pwdSpan.textContent = "ToiyeuSGU"; // Replace with actual password if available
+            } else {
+              pwdSpan.textContent = "••••••••";
+            }
+          }
+        </script>
+        <div class="row">
+          <label>New Password</label>
+          <input type="password" />
+        </div>
+        <div class="row">
+          <label>Confirm Password</label>
+          <input type="password" />
+        </div>
+        <button
+          class="btn"
+          onclick="alert('Password Updated'); location.href='customers.html';"
+        >
+          Update Password
+        </button>
+      </div>
+
       <h3>Orders</h3>
       <table class="table">
         <tr>

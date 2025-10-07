@@ -16,42 +16,54 @@
         <nav class="nav"><a href="dashboard.html">Dashboard</a></nav>
       </div>
     </header>
-    <main class="container">
-      <div class="form">
-        <h2>Edit Product</h2>
-        <div class="row"><input value="P001" /></div>
-        <div class="row"><input value="Book 1" /></div>
-        <div class="row">
-          <select>
-            <option>Novel</option>
-            <option>Science</option>
-          </select>
+    <main class="product-two-col container">
+      <aside class="image-panel">
+        <div class="image-box">
+          <img src="../img/sodod.jpg " alt="Book cover preview" />
         </div>
-        <div class="row"><input value="Author A" /></div>
-        <div class="row"><input value="2020" /></div>
-        <div class="row"><input value="Publisher X" /></div>
-        <div class="row">
-          <select>
-            <option>All ages</option>
-            <option>6+</option>
-            <option>8+</option>
-            <option>10+</option>
-            <option>12+</option>
-            <option>14+</option>
-            <option>16+</option>
-            <option>18+</option>
-          </select>
+        <div class="uploader">
+          <label class="file-label">Cập nhật ảnh bìa</label>
+          <input type="file" accept="image/*" />
+          <p class="hint">Chọn ảnh (JPG/PNG)</p>
         </div>
-        <div class="row"><input value="Vietnam" /></div>
-        <div class="row"><textarea>Description here...</textarea></div>
-        <div class="row"><input value="150000" /></div>
-        <div class="row"><input value="12" /></div>
-        <button
-          class="btn"
-          onclick="alert('Updated'); location.href='products.html'"
-        >
-          Update
-        </button>
+      </aside>
+
+      <div class="right-col">
+        <div class="form">
+          <h2>Edit Product</h2>
+          <div class="row"><input value="P001" /></div>
+          <div class="row"><input value="So do" /></div>
+          <div class="row">
+            <select>
+              <option>Novel</option>
+              <option>Science</option>
+            </select>
+          </div>
+          <div class="row"><input value="Vu Trong Phung" /></div>
+          <div class="row"><input value="1944" /></div>
+          <div class="row"><input value="NXB Tre" /></div>
+          <div class="row">
+            <select>
+              <option>16+</option>
+              <option>6+</option>
+              <option>8+</option>
+              <option>10+</option>
+              <option>12+</option>
+              <option>14+</option>
+              <option>18+</option>
+            </select>
+          </div>
+          <div class="row"><input value="Vietnam" /></div>
+          <div class="row"><textarea>Description here...</textarea></div>
+          <div class="row"><input value="120000" /></div>
+          <div class="row"><input value="999" /></div>
+          <button
+            class="btn"
+            onclick="alert('Updated'); location.href='products.html'"
+          >
+            Update
+          </button>
+        </div>
       </div>
     </main>
   </body>

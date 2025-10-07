@@ -257,7 +257,7 @@ a:hover {
 
 /* ---------- Slider (structure-compatible) ---------- */
 .slider {
-  max-width: var(--container);
+  max-width: 900px;
   margin: 22px auto;
   border-radius: var(--radius);
   overflow: hidden;
@@ -409,6 +409,10 @@ a:hover {
   gap: 12px;
   margin-bottom: 10px;
   flex-wrap: wrap;
+  border: 1px solid #1ba340;
+  border-radius: 5px;
+  /* padding: 10px; */
+  background: #f7fbf8;
 }
 .form input,
 .form select,
@@ -645,4 +649,75 @@ a:hover {
 .acard p {
   font-size: 0.95rem;
   opacity: 0.9;
+}
+
+/* ===== Two-column product layout (image left, info right) ===== */
+.product-two-col {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .product-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+.image-panel {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e8e8e8);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow, 0 4px 20px rgba(0, 0, 0, 0.06));
+}
+.image-box {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--green-50, #f5f5f5);
+  border: 1px dashed var(--border, #d9d9d9);
+}
+.image-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.uploader {
+  margin-top: 14px;
+}
+.file-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.image-panel input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border, #e8e8e8);
+  border-radius: 10px;
+  background: #fff;
+}
+.hint {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin-top: 8px;
+}
+
+/* Make existing form/card stretch nicely as the right column */
+.product-two-col > .right-col {
+  background: var(--surface, #fff);
+  border-radius: 16px;
+}
+
+.comment {
+  width: 100%;
+  height: 80px;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
 }
