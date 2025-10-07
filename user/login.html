@@ -14,12 +14,12 @@
           <h1>Green Bookstore</h1>
         </div>
         <nav class="nav">
-          <a href="../home.html">Home</a><a href="shop1guess.html">Shop</a
-          ><a href="cartguess.html">Cart</a><a href="register.html">Register</a>
+          <a href="../home.html">Home</a><a href="shop1guest.html">Shop</a
+          ><a href="cartguest.html">Cart</a><a href="register.html">Register</a>
         </nav>
         <div class="search">
           <input placeholder="Search..." /><button
-            onclick="location.href='shop1guess.html'"
+            onclick="location.href='shop1guest.html'"
           >
             Search
           </button>
@@ -29,7 +29,9 @@
     <main class="container">
       <div class="form">
         <h2>Login</h2>
-        <div class="row"><input placeholder="Email" required /></div>
+        <div class="row">
+          <input placeholder="Email" type="email" required />
+        </div>
         <div class="row">
           <input placeholder="Password" type="password" required />
         </div>
@@ -37,6 +39,11 @@
           <button class="btn" onclick="location.href='home_loggedin.html'">
             Login
           </button>
+        </div>
+        <div style="margin-top: 12px; font-size: 18px; text-align: center">
+          <a href="register.html">Don't have an account? Register</a>
+          <br />
+          <a href="forgot_password.html">Forgot Password?</a>
         </div>
       </div>
     </main>

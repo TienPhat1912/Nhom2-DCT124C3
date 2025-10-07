@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Shop</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='../home.html'">
+          <img src="../img/logo.png" />
+          <h1>Green Bookstore</h1>
+        </div>
+        <nav class="nav">
+          <a href="../home.html">Home</a><a href="shop1guest.html">Shop</a
+          ><a href="emptycartguest.html">Cart</a><a href="login.html">login</a
+          ><a href="register.html">register</a>
+        </nav>
+        <div class="search">
+          <input placeholder="Search books..." /><button
+            onclick="location.href='shop1guest.html'"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="category">
+        <a href="shop1guest.html">Novel</a><a href="shop2guest.html">Science</a>
+        <a href="shop1guest.html">History</a><a href="shop2guest.html">Psychology</a>
+        <a href="shop1guest.html">Education</a><a href="shop2guest.html">Documents</a>
+        <a href="shop1guest.html">Reference</a><a href="shop1guest.html">Guides</a>
+        <a href="shop2guest.html">Manga</a><a href="shop1guest.html">Light Novel</a>
+      </div>
+      <section class="section">
+        <h2>Filter</h2>
+        <div class="filter">
+          <select>
+            <option>Sort by</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Rating: Low to High</option>
+            <option>Rating: High to Low</option>
+            <option>Newest</option>
+            <option>Oldest</option>
+          </select>
+          <select>
+            <option>Price</option>
+            <option>Under ₫100k</option>
+            <option>₫100k-₫200k</option>
+            <option>₫200k-₫300k</option>
+            <option>Over ₫300k</option>
+          </select>
+          <select>
+            <option>Publisher</option>
+            <option>NXB Trẻ</option>
+            <option>NXB Kim Đồng</option>
+            <option>NXB Văn Học</option>
+            <option>NXB Giáo Dục</option>
+            <option>NXB Tổng Hợp TP.HCM</option>
+            <option>NXB Phụ Nữ</option>
+            <option>NXB Lao Động</option>
+            <option>NXB Thế Giới</option>
+            <option>NXB Văn Hóa - Văn Nghệ</option>
+          </select>
+          <select>
+            <option>Origin</option>
+            <option>Việt Nam</option>
+            <option>Nhật Bản</option>
+            <option>Hàn Quốc</option>
+            <option>Trung Quốc</option>
+            <option>Mỹ</option>
+            <opt>Anh</option>
+          </select>
+          <select>
+            <option>Color</option>
+            <option>Red</option>
+            <option>Green</option>
+            <option>Blue</option>
+            <option>Yellow</option>
+            <option>Black</option>
+            <option>White</option>
+          </select>
+          <button class="btn" onclick="alert('Filtered!');location.reload();">
+            Filter
+          </button>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <img src="img/prod9.jpg" />
+            <h3>Tiểu thuyết 9</h3>
+            <div class="price">₫9080</div>
+            <div class="rating">★★★★☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod10.jpg" />
+            <h3>Tiểu thuyết 10</h3>
+            <div class="price">₫10080</div>
+            <div class="rating">★★★★★</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod11.jpg" />
+            <h3>Tiểu thuyết 11</h3>
+            <div class="price">₫11080</div>
+            <div class="rating">★☆☆☆☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod12.jpg" />
+            <h3>Tiểu thuyết 12</h3>
+            <div class="price">₫12080</div>
+            <div class="rating">★★☆☆☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod13.jpg" />
+            <h3>Tiểu thuyết 13</h3>
+            <div class="price">₫13080</div>
+            <div class="rating">★★★☆☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod14.jpg" />
+            <h3>Tiểu thuyết 14</h3>
+            <div class="price">₫14080</div>
+            <div class="rating">★★★★☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod9.jpg" />
+            <h3>Tiểu thuyết 9</h3>
+            <div class="price">₫9080</div>
+            <div class="rating">★★★★☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod10.jpg" />
+            <h3>Tiểu thuyết 10</h3>
+            <div class="price">₫10080</div>
+            <div class="rating">★★★★★</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod11.jpg" />
+            <h3>Tiểu thuyết 11</h3>
+            <div class="price">₫11080</div>
+            <div class="rating">★☆☆☆☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod12.jpg" />
+            <h3>Tiểu thuyết 12</h3>
+            <div class="price">₫12080</div>
+            <div class="rating">★★☆☆☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod13.jpg" />
+            <h3>Tiểu thuyết 13</h3>
+            <div class="price">₫13080</div>
+            <div class="rating">★★★☆☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="img/prod14.jpg" />
+            <h3>Tiểu thuyết 14</h3>
+            <div class="price">₫14080</div>
+            <div class="rating">★★★★☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2.html">Details</a
+              ><a class="btn ghost" href="cart.html">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

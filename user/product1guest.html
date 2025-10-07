@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Số Đỏ</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='../home.html'">
+          <img src="../img/logo.png" />
+          <h1>Green Bookstore</h1>
+        </div>
+        <nav class="nav">
+          <a href="../home.html">Home</a><a href="shop1guest.html">Shop</a
+          ><a href="emptycartguest.html">Cart</a><a href="login.html">login</a
+          ><a href="register.html">register</a>
+        </nav>
+        <div class="search">
+          <input placeholder="Search..." /><button
+            onclick="location.href='shop1guest.html'"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="detail">
+        <img src="../img/sodod.jpg" />
+        <div class="info">
+          <h2>Số Đỏ</h2>
+          <p><strong>Product Code:</strong> SD-001</p>
+          <p><strong>Author:</strong> Vũ Trọng Phụng</p>
+          <p><strong>Year:</strong> 1936</p>
+          <p><strong>Publisher:</strong> NXB Văn Học</p>
+          <p><strong>Age:</strong> 16+</p>
+          <p><strong>Origin:</strong> Việt Nam</p>
+          <p><strong>Genre:</strong> Tiểu thuyết</p>
+          <p>
+            <strong>Description:</strong> Tác phẩm châm biếm xã hội nổi tiếng.
+          </p>
+          <p style="margin-top: 8px"><strong>Price:</strong> ₫120,000</p>
+          <div style="margin-top: 12px; display: flex; gap: 8px">
+            <button
+              class="btn"
+              onclick="alert('Login or register to continue!')"
+            >
+              Add to cart
+            </button>
+            <button
+              class="btn ghost"
+              onclick="alert('Login or register to continue!')"
+            >
+              Buy now
+            </button>
+          </div>
+
+          <hr style="margin: 16px 0" />
+          <h3>Đánh giá</h3>
+          <div id="s1" style="font-size: 24px; cursor: pointer">
+            <span onclick="set(1)">☆</span><span onclick="set(2)">☆</span
+            ><span onclick="set(3)">☆</span><span onclick="set(4)">☆</span
+            ><span onclick="set(5)">☆</span>
+          </div>
+          <div style="margin-top: 8px">
+            <button class="btn" onclick="submit()">Gửi đánh giá</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      let r = 0;
+      function set(n) {
+        r = n;
+        const sp = document.querySelectorAll("#s1 span");
+        for (let i = 0; i < 5; i++) {
+          sp[i].textContent = i < n ? "★" : "☆";
+        }
+      }
+      function submit() {
+        if (r === 0) {
+          alert("Chọn sao trước");
+          return;
+        }
+        alert("Login or register to continue!");
+      }
+    </script>
+  </body>
+</html>
