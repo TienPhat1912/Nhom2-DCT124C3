@@ -29,21 +29,37 @@
             <th>Product</th>
             <th>Price</th>
             <th>Qty</th>
+            <th>Total</th>
             <th>Action</th>
           </tr>
           <tr>
             <td>Số Đỏ</td>
-            <td>₫120,000</td>
-            <td>1</td>
-            <td><button class="btn" onclick="del()">Delete</button></td>
+            <td data-price="120000">₫120,000</td>
+            <td>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+                <input type="number" min="1" value="1" readonly />
+                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+              </div>
+            </td>
+            <td class="total"><span>₫120,000</span></td>
+            <td><button class="btn" onclick="del(this)">Delete</button></td>
           </tr>
           <tr>
             <td>Nỗi Buồn Chiến Tranh</td>
-            <td>₫150,000</td>
-            <td>1</td>
-            <td><button class="btn" onclick="del()">Delete</button></td>
+            <td data-price="150000">₫150,000</td>
+            <td>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+                <input type="number" min="1" value="1" readonly />
+                <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+              </div>
+            </td>
+            <td class="total"><span>₫150,000</span></td>
+            <td><button class="btn" onclick="del(this)">Delete</button></td>
           </tr>
         </table>
+
         <div
           style="
             display: flex;
@@ -52,12 +68,19 @@
             margin-top: 12px;
           "
         >
-          <button class="btn ghost" onclick="clearc()">Clear All</button
-          ><a class="btn" href="checkout.html">Checkout</a>
+          <button class="btn ghost" onclick="clearc()">Clear All</button>
+          <a class="btn" href="checkout.html">Checkout</a>
         </div>
       </section>
     </main>
     <script>
+      function changeQty(btn, delta) {
+        const input = btn.parentElement.querySelector("input");
+        let value = parseInt(input.value) + delta;
+        if (value < 1) value = 1;
+        input.value = value;
+      }
+
       function del() {
         alert("Item deleted successfully!");
         location.reload();

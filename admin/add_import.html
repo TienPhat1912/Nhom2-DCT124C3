@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Import Receipt</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" />
+          <h1>BOOKSTORE MANAGEMENT</h1>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Add Import Receipt</h2>
+
+      <form class="form">
+        <div style="display: flex; gap: 16px; flex-wrap: wrap">
+          <div style="flex: 1; min-width: 250px">
+            <label><b>Import Date</b></label
+            ><br />
+            <input type="date" />
+          </div>
+          <div style="flex: 1; min-width: 250px">
+            <label><b>Supplier</b></label
+            ><br />
+            <input type="text" placeholder="Enter supplier name" />
+          </div>
+          <div style="flex: 1; min-width: 250px">
+            <label><b>Handled By</b></label
+            ><br />
+            <input type="text" placeholder="Staff name" />
+          </div>
+        </div>
+
+        <h3 style="margin-top: 20px">Product List</h3>
+
+        <table class="table" id="productTable">
+          <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Unit Cost</th>
+            <th>Action</th>
+          </tr>
+
+          <tr>
+            <td><input type="text" placeholder="P001" /></td>
+            <td><input type="text" placeholder="Book Title" /></td>
+            <td><input type="number" min="1" placeholder="100" /></td>
+            <td><input type="number" min="0" placeholder="120000" /></td>
+            <td>
+              <button
+                type="button"
+                class="btn ghost"
+                onclick="this.closest('tr').remove()"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+        </table>
+
+        <div style="margin-top: 10px">
+          <button
+            type="button"
+            class="btn"
+            onclick="addRow()"
+            style="margin-right: 10px"
+          >
+            + Add Product
+          </button>
+        </div>
+
+        <div
+          style="
+            margin-top: 20px;
+            display: flex;
+            justify-content: end;
+            gap: 10px;
+          "
+        >
+          <button
+            type="button"
+            class="btn ghost"
+            onclick="location.href='import.html'"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="btn"
+            onclick="location.href='receiptconfirm.html'"
+          >
+            Confirm
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <script>
+      function addRow() {
+        const table = document.getElementById("productTable");
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><input type="text" placeholder="P00X" /></td>
+          <td><input type="text" placeholder="Book Title" /></td>
+          <td><input type="number" min="1" placeholder="0" /></td>
+          <td><input type="number" min="0" placeholder="0" /></td>
+          <td>
+            <button type="button" class="btn ghost" onclick="this.closest('tr').remove()">Remove</button>
+          </td>
+        `;
+        table.appendChild(row);
+      }
+    </script>
+  </body>
+</html>

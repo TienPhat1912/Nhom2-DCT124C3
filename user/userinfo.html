@@ -40,7 +40,55 @@
           <p>Email: thanhcao@gmail.com</p>
           <p>Phone: 0909 022 966</p>
           <p>Address: 273, An Duong Vuong, District 5, Ho Chi Minh City</p>
+          <div style="margin-top: 12px">
+            <button
+              class="btn"
+              onclick="location.href='useredit.html'"
+              style="min-width: 120px"
+            >
+              Edit Info
+            </button>
+          </div>
         </div>
+      </div>
+      <!-- them filter -->
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 16px;
+          "
+        >
+          <h2 style="margin: 0">Orders</h2>
+          <!-- filer theo ngay mua -->
+        <table class="table">
+          <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>O001</td>
+            <td>2025-09-01</td>
+            <td>Confirmed</td>
+            <td><a class="btn" href="order_detail.html">Detail</a></td>
+          </tr>
+          <tr>
+            <td>O002</td>
+            <td>2025-09-02</td>
+            <td>Cancelled</td>
+            <td><a class="btn" href="order_detail.html">Detail</a></td>
+          </tr>
+          <tr>
+            <td>O003</td>
+            <td>2025-09-03</td>
+            <td>confirmed</td>
+            <td><a class="btn" href="order_detail.html">Detail</a></td>
+          </tr>
+        </table>
       </div>
     </main>
   </body>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Product</title>
+    <title>Add product</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
@@ -16,42 +16,96 @@
         <nav class="nav"><a href="dashboard.html">Dashboard</a></nav>
       </div>
     </header>
-    <main class="container">
-      <div class="form">
-        <h2>Add Product</h2>
-        <div class="row"><input placeholder="Product ID" /></div>
-        <div class="row"><input placeholder="Product Name" /></div>
-        <div class="row">
-          <select>
-            <option>Novel</option>
-            <option>Science</option>
-          </select>
+    <main class="product-two-col container">
+      <aside class="image-panel">
+        <div class="image-box">
+          <img src="../img/placeholder.jpg " alt="Book cover preview" />
         </div>
-        <div class="row"><input placeholder="Author" /></div>
-        <div class="row"><input placeholder="Year" /></div>
-        <div class="row"><input placeholder="Publisher" /></div>
-        <div class="row">
-          <select>
-            <option>All ages</option>
-            <option>6+</option>
-            <option>8+</option>
-            <option>10+</option>
-            <option>12+</option>
-            <option>14+</option>
-            <option>16+</option>
-            <option>18+</option>
-          </select>
+        <div class="uploader">
+          <label class="file-label">upload the book cover</label>
+          <input type="file" accept="image/*" />
+          <p class="hint">Choose image (JPG/PNG)</p>
         </div>
-        <div class="row"><input placeholder="Origin" /></div>
-        <div class="row"><textarea placeholder="Description"></textarea></div>
-        <div class="row"><input placeholder="Price" /></div>
-        <div class="row"><input placeholder="Stock" /></div>
-        <button
-          class="btn"
-          onclick="alert('Product added'); location.href='products.html'"
-        >
-          Add
-        </button>
+      </aside>
+
+      <div class="right-col">
+        <div class="form">
+          <h2>Add product</h2>
+          <div class="row">
+            <label for="product-id">Product ID</label>
+            <input id="product-id" placeholder="Enter product ID" />
+          </div>
+          <div class="row">
+            <label for="product-name">Name</label>
+            <input id="product-name" placeholder="Enter product name" />
+          </div>
+          <div class="row">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="" disabled selected>Select category</option>
+              <option>Novel</option>
+              <option>Science</option>
+              <option>History</option>
+              <option>Psychology</option>
+              <option>Education</option>
+              <option>Documents</option>
+              <option>Reference</option>
+              <option>Guides</option>
+              <option>Manga</option>
+              <option>Light Novel</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="author">Author</label>
+            <input id="author" placeholder="Enter author name" />
+          </div>
+          <div class="row">
+            <label for="year">Year</label>
+            <input id="year" placeholder="Enter publication year" />
+          </div>
+          <div class="row">
+            <label for="publisher">Publisher</label>
+            <select id="publisher">
+              <option value="" disabled selected>Select publisher</option>
+              <option>NXB Tre</option>
+              <option>NXB Kim Dong</option>
+              <option>NXB Van Hoc</option>
+              <option>NXB Giao Duc</option>
+              <option>NXB Phu Nu</option>
+              <option>NXB Tong Hop TPHCM</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="age">Age</label>
+            <select id="age">
+              <option value="" disabled selected>Select age group</option>
+              <option>16+</option>
+              <option>6+</option>
+              <option>8+</option>
+              <option>10+</option>
+              <option>12+</option>
+              <option>14+</option>
+              <option>18+</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="country">Country</label>
+            <input id="country" placeholder="Enter country" />
+          </div>
+          <div class="row">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+          <button
+            class="btn"
+            onclick="alert('Updated'); location.href='products.html'"
+          >
+            Add to inventory
+          </button>
+        </div>
       </div>
     </main>
   </body>

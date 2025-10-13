@@ -31,19 +31,51 @@
       <div class="right-col">
         <div class="form">
           <h2>Edit Product</h2>
-          <div class="row"><input value="P001" /></div>
-          <div class="row"><input value="So do" /></div>
           <div class="row">
-            <select>
+            <label for="product-id">Product ID</label>
+            <input id="product-id" value="P001" />
+          </div>
+          <div class="row">
+            <label for="product-name">Name</label>
+            <input id="product-name" value="So do" />
+          </div>
+          <div class="row">
+            <label for="category">Category</label>
+            <select id="category">
               <option>Novel</option>
               <option>Science</option>
+              <option>History</option>
+              <option>Psychology</option>
+              <option>Education</option>
+              <option>Documents</option>
+              <option>Reference</option>
+              <option>Guides</option>
+              <option>Manga</option>
+              <option>Light Novel</option>
             </select>
           </div>
-          <div class="row"><input value="Vu Trong Phung" /></div>
-          <div class="row"><input value="1944" /></div>
-          <div class="row"><input value="NXB Tre" /></div>
           <div class="row">
-            <select>
+            <label for="author">Author</label>
+            <input id="author" value="Vu Trong Phung" />
+          </div>
+          <div class="row">
+            <label for="year">Year</label>
+            <input id="year" value="2022" />
+          </div>
+          <div class="row">
+            <label for="publisher">Publisher</label>
+            <select id="publisher">
+              <option>NXB Tre</option>
+              <option>NXB Kim Dong</option>
+              <option>NXB Van Hoc</option>
+              <option>NXB Giao Duc</option>
+              <option>NXB Phu Nu</option>
+              <option>NXB Tong Hop TPHCM</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="age">Age</label>
+            <select id="age">
               <option>16+</option>
               <option>6+</option>
               <option>8+</option>
@@ -53,10 +85,14 @@
               <option>18+</option>
             </select>
           </div>
-          <div class="row"><input value="Vietnam" /></div>
-          <div class="row"><textarea>Description here...</textarea></div>
-          <div class="row"><input value="120000" /></div>
-          <div class="row"><input value="999" /></div>
+          <div class="row">
+            <label for="country">Country</label>
+            <input id="country" value="Vietnam" />
+          </div>
+          <div class="row">
+            <label for="description">Description</label>
+            <textarea id="description">Tieu thuyet tam li</textarea>
+          </div>
           <button
             class="btn"
             onclick="alert('Updated'); location.href='products.html'"

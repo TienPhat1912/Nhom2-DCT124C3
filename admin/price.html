@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price Management</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" />
+          <h1>BOOKSTORE MANAGEMENT</h1>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Price Management</h2>
+
+      <!-- FILTER + SEARCH SECTION -->
+      <div class="search-section" style="margin-bottom: 20px">
+        <div
+          class="filter-bar"
+          style="display: flex; gap: 10px; margin-bottom: 10px"
+        >
+          <select id="categorySelect">
+            <option value="">-- Select Category --</option>
+            <option value="Novel">Novel</option>
+            <option value="Science">Science</option>
+            <option value="History">History</option>
+            <option value="Psychology">Psychology</option>
+            <option value="Education">Education</option>
+            <option value="Documents">Documents</option>
+            <option value="Reference">Reference</option>
+            <option value="Guides">Guides</option>
+            <option value="Manga">Manga</option>
+            <option value="Light Novel">Light Novel</option>
+          </select>
+          <button class="btn" onclick="filterCategory()">Filter</button>
+        </div>
+
+        <div class="search-bar" style="display: flex; gap: 10px">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Enter product ID or name..."
+            style="flex: 1"
+          />
+          <button class="btn" onclick="searchProduct()">Search</button>
+        </div>
+      </div>
+
+      <!-- CATEGORY TABLE -->
+      <table class="table">
+        <tr>
+          <th>Category</th>
+          <th>Profit Margin (%)</th>
+          <th>Products</th>
+          <th>Action</th>
+        </tr>
+
+        <tr>
+          <td>Novel</td>
+          <td>25%</td>
+          <td>10</td>
+          <td>
+            <button class="btn" onclick="openModal('Novel', 25)">Edit</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Science</td>
+          <td>20%</td>
+          <td>8</td>
+          <td>
+            <button class="btn" onclick="openModal('Science', 20)">Edit</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>History</td>
+          <td>15%</td>
+          <td>6</td>
+          <td>
+            <button class="btn" onclick="openModal('History', 15)">Edit</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Psychology</td>
+          <td>18%</td>
+          <td>5</td>
+          <td>
+            <button class="btn" onclick="openModal('Psychology', 18)">
+              Edit
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Education</td>
+          <td>12%</td>
+          <td>9</td>
+          <td>
+            <button class="btn" onclick="openModal('Education', 12)">
+              Edit
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Documents</td>
+          <td>10%</td>
+          <td>7</td>
+          <td>
+            <button class="btn" onclick="openModal('Documents', 10)">
+              Edit
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Reference</td>
+          <td>15%</td>
+          <td>4</td>
+          <td>
+            <button class="btn" onclick="openModal('Reference', 15)">
+              Edit
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Guides</td>
+          <td>20%</td>
+          <td>6</td>
+          <td>
+            <button class="btn" onclick="openModal('Guides', 20)">Edit</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Manga</td>
+          <td>35%</td>
+          <td>12</td>
+          <td>
+            <button class="btn" onclick="openModal('Manga', 35)">Edit</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Light Novel</td>
+          <td>30%</td>
+          <td>10</td>
+          <td>
+            <button class="btn" onclick="openModal('Light Novel', 30)">
+              Edit
+            </button>
+          </td>
+        </tr>
+      </table>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal" id="editModal">
+      <div class="modal-content">
+        <h3>Edit Category Profit Margin</h3>
+        <label><b>Category:</b></label>
+        <input type="text" id="categoryName" readonly />
+        <label><b>Profit Margin (%):</b></label>
+        <input type="number" id="profitMargin" />
+        <div
+          style="
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+          "
+        >
+          <button class="btn ghost" onclick="closeModal()">Cancel</button>
+          <button class="btn" onclick="saveModal()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function filterCategory() {
+        const category = document.getElementById("categorySelect").value;
+        if (!category) {
+          alert("Please select a category first!");
+          return;
+        }
+        location.href = `price_list.html?category=${encodeURIComponent(
+          category
+        )}`;
+      }
+
+      function searchProduct() {
+        const keyword = document.getElementById("searchInput").value.trim();
+        if (!keyword) {
+          alert("Please enter a product name or ID!");
+          return;
+        }
+        location.href = `price_product.html?query=${encodeURIComponent(
+          keyword
+        )}`;
+      }
+
+      function openModal(category, profit) {
+        document.getElementById("categoryName").value = category;
+        document.getElementById("profitMargin").value = profit;
+        document.getElementById("editModal").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("editModal").style.display = "none";
+      }
+
+      function saveModal() {
+        alert("Profit margin updated successfully!");
+        closeModal();
+      }
+    </script>
+  </body>
+</html>

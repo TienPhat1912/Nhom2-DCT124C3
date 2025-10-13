@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Import Receipt Detail</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" />
+          <h1>BOOKSTORE MANAGEMENT</h1>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <h2>Import Receipt Detail</h2>
+
+        <p><b>Receipt ID:</b> I20251010</p>
+        <p><b>Supplier:</b> FAHASA</p>
+        <p><b>Import Date:</b> 2025-10-10</p>
+        <p><b>Handled By:</b> Trần Tiến Phát</p>
+        <p><b>Note:</b> First import batch for October 2025.</p>
+
+        <table class="table">
+          <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Unit Cost (₫)</th>
+            <th>Total (₫)</th>
+          </tr>
+          <tr>
+            <td>P001</td>
+            <td>Số Đỏ</td>
+            <td>100</td>
+            <td>85,000</td>
+            <td>8,500,000</td>
+          </tr>
+          <tr>
+            <td>P002</td>
+            <td>Nỗi Buồn Chiến Tranh</td>
+            <td>100</td>
+            <td>90,000</td>
+            <td>9,000,000</td>
+          </tr>
+          <tr>
+            <td>P003</td>
+            <td>Tuổi Trẻ Đáng Giá Bao Nhiêu</td>
+            <td>100</td>
+            <td>70,000</td>
+            <td>7,000,000</td>
+          </tr>
+          <tr>
+            <td>P004</td>
+            <td>Đắc Nhân Tâm</td>
+            <td>100</td>
+            <td>95,000</td>
+            <td>9,500,000</td>
+          </tr>
+          <tr>
+            <td>P005</td>
+            <td>Nhà Giả Kim</td>
+            <td>100</td>
+            <td>80,000</td>
+            <td>8,000,000</td>
+          </tr>
+          <tr>
+            <td>P006</td>
+            <td>Hạt Giống Tâm Hồn</td>
+            <td>100</td>
+            <td>65,000</td>
+            <td>6,500,000</td>
+          </tr>
+          <tr>
+            <td>P007</td>
+            <td>Thép Đã Tôi Thế Đấy</td>
+            <td>100</td>
+            <td>78,000</td>
+            <td>7,800,000</td>
+          </tr>
+          <tr>
+            <td>P008</td>
+            <td>Vũ Trụ Trong Vỏ Hạt Dẻ</td>
+            <td>100</td>
+            <td>110,000</td>
+            <td>11,000,000</td>
+          </tr>
+          <tr>
+            <td>P009</td>
+            <td>Dế Mèn Phiêu Lưu Ký</td>
+            <td>100</td>
+            <td>60,000</td>
+            <td>6,000,000</td>
+          </tr>
+          <tr>
+            <td>P010</td>
+            <td>Harry Potter and the Sorcerer’s Stone</td>
+            <td>100</td>
+            <td>120,000</td>
+            <td>12,000,000</td>
+          </tr>
+        </table>
+
+        <p style="text-align: right; font-weight: bold; margin-top: 16px">
+          Total Amount: ₫85,300,000
+        </p>
+
+        <div
+          style="
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 16px;
+          "
+        >
+          <a class="btn ghost" href="import.html">Back</a>
+          <button class="btn" onclick="alert('Receipt printed!')">Print</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

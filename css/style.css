@@ -474,7 +474,7 @@ a:hover {
 }
 .table th,
 .table td {
-  padding: 12px;
+  padding: 8px 6px; /* giảm padding để các cột gần nhau hơn */
   border-bottom: 1px solid #f2f6f2;
   text-align: left;
 }
@@ -720,4 +720,152 @@ a:hover {
   border-radius: 4px;
   border: 1px solid #ccc;
   resize: vertical;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px; /* khoảng cách giữa các ô */
+  margin-top: 12px;
+}
+
+.pagination a {
+  width: 36px; /* tạo hình vuông */
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px; /* bo nhẹ các góc */
+  background: var(--green-900);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.pagination a:hover {
+  background: var(--green-200);
+  transform: translateY(-2px);
+}
+
+.pagination a.active {
+  background: var(--green-600);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.pagination a:first-child,
+.pagination a:last-child {
+  width: 32px; /* nhỏ hơn một chút cho dấu « » */
+  font-weight: bold;
+}
+
+/* cart qty */
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 90px;
+}
+
+.qty-control input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: #fff;
+  font-size: 14px;
+}
+
+.qty-btn {
+  background: #f0f0f0;
+  border: none;
+  width: 25px;
+  height: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.qty-btn:hover {
+  background: #ddd;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.modal-content h3 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Filter & Search Layout */
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.search-section input,
+.search-section select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }

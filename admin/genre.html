@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genre Management</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" />
+          <h1>BOOKSTORE MANAGEMENT</h1>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Genre Management</h2>
+
+      <div style="margin-bottom: 16px">
+        <button class="btn" id="openAddModal">Add Genre</button>
+      </div>
+
+      <table class="table">
+        <tr>
+          <th>Genre Name</th>
+          <th>Number of Books</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+
+        <tr>
+          <td>Novel</td>
+          <td>25</td>
+          <td style="color: green; font-weight: 600">Active</td>
+          <td>
+            <button class="btn" onclick="openEditModal('Novel','Active')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('Novel')">Delete</button>
+            <button
+              class="btn"
+              onclick="alert('Genre Hidden'); location.reload();"
+            >
+              Hide
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Science</td>
+          <td>18</td>
+          <td style="color: green; font-weight: 600">Active</td>
+          <td>
+            <button class="btn" onclick="openEditModal('Science','Active')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('Science')">
+              Delete
+            </button>
+            <button
+              class="btn"
+              onclick="alert('Genre Hidden'); location.reload();"
+            >
+              Hide
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>History</td>
+          <td>12</td>
+          <td style="color: green; font-weight: 600">Active</td>
+          <td>
+            <button class="btn" onclick="openEditModal('History','Active')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('History')">
+              Delete
+            </button>
+            <button
+              class="btn"
+              onclick="alert('Genre Hidden'); location.reload();"
+            >
+              Hide
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Psychology</td>
+          <td>14</td>
+          <td style="color: green; font-weight: 600">Active</td>
+          <td>
+            <button class="btn" onclick="openEditModal('Psychology','Active')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('Psychology')">
+              Delete
+            </button>
+            <button
+              class="btn"
+              onclick="alert('Genre Hidden'); location.reload();"
+            >
+              Hide
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Education</td>
+          <td>20</td>
+          <td style="color: green; font-weight: 600">Active</td>
+          <td>
+            <button class="btn" onclick="openEditModal('Education','Active')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('Education')">
+              Delete
+            </button>
+            <button
+              class="btn"
+              onclick="alert('Genre Hidden'); location.reload();"
+            >
+              Hide
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Documents</td>
+          <td>10</td>
+          <td style="color: orange; font-weight: 600">Inactive</td>
+          <td>
+            <button class="btn" onclick="openEditModal('Documents','Inactive')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('Documents')">
+              Delete
+            </button>
+            <button
+              class="btn"
+              onclick="alert('Genre Unhidden'); location.reload();"
+            >
+              Unhide
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Reference</td>
+          <td>8</td>
+          <td style="color: green; font-weight: 600">Active</td>
+          <td>
+            <button class="btn" onclick="openEditModal('Reference','Active')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('Reference')">
+              Delete
+            </button>
+            <button
+              class="btn"
+              onclick="alert('Genre Hidden'); location.reload();"
+            >
+              Hide
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Guides</td>
+          <td>15</td>
+          <td style="color: green; font-weight: 600">Active</td>
+          <td>
+            <button class="btn" onclick="openEditModal('Guides','Active')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('Guides')">
+              Delete
+            </button>
+            <button
+              class="btn"
+              onclick="alert('Genre Hidden'); location.reload();"
+            >
+              Hide
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Manga</td>
+          <td>30</td>
+          <td style="color: green; font-weight: 600">Active</td>
+          <td>
+            <button class="btn" onclick="openEditModal('Manga','Active')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('Manga')">Delete</button>
+            <button
+              class="btn"
+              onclick="alert('Genre Hidden'); location.reload();"
+            >
+              Hide
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Light Novel</td>
+          <td>22</td>
+          <td style="color: green; font-weight: 600">Active</td>
+          <td>
+            <button class="btn" onclick="openEditModal('Light Novel','Active')">
+              Edit
+            </button>
+            <button class="btn" onclick="confirmDelete('Light Novel')">
+              Delete
+            </button>
+            <button
+              class="btn"
+              onclick="alert('Genre Hidden'); location.reload();"
+            >
+              Hide
+            </button>
+          </td>
+        </tr>
+      </table>
+    </main>
+
+    <!-- Popup: Add Genre -->
+    <div class="modal" id="addModal">
+      <div class="modal-content">
+        <h3>Add New Genre</h3>
+        <form id="addGenreForm">
+          <label>Genre Name:</label>
+          <input
+            type="text"
+            id="addGenreName"
+            placeholder="Enter genre name"
+            required
+          />
+
+          <label>Description:</label>
+          <textarea
+            id="addGenreDesc"
+            placeholder="Short description..."
+            rows="3"
+          ></textarea>
+
+          <label>Status:</label>
+          <select id="addGenreStatus">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+
+          <div class="modal-actions">
+            <button type="button" class="btn" id="saveAddGenre">Save</button>
+            <button
+              type="button"
+              class="btn ghost"
+              onclick="closeModal('addModal')"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Popup: Edit Genre -->
+    <div class="modal" id="editModal">
+      <div class="modal-content">
+        <h3>Edit Genre</h3>
+        <form id="editGenreForm">
+          <label>Genre Name:</label>
+          <input type="text" id="editGenreName" required />
+
+          <label>Description:</label>
+          <textarea
+            id="editGenreDesc"
+            placeholder="Short description..."
+            rows="3"
+          ></textarea>
+
+          <label>Status:</label>
+          <select id="editGenreStatus">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+
+          <div class="modal-actions">
+            <button type="button" class="btn" id="saveEditGenre">Save</button>
+            <button
+              type="button"
+              class="btn ghost"
+              onclick="closeModal('editModal')"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Mở và đóng modal
+      const openAddModalBtn = document.getElementById("openAddModal");
+      const addModal = document.getElementById("addModal");
+      const editModal = document.getElementById("editModal");
+
+      openAddModalBtn.onclick = () => (addModal.style.display = "flex");
+
+      function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+      }
+
+      window.onclick = (e) => {
+        if (e.target === addModal) addModal.style.display = "none";
+        if (e.target === editModal) editModal.style.display = "none";
+      };
+
+      // Thêm thể loại mới
+      document.getElementById("saveAddGenre").onclick = () => {
+        const name = document.getElementById("addGenreName").value;
+        if (!name.trim()) return alert("Please enter a genre name!");
+        alert(`Genre "${name}" added successfully!`);
+        closeModal("addModal");
+      };
+
+      // Xóa thể loại
+      function confirmDelete(name) {
+        if (confirm(`Are you sure you want to delete "${name}"?`)) {
+          alert(`Genre "${name}" deleted.`);
+          location.reload();
+        }
+      }
+
+      // Mở modal chỉnh sửa
+      function openEditModal(name, status) {
+        document.getElementById("editGenreName").value = name;
+        document.getElementById("editGenreStatus").value = status;
+        editModal.style.display = "flex";
+      }
+
+      // Lưu chỉnh sửa
+      document.getElementById("saveEditGenre").onclick = () => {
+        const name = document.getElementById("editGenreName").value;
+        alert(`Genre "${name}" updated successfully!`);
+        closeModal("editModal");
+      };
+    </script>
+  </body>
+</html>

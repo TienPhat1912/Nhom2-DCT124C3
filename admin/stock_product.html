@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Found</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" />
+          <h1>BOOKSTORE MANAGEMENT</h1>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Inventory Lookup Result</h2>
+
+      <div style="margin-bottom: 16px">
+        <button class="btn" onclick="location.href='stock.html'">
+          Back to Lookup
+        </button>
+        <button class="btn ghost" onclick="location.href='import.html'">
+          View Import Receipts
+        </button>
+      </div>
+
+      <h3>
+        Found 1 match <span style="color: blue">"P001"</span> on
+        <span style="color: green">2025-10-19</span>
+      </h3>
+
+      <table class="table">
+        <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>In Stock</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+
+        <tr>
+          <td>P001</td>
+          <td>Số Đỏ</td>
+          <td>80</td>
+          <td style="color: green; font-weight: bold">Available</td>
+          <td><a class="btn" href="product_detail.html">Detail</a></td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>

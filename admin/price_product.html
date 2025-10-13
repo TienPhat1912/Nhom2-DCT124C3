@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Prices by Category</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" alt="logo" />
+          <h1>BOOKSTORE MANAGEMENT</h1>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Products in Category</h2>
+
+      <button class="btn ghost" onclick="location.href='price.html'">
+        ← Back to Categories
+      </button>
+
+      <h3 style="margin-top: 15px">
+        Found <span style="color: blue">"P001"</span>
+      </h3>
+
+      <table class="table">
+        <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Cost Price</th>
+          <th>Selling Price</th>
+          <th>Profit Margin (%)</th>
+          <th>Action</th>
+        </tr>
+
+        <!-- ví dụ dòng 1 -->
+        <tr>
+          <td>P001</td>
+          <td>Số Đỏ</td>
+          <td>₫85,000</td>
+          <td>₫110,000</td>
+          <td>29.41%</td>
+          <td>
+            <button class="btn" onclick="openModal('P001','85','110')">
+              Edit
+            </button>
+          </td>
+        </tr>
+      </table>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="editModal">
+      <div class="modal-content">
+        <h3>Edit Product Profit</h3>
+
+        <label><b>Product ID:</b></label>
+        <input type="text" id="prodId" readonly />
+
+        <label><b>Cost Price (₫):</b></label>
+        <input type="number" id="costPrice" readonly />
+
+        <label><b>New Profit Margin (%):</b></label>
+        <input type="number" id="newMargin" />
+
+        <p>
+          <b>Suggested Selling Price:</b> ₫<span id="suggestedPrice">0</span>
+        </p>
+
+        <div
+          style="
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+          "
+        >
+          <button class="btn ghost" onclick="closeModal()">Cancel</button>
+          <button class="btn" onclick="saveModal()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openModal(pid, cost, sell) {
+        // hiển thị modal và điền dữ liệu
+        document.getElementById("prodId").value = pid;
+        document.getElementById("costPrice").value = cost * 1000;
+        document.getElementById("newMargin").value = (
+          ((sell - cost) / cost) *
+          100
+        ).toFixed(2);
+        document.getElementById("suggestedPrice").innerText = (
+          sell * 1000
+        ).toLocaleString("vi-VN");
+
+        document.getElementById("editModal").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("editModal").style.display = "none";
+      }
+
+      function saveModal() {
+        const id = document.getElementById("prodId").value;
+        const margin = document.getElementById("newMargin").value;
+        alert(`Saved new margin ${margin}% for product ${id} (demo)`);
+        closeModal();
+      }
+
+      // click ra ngoài để tắt modal
+      window.onclick = function (e) {
+        const modal = document.getElementById("editModal");
+        if (e.target === modal) closeModal();
+      };
+    </script>
+  </body>
+</html>

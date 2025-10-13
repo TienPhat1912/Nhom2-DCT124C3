@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='home_loggedin.html'">
+          <img src="../img/logo.png" />
+          <h1>Green Bookstore</h1>
+        </div>
+        <nav class="nav">
+          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
+          ><a href="cart.html">Cart</a
+          ><a href="userinfo.html">Cao Thai Phuong Thanh</a
+          ><a href="../home.html">Log out</a>
+        </nav>
+      </div>
+    </header>
+    <main class="product-two-col container">
+      <aside class="image-panel">
+        <div class="image-box">
+          <img src="../img/avatar.png " alt="Book cover preview" />
+        </div>
+        <div class="uploader">
+          <label class="file-label">update your avatar</label>
+          <input type="file" accept="image/*" />
+          <p class="hint">Chọn ảnh (JPG/PNG)</p>
+        </div>
+      </aside>
+
+      <div class="right-col">
+        <div class="form">
+          <h2>Edit your profile</h2>
+          <div
+            class="row"
+            style="display: flex; align-items: center; margin-bottom: 16px"
+          >
+            <label for="user-id">User ID:</label>
+            <input id="user-id" value="P001" readonly />
+          </div>
+          <div class="row">
+            <label for="first-name">First Name:</label>
+            <input id="first-name" value="Cao" />
+          </div>
+          <div class="row">
+            <label for="last-name">Last Name:</label>
+            <input id="last-name" value="Thai Phuong Thanh" />
+          </div>
+          <div class="row">
+            <label for="dob">Date of Birth:</label>
+            <input id="dob" type="date" value="1990-01-01" />
+          </div>
+          <div class="row">
+            <label for="email">Email:</label>
+            <input id="email" value="thanhcao@gmail.com" />
+          </div>
+          <div class="row">
+            <label for="phone">Phone:</label>
+            <input id="phone" value="0909 022 966" />
+          </div>
+          <div class="row">
+            <label for="address">Address:</label>
+            <input
+              id="address"
+              value="273, An Duong Vuong, District 5, Ho Chi Minh City"
+            />
+          </div>
+          <button
+            class="btn"
+            onclick="alert('Updated'); location.href='userinfo.html'"
+          >
+            Update
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
