@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revenue - Today</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" />
+          <h1>BOOKSTORE MANAGEMENT</h1>
+        </div>
+        <nav class="nav"><a href="dashboard.html">Dashboard</a></nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Revenue - Today</h2>
+      <p class="text-muted">Showing revenue for <b>2025-10-12</b></p>
+
+      <!-- FILTER BUTTONS -->
+      <div class="revenue-filter">
+        <button class="btn active">Today</button>
+        <button class="btn ghost" onclick="location.href='revenue_week.html'">
+          This Week
+        </button>
+        <button class="btn ghost" onclick="location.href='revenue_month.html'">
+          This Month
+        </button>
+        <button class="btn ghost" id="btnRange" onclick="toggleRange()">
+          Custom Range
+        </button>
+      </div>
+
+      <!-- DATE RANGE SELECTOR -->
+      <div class="range-box" id="rangeForm">
+        <label><b>Select Date Range:</b></label>
+        <div class="range-inputs">
+          <input type="date" id="fromDate" />
+          <span>to</span>
+          <input type="date" id="toDate" />
+          <button class="btn" onclick="goRange()">Search</button>
+        </div>
+      </div>
+
+      <!-- SUMMARY CARDS -->
+      <section class="summary-grid">
+        <div class="summary-card card-blue">
+          <h3>Total Orders</h3>
+          <p>8</p>
+        </div>
+        <div class="summary-card card-green">
+          <h3>Total Sold Products</h3>
+          <p>215</p>
+        </div>
+        <div class="summary-card card-yellow">
+          <h3>Total Revenue</h3>
+          <p>₫3,250,000</p>
+        </div>
+        <div class="summary-card card-purple">
+          <h3>Estimated Profit</h3>
+          <p>₫820,000</p>
+        </div>
+      </section>
+
+      <!-- REVENUE TABLE -->
+      <section class="table-section">
+        <h3>Today's Revenue by Category</h3>
+        <table class="table">
+          <tr>
+            <th>Category</th>
+            <th>Products Sold</th>
+            <th>Total Revenue</th>
+            <th>Profit (Est.)</th>
+          </tr>
+          <tr>
+            <td>Novel</td>
+            <td>80</td>
+            <td>₫1,200,000</td>
+            <td>₫300,000</td>
+          </tr>
+          <tr>
+            <td>Science</td>
+            <td>40</td>
+            <td>₫600,000</td>
+            <td>₫140,000</td>
+          </tr>
+          <tr>
+            <td>Manga</td>
+            <td>60</td>
+            <td>₫900,000</td>
+            <td>₫250,000</td>
+          </tr>
+          <tr>
+            <td>Education</td>
+            <td>35</td>
+            <td>₫550,000</td>
+            <td>₫130,000</td>
+          </tr>
+        </table>
+
+        <p class="total-footer">Total Revenue (Today): ₫3,250,000</p>
+      </section>
+    </main>
+
+    <script>
+      function toggleRange() {
+        const rangeForm = document.getElementById("rangeForm");
+        rangeForm.style.display =
+          rangeForm.style.display === "block" ? "none" : "block";
+      }
+
+      function goRange() {
+        const from = document.getElementById("fromDate").value;
+        const to = document.getElementById("toDate").value;
+        if (!from || !to) {
+          alert("Please select both start and end dates!");
+          return;
+        }
+        location.href = "revenue_range.html";
+      }
+    </script>
+  </body>
+</html>

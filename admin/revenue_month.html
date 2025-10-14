@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Revenue - This Month</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" alt="logo" />
+          <h1>BOOKSTORE MANAGEMENT</h1>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Revenue - This Month</h2>
+      <p class="text-muted">Showing revenue for <b>October 2025</b></p>
+
+      <!-- FILTER BUTTONS (reuse same classes) -->
+      <div class="revenue-filter">
+        <button class="btn ghost" onclick="location.href='revenue.html'">
+          Today
+        </button>
+        <button class="btn ghost" onclick="location.href='revenue_week.html'">
+          This Week
+        </button>
+        <button class="btn active">This Month</button>
+        <button class="btn ghost" id="btnRange" onclick="toggleRange()">
+          Custom Range
+        </button>
+      </div>
+
+      <!-- RANGE BOX (hidden by default, toggled by JS) -->
+      <div id="rangeForm" class="range-box">
+        <label><b>Select Date Range:</b></label>
+        <div class="range-inputs">
+          <input type="date" id="fromDate" />
+          <span>to</span>
+          <input type="date" id="toDate" />
+          <button class="btn" onclick="goRange()">Search</button>
+        </div>
+      </div>
+
+      <!-- SUMMARY CARDS -->
+      <section class="summary-grid">
+        <div class="summary-card card-blue">
+          <h3>Total Orders</h3>
+          <p>128</p>
+        </div>
+
+        <div class="summary-card card-green">
+          <h3>Books Sold</h3>
+          <p>436</p>
+        </div>
+
+        <div class="summary-card card-yellow">
+          <h3>Total Revenue</h3>
+          <p>₫62,540,000</p>
+        </div>
+
+        <div class="summary-card card-purple">
+          <h3>Estimated Profit</h3>
+          <p>₫13,280,000</p>
+        </div>
+      </section>
+
+      <!-- TOP SELLING TABLE -->
+      <!-- CATEGORY REVENUE TABLE -->
+      <section class="table-section">
+        <h3>Revenue by Category (This Month)</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Books Sold</th>
+              <th>Total Revenue</th>
+              <th>Profit (Est.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Novel</td>
+              <td>160</td>
+              <td>₫24,200,000</td>
+              <td>₫4,800,000</td>
+            </tr>
+            <tr>
+              <td>Psychology</td>
+              <td>85</td>
+              <td>₫12,600,000</td>
+              <td>₫2,300,000</td>
+            </tr>
+            <tr>
+              <td>Education</td>
+              <td>60</td>
+              <td>₫9,000,000</td>
+              <td>₫1,500,000</td>
+            </tr>
+            <tr>
+              <td>Documents</td>
+              <td>45</td>
+              <td>₫6,200,000</td>
+              <td>₫900,000</td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>38</td>
+              <td>₫5,100,000</td>
+              <td>₫780,000</td>
+            </tr>
+            <tr>
+              <td>History</td>
+              <td>28</td>
+              <td>₫3,440,000</td>
+              <td>₫620,000</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="total-footer">Total Revenue (This Month): ₫62,540,000</p>
+      </section>
+    </main>
+
+    <script>
+      function toggleRange() {
+        const rangeForm = document.getElementById("rangeForm");
+        rangeForm.style.display =
+          rangeForm.style.display === "block" ? "none" : "block";
+      }
+
+      function goRange() {
+        const from = document.getElementById("fromDate").value;
+        const to = document.getElementById("toDate").value;
+        if (!from || !to) {
+          alert("Please select both start and end dates!");
+          return;
+        }
+        location.href = "revenue_range.html";
+      }
+    </script>
+  </body>
+</html>

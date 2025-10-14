@@ -49,7 +49,7 @@
             ><a class="btn ghost" href="checkout.html">Buy now</a>
           </div>
           <hr style="margin: 16px 0" />
-          <h3>Đánh giá</h3>
+          <h3>Rating</h3>
           <div id="s2" style="font-size: 24px; cursor: pointer">
             <span onclick="set2(1)">☆</span><span onclick="set2(2)">☆</span
             ><span onclick="set2(3)">☆</span><span onclick="set2(4)">☆</span
@@ -58,11 +58,11 @@
           <div>
             <textarea
               class="comment"
-              placeholder="Viết đánh giá của bạn..."
+              placeholder="Write your review..."
             ></textarea>
           </div>
           <div style="margin-top: 8px">
-            <button class="btn" onclick="submit2()">Gửi đánh giá</button>
+            <button class="btn" onclick="submit2()">Send</button>
           </div>
         </div>
       </div>
@@ -78,10 +78,10 @@
       }
       function submit2() {
         if (r2 === 0) {
-          alert("Chọn sao trước");
+          alert("Please select a rating star!");
           return;
         }
-        alert("Cảm ơn bạn vì đánh giá!");
+        alert("Thank you for your review!");
       }
     </script>
   </body>

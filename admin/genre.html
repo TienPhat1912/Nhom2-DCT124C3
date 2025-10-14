@@ -328,7 +328,6 @@
       // Thêm thể loại mới
       document.getElementById("saveAddGenre").onclick = () => {
         const name = document.getElementById("addGenreName").value;
-        if (!name.trim()) return alert("Please enter a genre name!");
         alert(`Genre "${name}" added successfully!`);
         closeModal("addModal");
       };

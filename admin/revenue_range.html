@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Revenue - Custom Range</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" alt="logo" />
+          <h1>BOOKSTORE MANAGEMENT</h1>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Dashboard</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Revenue - Custom Range</h2>
+      <p class="text-muted">
+        View total sales and profit between your selected dates.
+      </p>
+
+      <!-- FILTER BUTTONS -->
+      <div class="revenue-filter">
+        <button class="btn ghost" onclick="location.href='revenue.html'">
+          Today
+        </button>
+        <button class="btn ghost" onclick="location.href='revenue_week.html'">
+          This Week
+        </button>
+        <button class="btn ghost" onclick="location.href='revenue_month.html'">
+          This Month
+        </button>
+        <button class="btn active">Custom Range</button>
+      </div>
+
+      <!-- RANGE FILTER -->
+      <div id="rangeForm" class="range-box" style="display: block">
+        <label><b>Select Date Range:</b></label>
+        <div class="range-inputs">
+          <input type="date" id="fromDate" value="2025-09-01" />
+          <span>to</span>
+          <input type="date" id="toDate" value="2025-09-30" />
+          <button class="btn" onclick="goRange()">Search</button>
+        </div>
+      </div>
+
+      <!-- SUMMARY CARDS -->
+      <section class="summary-grid">
+        <div class="summary-card card-blue">
+          <h3>Total Orders</h3>
+          <p>412</p>
+        </div>
+
+        <div class="summary-card card-green">
+          <h3>Books Sold</h3>
+          <p>1,068</p>
+        </div>
+
+        <div class="summary-card card-yellow">
+          <h3>Total Revenue</h3>
+          <p>₫104,200,000</p>
+        </div>
+
+        <div class="summary-card card-purple">
+          <h3>Estimated Profit</h3>
+          <p>₫19,200,000</p>
+        </div>
+      </section>
+
+      <!-- TABLE -->
+      <section class="table-section">
+        <h3>Revenue by Category (2025-09-01 → 2025-09-30)</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Books Sold</th>
+              <th>Total Revenue</th>
+              <th>Profit (Est.)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Novel</td>
+              <td>280</td>
+              <td>₫41,600,000</td>
+              <td>₫8,200,000</td>
+            </tr>
+            <tr>
+              <td>Psychology</td>
+              <td>150</td>
+              <td>₫21,900,000</td>
+              <td>₫4,300,000</td>
+            </tr>
+            <tr>
+              <td>Education</td>
+              <td>100</td>
+              <td>₫14,500,000</td>
+              <td>₫2,500,000</td>
+            </tr>
+            <tr>
+              <td>Science</td>
+              <td>75</td>
+              <td>₫10,200,000</td>
+              <td>₫1,800,000</td>
+            </tr>
+            <tr>
+              <td>History</td>
+              <td>60</td>
+              <td>₫8,700,000</td>
+              <td>₫1,400,000</td>
+            </tr>
+            <tr>
+              <td>Documents</td>
+              <td>55</td>
+              <td>₫7,300,000</td>
+              <td>₫1,000,000</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="total-footer">Total Revenue (Range): ₫104,200,000</p>
+      </section>
+    </main>
+
+    <script>
+      function goRange() {
+        const from = document.getElementById("fromDate").value;
+        const to = document.getElementById("toDate").value;
+        if (!from || !to) {
+          alert("Please select both start and end dates!");
+          return;
+        }
+        alert(`Showing revenue from ${from} to ${to}`);
+      }
+    </script>
+  </body>
+</html>

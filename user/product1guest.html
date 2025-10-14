@@ -42,7 +42,7 @@
           <p>
             <strong>Description:</strong> Tác phẩm châm biếm xã hội nổi tiếng.
           </p>
-          <p style="margin-top: 8px"><strong>Price:</strong> ₫120,000</p>
+          <p style="margin-top: 8px"><strong>Price:</strong> ₫110,000</p>
           <div style="margin-top: 12px; display: flex; gap: 8px">
             <button
               class="btn"
@@ -59,7 +59,7 @@
           </div>
 
           <hr style="margin: 16px 0" />
-          <h3>Đánh giá</h3>
+          <h3>Rating</h3>
           <div id="s1" style="font-size: 24px; cursor: pointer">
             <span onclick="set(1)">☆</span><span onclick="set(2)">☆</span
             ><span onclick="set(3)">☆</span><span onclick="set(4)">☆</span
@@ -68,11 +68,11 @@
           <div>
             <textarea
               class="comment"
-              placeholder="Viết đánh giá của bạn..."
+              placeholder="Write your review..."
             ></textarea>
           </div>
           <div style="margin-top: 8px">
-            <button class="btn" onclick="submit()">Gửi đánh giá</button>
+            <button class="btn" onclick="submit()">Send</button>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@
       }
       function submit() {
         if (r === 0) {
-          alert("Chọn sao trước");
+          alert("Please select a rating star!");
           return;
         }
         alert("Login or register to continue!");
