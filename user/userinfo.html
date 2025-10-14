@@ -14,15 +14,13 @@
           <h1>Green Bookstore</h1>
         </div>
         <nav class="nav">
-          <a href="home_loggedin.html">Home</a>
-          <a href="shop1.html">Shop</a>
-          <a href="cart.html">Cart</a>
-          <a href="userinfo.html">Cao Thai Phuong Thanh</a>
-          <a href="../home.html">Log out</a>
+          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
+          ><a href="cart.html">Cart</a
+          ><a href="userinfo.html">Cao Thai Phuong Thanh</a
+          ><a href="../home.html">Log out</a>
         </nav>
       </div>
     </header>
-
     <main class="container">
       <div class="form" style="display: flex; align-items: center; gap: 32px">
         <img
@@ -53,177 +51,48 @@
           </div>
         </div>
       </div>
-
-      <h2 style="margin: 20px 0 10px">Orders History</h2>
-
-      <!-- ==== FILTER SECTION ==== -->
-      <div style="display: flex; gap: 10px; margin-bottom: 20px">
-        <button
-          id="btnDay"
-          class="btn"
-          style="flex: 1; background: #2d6cdf; color: #fff"
-          onclick="showForm('day')"
-        >
-          View by Date
-        </button>
-        <button
-          id="btnRange"
-          class="btn ghost"
-          style="flex: 1"
-          onclick="showForm('range')"
-        >
-          View by Date Range
-        </button>
-      </div>
-
-      <!-- ==== FILTER BY DAY ==== -->
-      <div
-        id="formDay"
-        style="
-          display: block;
-          background: #fff;
-          padding: 20px;
-          border-radius: 12px;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-          margin-bottom: 20px;
-        "
-      >
-        <label><b>Select Date:</b></label>
-        <input
-          type="date"
-          id="orderDate"
-          style="
-            width: 100%;
-            padding: 8px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            margin-top: 6px;
-          "
-        />
-        <button class="btn" style="margin-top: 10px" onclick="filterDay()">
-          Filter
-        </button>
-      </div>
-
-      <!-- ==== FILTER BY RANGE ==== -->
-      <div
-        id="formRange"
-        style="
-          display: none;
-          background: #fff;
-          padding: 20px;
-          border-radius: 12px;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-          margin-bottom: 20px;
-        "
-      >
-        <label><b>Select Date Range:</b></label>
+       <h2 style="margin: 0">Orders history</h2>
+       
+      <div class="container">
         <div
-          style="display: flex; align-items: center; gap: 10px; margin-top: 6px"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 16px;
+          "
         >
-          <input
-            type="date"
-            id="fromDate"
-            style="
-              flex: 1;
-              padding: 8px;
-              border-radius: 6px;
-              border: 1px solid #ccc;
-            "
-          />
-          <span>to</span>
-          <input
-            type="date"
-            id="toDate"
-            style="
-              flex: 1;
-              padding: 8px;
-              border-radius: 6px;
-              border: 1px solid #ccc;
-            "
-          />
-        </div>
-        <button class="btn" style="margin-top: 10px" onclick="filterRange()">
-          Filter
-        </button>
+        <table class="table">
+          <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>total</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>O001</td>
+            <td>2025-01-25</td>
+            <td>₫445,000</td>
+            <td>Delivered</td>
+            <td><a class="btn" href="order_detail.html">Detail</a></td>
+          </tr>
+          <tr>
+            <td>O002</td>
+            <td>2025-01-26</td>
+            <td>₫310,000</td>
+            <td>Cancelled</td>
+            <td><a class="btn" href="order_detail2.html">Detail</a></td>
+          </tr>
+          <tr>
+            <td>O011</td>
+            <td>2025-10-01</td>
+            <td>₫225,000</td>
+            <td>Processing</td>
+            <td><a class="btn" href="order_detail.html">Detail</a></td>
+          </tr>
+        </table>
       </div>
-
-      <!-- ==== ORDER TABLE ==== -->
-      <table class="table">
-        <tr>
-          <th>Order ID</th>
-          <th>Date</th>
-          <th>Total</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-        <tr>
-          <td>O001</td>
-          <td>2025-01-25</td>
-          <td>₫445,000</td>
-          <td>Delivered</td>
-          <td><a class="btn" href="order_detail.html">Detail</a></td>
-        </tr>
-        <tr>
-          <td>O002</td>
-          <td>2025-01-26</td>
-          <td>₫310,000</td>
-          <td>Cancelled</td>
-          <td><a class="btn" href="order_detail2.html">Detail</a></td>
-        </tr>
-        <tr>
-          <td>O011</td>
-          <td>2025-10-01</td>
-          <td>₫225,000</td>
-          <td>Processing</td>
-          <td><a class="btn" href="order_detail.html">Detail</a></td>
-        </tr>
-      </table>
     </main>
-
-    <!-- ==== SCRIPT ==== -->
-    <script>
-      const btnDay = document.getElementById("btnDay");
-      const btnRange = document.getElementById("btnRange");
-      const formDay = document.getElementById("formDay");
-      const formRange = document.getElementById("formRange");
-
-      function showForm(type) {
-        if (type === "day") {
-          formDay.style.display = "block";
-          formRange.style.display = "none";
-          btnDay.style.background = "#2d6cdf";
-          btnDay.style.color = "#fff";
-          btnRange.style.background = "#fff";
-          btnRange.style.color = "#2d6cdf";
-        } else {
-          formDay.style.display = "none";
-          formRange.style.display = "block";
-          btnRange.style.background = "#2d6cdf";
-          btnRange.style.color = "#fff";
-          btnDay.style.background = "#fff";
-          btnDay.style.color = "#2d6cdf";
-        }
-      }
-
-      function filterDay() {
-        const date = document.getElementById("orderDate").value;
-        if (!date) {
-          alert("Please select a date.");
-          return;
-        }
-        alert(`Viewing orders on ${date}`);
-      }
-
-      function filterRange() {
-        const from = document.getElementById("fromDate").value;
-        const to = document.getElementById("toDate").value;
-        if (!from || !to) {
-          alert("Please select both start and end dates.");
-          return;
-        }
-        alert(`Viewing orders from ${from} to ${to}`);
-      }
-    </script>
   </body>
 </html>
