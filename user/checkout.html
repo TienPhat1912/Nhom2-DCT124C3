@@ -4,65 +4,112 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Checkout</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
-        <div class="logo" onclick="location.href='home_loggedin.html'">
-          <img src="../img/logo.png" />
-          <h1>Green Bookstore</h1>
+        <!-- Left -->
+        <div class="header-left">
+          <div class="logo" onclick="location.href='home_loggedin.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
+            <h1>Nhà Sách FACABA</h1>
+          </div>
         </div>
-        <nav class="nav">
-          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
-          ><a href="cart.html">Cart</a
-          ><a href="userinfo.html">Cao Thai Phuong Thanh</a
-          ><a href="../home.html">Log out</a>
-        </nav>
+
+        <!-- Center -->
+        <div class="header-center">
+          <a href="home_loggedin.html" class="dropbtn">Trang chủ</a>
+          <div class="dropdown">
+            <button class="dropbtn">Thể loại ▼</button>
+            <div class="dropdown-content">
+              <a class="btn--light" href="home_loggedin.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1.html">Manga</a>
+              <a class="btn--light" href="shop1.html">Khoa học</a>
+              <a class="btn--light" href="home_loggedin.html">Lịch sử</a>
+              <a class="btn--light" href="shop1.html">Tâm lý học</a>
+              <a class="btn--light" href="home_loggedin.html">Giáo dục</a>
+              <a class="btn--light" href="shop1.html">Tài liệu</a>
+              <a class="btn--light" href="home_loggedin.html">Tham khảo</a>
+              <a class="btn--light" href="shop1.html">Hướng dẫn</a>
+              <a class="btn--light" href="home_loggedin.html">Light Novel</a>
+            </div>
+          </div>
+
+          <div class="search">
+            <input placeholder="Tìm kiếm sách..." />
+            <a class="btn" href="search.html">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropbtn">Thanh Cao ▼</button>
+            <div class="dropdown-content">
+              <button class="btn btn--light" onclick="location='userinfo.html'">
+                Chi tiết
+              </button>
+              <button class="btn btn--light" onclick="location='../home.html'">
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+          <button id="cart-btn" class="dropbtn" onclick="location='cart.html'">
+            🛒 <span id="cart-count">0</span>
+          </button>
+        </div>
       </div>
     </header>
     <main class="container">
       <section class="section">
-        <h2>Checkout</h2>
+        <h1 style="text-align: center;">Thanh toán</h1>
         <div
           class="form"
           style="display: grid; grid-template-columns: 1fr 360px; gap: 18px"
         >
           <div>
-            <p><strong>Order Code:</strong> O011</p>
-            <p><strong>Order Date:</strong> 2025-10-01</p>
-            <h3>Shipping Information</h3>
+            <p><strong>Mã đơn hàng:</strong> O011</p>
+            <p><strong>Ngày đặt hàng:</strong> 2025-10-01</p>
+            <h3>Thông tin giao hàng</h3>
             <div class="row"><input value="Cao Thai Phuong Thanh" /></div>
             <div class="row"><input value="thanhcao@gmail.com" /></div>
-            <div class="row"><input placeholder="Address" /></div>
-            <div class="row"><input placeholder="Phone" /></div>
-            <div style="margin-top: 8px">
-              <label>Payment Method</label
-              ><select>
-                <option>Cash on Delivery</option>
-                <option>Credit/Debit Card</option>
-                <option>E-Wallet</option>
+            <div class="row"><input value="273 An Duong Vuong, phuong Cho Quan, TP. Ho Chi Minh" /></div>
+            <div class="row"><input value="0909 022 966" /></div>
+            <div class="row" style="margin-top: 8px">
+              <select>
+                <option>Thanh toán khi nhận hàng</option>
+                <option>Thẻ tín dụng/Thẻ ghi nợ</option>
+                <option>Ví điện tử</option>
               </select>
             </div>
           </div>
           <div class="info">
-            <h3>Order Summary</h3>
+            <h3>Tóm tắt đơn hàng</h3>
             <table style="width: 100%; border-collapse: collapse">
+              <thead>
+                <tr style="border-bottom: 1px solid #ccc">
+                  <th style="text-align: left">Sản phẩm</th>
+                  <th style="text-align: center">Số lượng</th>
+                  <th style="text-align: right">Giá</th>
+                </tr>
               <tr>
                 <td>Số Đỏ</td>
+                <td style="text-align: center">1</td>
                 <td style="text-align: right">₫110,000</td>
               </tr>
               <tr>
                 <td>Nỗi Buồn Chiến Tranh</td>
+                <td style="text-align: center">1</td>
                 <td style="text-align: right">₫115,000</td>
               </tr>
-              <tr style="font-weight: 700">
-                <td style="text-align: right">Total</td>
-                <td style="text-align: right">₫225,000</td>
-              </tr>
+              
             </table>
+            <p style="font-weight: 700;text-align: right; margin-top: 12px">
+                Total: ₫225,000
+              </p>
             <div style="text-align: right; margin-top: 12px">
-              <button class="btn" onclick="confirm()">Confirm</button>
+              <button class="btn" onclick="confirm()">Xác nhận</button>
             </div>
           </div>
         </div>
@@ -70,7 +117,7 @@
     </main>
     <script>
       function confirm() {
-        alert("Order placed successfully!");
+        alert("Đặt hàng thành công!");
         location.href = "confirm.html";
       }
     </script>

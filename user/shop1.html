@@ -3,224 +3,292 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Shop</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <title>Nhà Sách FACABA</title>
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
-        <div class="logo" onclick="location.href='home_loggedin.html'">
-          <img src="../img/logo.png" />
-          <h1>Green Bookstore</h1>
+        <!-- Left -->
+        <div class="header-left">
+          <div class="logo" onclick="location.href='home_loggedin.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
+            <h1>Nhà Sách FACABA</h1>
+          </div>
         </div>
-        <nav class="nav">
-          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
-          ><a href="cart.html">Cart</a
-          ><a href="userinfo.html">Cao Thai Phuong Thanh</a
-          ><a href="../home.html">Log out</a>
-        </nav>
-        <div class="search">
-          <input placeholder="Search books..." /><button
-            onclick="location.href='search.html'"
-          >
-            Search
+
+        <!-- Center -->
+        <div class="header-center">
+          <a href="home_loggedin.html" class="dropbtn">Trang chủ</a>
+          <div class="dropdown">
+            <button class="dropbtn">Thể loại ▼</button>
+            <div class="dropdown-content">
+              <a class="btn--light" href="home_loggedin.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1.html">Manga</a>
+              <a class="btn--light" href="shop1.html">Khoa học</a>
+              <a class="btn--light" href="home_loggedin.html">Lịch sử</a>
+              <a class="btn--light" href="shop1.html">Tâm lý học</a>
+              <a class="btn--light" href="home_loggedin.html">Giáo dục</a>
+              <a class="btn--light" href="shop1.html">Tài liệu</a>
+              <a class="btn--light" href="home_loggedin.html">Tham khảo</a>
+              <a class="btn--light" href="shop1.html">Hướng dẫn</a>
+              <a class="btn--light" href="home_loggedin.html">Light Novel</a>
+            </div>
+          </div>
+
+          <div class="search">
+            <input placeholder="Tìm kiếm sách..." />
+            <a class="btn" href="search.html">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropbtn">Thanh Cao ▼</button>
+            <div class="dropdown-content">
+              <button class="btn btn--light" onclick="location='userinfo.html'">
+                Chi tiết
+              </button>
+              <button class="btn btn--light" onclick="location='../home.html'">
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+          <button id="cart-btn" class="dropbtn" onclick="location='cart.html'">
+            🛒 <span id="cart-count">0</span>
           </button>
         </div>
       </div>
     </header>
-    <div class="container">
-      <div class="category">
-        <a href="shop1.html">Novel</a><a href="shop2.html">Science</a>
-        <a href="shop1.html">History</a><a href="shop2.html">Psychology</a>
-        <a href="shop1.html">Education</a><a href="shop2.html">Documents</a>
-        <a href="shop1.html">Reference</a><a href="shop1.html">Guides</a>
-        <a href="shop2.html">Manga</a><a href="shop1.html">Light Novel</a>
+
+    <div class="slider">
+      <div class="slides">
+        <img class="slide" src="../img/banner.jpg" alt="Banner 1" />
+        <img class="slide" src="../img/banner2.jpg" alt="Banner 2" />
+        <img class="slide" src="../img/banner3.jpg" alt="Banner 3" />
+        <img class="slide" src="../img/banner4.jpg" alt="Banner 4" />
+        <img class="slide" src="../img/banner5.jpg" alt="Banner 5" />
+        <img class="slide" src="../img/banner6.jpg" alt="Banner 6" />
       </div>
-      <section class="section">
-        <h2>Filter</h2>
-        <div class="filter">
-          <select>
-            <option>Sort by</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-            <option>Rating: Low to High</option>
-            <option>Rating: High to Low</option>
-            <option>Newest</option>
-            <option>Oldest</option>
-          </select>
-          <select>
-            <option>Price</option>
-            <option>Under ₫100k</option>
-            <option>₫100k-₫200k</option>
-            <option>₫200k-₫300k</option>
-            <option>Over ₫300k</option>
-          </select>
-          <select>
-            <option>Publisher</option>
-            <option>NXB Trẻ</option>
-            <option>NXB Kim Đồng</option>
-            <option>NXB Văn Học</option>
-            <option>NXB Giáo Dục</option>
-            <option>NXB Tổng Hợp TP.HCM</option>
-            <option>NXB Phụ Nữ</option>
-            <option>NXB Lao Động</option>
-            <option>NXB Thế Giới</option>
-            <option>NXB Văn Hóa - Văn Nghệ</option>
-          </select>
-          <select>
-            <option>Origin</option>
-            <option>Việt Nam</option>
-            <option>Nhật Bản</option>
-            <option>Hàn Quốc</option>
-            <option>Trung Quốc</option>
-            <option>Mỹ</option>
-            <opt>Anh</option>
-          </select>
-          <select>
-            <option>Color</option>
-            <option>Red</option>
-            <option>Green</option>
-            <option>Blue</option>
-            <option>Yellow</option>
-            <option>Black</option>
-            <option>White</option>
-          </select>
-          <button class="btn" onclick="alert('Filtered!');location='shop2.html';">
-            Filter
-          </button>
-        </div>
-        <div class="grid">
-          <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 3</h3>
-            <div class="price">₫3080</div>
-            <div class="rating">★★★☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 4</h3>
-            <div class="price">₫4080</div>
-            <div class="rating">★★★★☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 5</h3>
-            <div class="price">₫5080</div>
-            <div class="rating">★★★★★</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 6</h3>
-            <div class="price">₫6080</div>
-            <div class="rating">★☆☆☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 7</h3>
-            <div class="price">₫7080</div>
-            <div class="rating">★★☆☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 8</h3>
-            <div class="price">₫8080</div>
-            <div class="rating">★★★☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 3</h3>
-            <div class="price">₫3080</div>
-            <div class="rating">★★★☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 4</h3>
-            <div class="price">₫4080</div>
-            <div class="rating">★★★★☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 5</h3>
-            <div class="price">₫5080</div>
-            <div class="rating">★★★★★</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 6</h3>
-            <div class="price">₫6080</div>
-            <div class="rating">★☆☆☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 7</h3>
-            <div class="price">₫7080</div>
-            <div class="rating">★★☆☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 8</h3>
-            <div class="price">₫8080</div>
-            <div class="rating">★★★☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2.html">Details</a
-              ><a class="btn ghost" href="cart.html">Add to cart</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="pagination">
-        <a href="shop1.html">&laquo;</a>
-        <a href="shop1.html">1</a>
-        <a href="shop2.html">2</a>
-        <a href="shop1.html">3</a>
-        <a href="shop2.html">4</a>
-        <a href="shop1.html">5</a>
-        <a href="shop2.html">&raquo;</a>
-      </div>
+      <button class="nav-btn prev" onclick="moveSlide(-1)">❮</button>
+      <button class="nav-btn next" onclick="moveSlide(1)">❯</button>
     </div>
+    <main class="container">
+      <div class="grid">
+        <div class="card">
+          <img src="../img/onepiece.jpg" />
+          <h3>One Piece Tập 1: Romance Dawn</h3>
+          <div class="price">₫45,000</div>
+          <div class="rating">★★★★★</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product1.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/attackontitan.jpg" />
+          <h3>Attack on Titan Tập 1-3</h3>
+          <div class="price">₫135,000</div>
+          <div class="rating">★★★★★</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product2.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/demonslayer.jpg" />
+          <h3>Demon Slayer Tập 1: Kimetsu no Yaiba</h3>
+          <div class="price">₫48,000</div>
+          <div class="rating">★★★★☆</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product1.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/conan.jpg" />
+          <h3>Conan Tập 1:</h3>
+          <div class="price">₫55,000</div>
+          <div class="rating">★★★★★</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product2.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/spyxfamily.jpg" />
+          <h3>Spy x Family Tập 1</h3>
+          <div class="price">₫52,000</div>
+          <div class="rating">★★★★★</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product1.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/jujutsukaisen.jpg" />
+          <h3>Jujutsu Kaisen Tập 1</h3>
+          <div class="price">₫50,000</div>
+          <div class="rating">★★★★☆</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product2.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/shin.jpg" />
+          <h3>Shin cậu bé bút chì</h3>
+          <div class="price">₫58,000</div>
+          <div class="rating">★★★★☆</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product1.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/onepunchman.jpg" />
+          <h3>One Punch Man Tập 1</h3>
+          <div class="price">₫53,000</div>
+          <div class="rating">★★★★★</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product2.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/doraemon.jpg" />
+          <h3>Doraemon: Nobita và Ba Chàng Hiệp Sĩ Mộng Mơ</h3>
+          <div class="price">₫38,000</div>
+          <div class="rating">★★★★★</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product1.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/myheroacademia.jpg" />
+          <h3>My Hero Academia Tập 1</h3>
+          <div class="price">₫52,000</div>
+          <div class="rating">★★★★★</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product2.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/naruto.jpg" />
+          <h3>Naruto Tập 1: Uzumaki Naruto</h3>
+          <div class="price">₫40,000</div>
+          <div class="rating">★★★★☆</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product1.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="../img/bleach.jpg" />
+          <h3>Bleach Tập 1: The Death and the Strawberry</h3>
+          <div class="price">₫50,000</div>
+          <div class="rating">★★★★☆</div>
+          <div style="display: flex; gap: 8px; margin-top: 8px">
+            <a class="btn" href="product2.html">Chi tiết</a
+            ><button class="btn ghost" onclick="alert('Đã thêm vào giỏ hàng');">
+              Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <a href="home_loggedin.html">&laquo;</a>
+        <a href="home_loggedin.html">1</a>
+        <a href="shop1.html">2</a>
+        <a href="home_loggedin.html">3</a>
+        <a href="shop1.html">4</a>
+        <a href="home_loggedin.html">5</a>
+        <a href="shop1.html">&raquo;</a>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="grid container">
+        <div>
+          <h3>Green Bookstore</h3>
+          <p>Nhà sách bán chạy số 1 Việt Nam</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Email: support@greenbookstore.vn</p>
+          <p>Phone: +84 123 456 789</p>
+        </div>
+        <div>
+          <h3>Follow</h3>
+          <p><a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+        </div>
+      </div>
+      <div
+        style="
+          text-align: center;
+          padding-top: 12px;
+          color: rgba(255, 255, 255, 0.8);
+        "
+      >
+        © 2025 Green Bookstore
+      </div>
+    </footer>
+    <script>
+      let cartCount = 0;
+      const cartCountSpan = document.getElementById("cart-count");
+
+      // Lấy tất cả nút "Thêm vào giỏ"
+      const addToCartButtons = document.querySelectorAll(".btn.ghost");
+
+      // Gắn sự kiện click 1 lần duy nhất
+      addToCartButtons.forEach((button) => {
+        // Loại bỏ sự kiện cũ (nếu có)
+        button.onclick = null;
+
+        // Gắn sự kiện mới
+        button.addEventListener("click", () => {
+          cartCount++;
+          cartCountSpan.textContent = cartCount;
+          alert("Đã thêm vào giỏ hàng"); // Chỉ hiện 1 lần
+        });
+      });
+
+      // SLIDER
+      let index = 0;
+      const slides = document.querySelector(".slides");
+      const slideCount = document.querySelectorAll(".slide").length;
+
+      function moveSlide(direction) {
+        index = (index + direction + slideCount) % slideCount;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      // Tự động chạy mỗi 4 giây
+      setInterval(() => moveSlide(1), 4000);
+    </script>
   </body>
 </html>

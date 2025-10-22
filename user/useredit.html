@@ -3,22 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Product</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
-        <div class="logo" onclick="location.href='home_loggedin.html'">
-          <img src="../img/logo.png" />
-          <h1>Green Bookstore</h1>
+        <!-- Left -->
+        <div class="header-left">
+          <div class="logo" onclick="location.href='home_loggedin.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
+            <h1>Nhà Sách FACABA</h1>
+          </div>
         </div>
-        <nav class="nav">
-          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
-          ><a href="cart.html">Cart</a
-          ><a href="userinfo.html">Cao Thai Phuong Thanh</a
-          ><a href="../home.html">Log out</a>
-        </nav>
+
+        <!-- Center -->
+        <div class="header-center">
+          <a href="home_loggedin.html" class="dropbtn">Trang chủ</a>
+          <div class="dropdown">
+            <button class="dropbtn">Thể loại ▼</button>
+            <div class="dropdown-content">
+              <a class="btn--light" href="home_loggedin.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1.html">Manga</a>
+              <a class="btn--light" href="shop1.html">Khoa học</a>
+              <a class="btn--light" href="home_loggedin.html">Lịch sử</a>
+              <a class="btn--light" href="shop1.html">Tâm lý học</a>
+              <a class="btn--light" href="home_loggedin.html">Giáo dục</a>
+              <a class="btn--light" href="shop1.html">Tài liệu</a>
+              <a class="btn--light" href="home_loggedin.html">Tham khảo</a>
+              <a class="btn--light" href="shop1.html">Hướng dẫn</a>
+              <a class="btn--light" href="home_loggedin.html">Light Novel</a>
+            </div>
+          </div>
+
+          <div class="search">
+            <input placeholder="Tìm kiếm sách..." />
+            <a class="btn" href="search.html">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropbtn">Thanh Cao ▼</button>
+            <div class="dropdown-content">
+              <button class="btn btn--light" onclick="location='userinfo.html'">
+                Chi tiết
+              </button>
+              <button class="btn btn--light" onclick="location='../home.html'">
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+          <button id="cart-btn" class="dropbtn" onclick="location='cart.html'">
+            🛒 <span id="cart-count">0</span>
+          </button>
+        </div>
       </div>
     </header>
     <main class="product-two-col container">
@@ -27,7 +67,7 @@
           <img src="../img/avatar.png " alt="Book cover preview" />
         </div>
         <div class="uploader">
-          <label class="file-label">update your avatar</label>
+          <label class="file-label">Chọn ảnh đại diên</label>
           <input type="file" accept="image/*" />
           <p class="hint">Chọn ảnh (JPG/PNG)</p>
         </div>
@@ -35,46 +75,51 @@
 
       <div class="right-col">
         <div class="form">
-          <h2>Edit your profile</h2>
-          <div
-            class="row"
-            style="display: flex; align-items: center; margin-bottom: 16px"
-          >
-            <label for="user-id">User ID:</label>
+          <h2>Chỉnh sửa thông tin</h2>
+
+          <label class="label" for="user-id">Mã khách hàng</label>
+          <div class="row">
             <input id="user-id" value="P001" readonly />
           </div>
+
+          <label class="label" for="first-name">Họ</label>
           <div class="row">
-            <label for="first-name">First Name:</label>
             <input id="first-name" value="Cao" />
           </div>
+
+          <label class="label" for="last-name">Tên</label>
           <div class="row">
-            <label for="last-name">Last Name:</label>
             <input id="last-name" value="Thai Phuong Thanh" />
           </div>
+
+          <label class="label" for="dob">Ngày sinh</label>
           <div class="row">
-            <label for="dob">Date of Birth:</label>
             <input id="dob" type="date" value="1990-01-01" />
           </div>
+
+          <label class="label" for="email">Email</label>
           <div class="row">
-            <label for="email">Email:</label>
-            <input id="email" value="thanhcao@gmail.com" />
+            <input id="email" type="email" value="thanhcao@gmail.com" />
           </div>
+
+          <label class="label" for="phone">Số điện thoại</label>
           <div class="row">
-            <label for="phone">Phone:</label>
             <input id="phone" value="0909 022 966" />
           </div>
+
+          <label class="label" for="address">Địa chỉ</label>
           <div class="row">
-            <label for="address">Address:</label>
             <input
               id="address"
               value="273, An Duong Vuong, District 5, Ho Chi Minh City"
             />
           </div>
+
           <button
             class="btn"
             onclick="alert('Updated'); location.href='userinfo.html'"
           >
-            Update
+            Cập nhật
           </button>
         </div>
       </div>

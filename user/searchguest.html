@@ -3,54 +3,88 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Shop</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <title>Search results for "So Do"</title>
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
-        <div class="logo" onclick="location.href='../home.html'">
-          <img src="../img/logo.png" />
-          <h1>Green Bookstore</h1>
+        <!-- Left -->
+        <div class="header-left">
+          <div class="logo" onclick="location.href='home.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
+            <h1>Nhà Sách FACABA</h1>
+          </div>
         </div>
-        <nav class="nav">
-          <a href="../home.html">Home</a><a href="shop1guest.html">Shop</a
-          ><a href="emptycartguest.html">Cart</a><a href="login.html">login</a
-          ><a href="register.html">register</a>
-        </nav>
-        <div class="search">
-          <input placeholder="Search books..." /><button
-            onclick="location.href='searchguest.html'"
-          >
-            Search
+
+        <!-- Center -->
+        <div class="header-center">
+          <a href="../home.html" class="dropbtn">Trang chủ</a>
+          <div class="dropdown">
+            <button class="dropbtn">Thể loại ▼</button>
+            <div class="dropdown-content">
+              <a class="btn--light" href="../home.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1guest.html">Manga</a>
+              <a class="btn--light" href="../home.html">Lịch sử</a>
+              <a class="btn--light" href="shop1guest.html">Tâm lý học</a>
+              <a class="btn--light" href="../home.html">Giáo dục</a>
+              <a class="btn--light" href="shop1guest.html">Tài liệu</a>
+              <a class="btn--light" href="home.html">Tham khảo</a>
+              <a class="btn--light" href="shop1guest.html">Hướng dẫn</a>
+              <a class="btn--light" href="../home.html">Light Novel</a>
+              <a class="btn--light" href="shop1guest.html">Khoa học</a>
+            </div>
+          </div>
+
+          <div class="search">
+            <input placeholder="Tìm kiếm sách..." />
+            <a class="btn" href="searchguest.html">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropbtn">Tài khoản ▼</button>
+            <div class="dropdown-content">
+              <button class="btn btn--light" onclick="openLoginPopup()">
+                Đăng nhập
+              </button>
+              <button class="btn btn--light" onclick="openRegisterPopup()">
+                Đăng ký
+              </button>
+            </div>
+          </div>
+          <button class="dropbtn" onclick="location='emptycartguest.html'">
+            🛒
           </button>
         </div>
       </div>
     </header>
-    <h1 style="text-align: center;margin-top: 100px;">
-      Found 36 results for<span style="color:blue;">"So Do"</span></h1>
-    <div class="container">
+    <h1 style="text-align: center">
+      Tìm thấy 12 mục trùng khớp với <span style="color: blue">"So Do"</span>
+    </h1>
+    <main class="container">
       <section class="section">
-        <h2>Filter</h2>
         <div class="filter">
           <select>
-            <option>Sort by</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-            <option>Rating: Low to High</option>
-            <option>Rating: High to Low</option>
-            <option>Newest</option>
-            <option>Oldest</option>
+            <option>Sắp xếp theo</option>
+            <option>Giá: Thấp đến Cao</option>
+            <option>Giá: Cao đến Thấp</option>
+            <option>Đánh giá: Thấp đến Cao</option>
+            <option>Đánh giá: Cao đến Thấp</option>
+            <option>Mới nhất</option>
+            <option>Cũ nhất</option>
           </select>
           <select>
-            <option>Price</option>
-            <option>Under ₫100k</option>
+            <option>Giá</option>
+            <option>Dưới ₫100k</option>
             <option>₫100k-₫200k</option>
             <option>₫200k-₫300k</option>
-            <option>Over ₫300k</option>
+            <option>trên ₫300k</option>
           </select>
           <select>
-            <option>Publisher</option>
+            <option>Nhà xuất bản</option>
             <option>NXB Trẻ</option>
             <option>NXB Kim Đồng</option>
             <option>NXB Văn Học</option>
@@ -62,159 +96,296 @@
             <option>NXB Văn Hóa - Văn Nghệ</option>
           </select>
           <select>
-            <option>Origin</option>
+            <option>Xuất xứ</option>
             <option>Việt Nam</option>
             <option>Nhật Bản</option>
             <option>Hàn Quốc</option>
             <option>Trung Quốc</option>
             <option>Mỹ</option>
-            <opt>Anh</option>
+            <option>Anh</option>
           </select>
           <select>
-            <option>Color</option>
-            <option>Red</option>
-            <option>Green</option>
-            <option>Blue</option>
-            <option>Yellow</option>
-            <option>Black</option>
-            <option>White</option>
+            <option>màu sắc</option>
+            <option>Đỏ</option>
+            <option>Xanh lá</option>
+            <option>Xanh dương</option>
+            <option>Vàng</option>
+            <option>Đen</option>
+            <option>Trắng</option>
           </select>
-          <button class="btn" onclick="alert('Login or register to continue!');location.reload();">
-            Filter
+          <button
+            class="btn"
+            onclick="alert('Login or register to continue!');location.reload();"
+          >
+            Áp dụng
           </button>
         </div>
+      </section>
+
         <div class="grid">
           <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 3</h3>
-            <div class="price">₫3080</div>
-            <div class="rating">★★★☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1guest.html">Details</a
-                ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 4</h3>
-            <div class="price">₫4080</div>
+            <img src="../img/sodod.jpg" />
+            <h3>Số đỏ</h3>
+            <div class="price">₫110,000</div>
             <div class="rating">★★★★☆</div>
             <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
+              <a class="btn" href="product1guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
             </div>
           </div>
           <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 5</h3>
-            <div class="price">₫5080</div>
-            <div class="rating">★★★★★</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 6</h3>
-            <div class="price">₫6080</div>
-            <div class="rating">★☆☆☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 7</h3>
-            <div class="price">₫7080</div>
-            <div class="rating">★★☆☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 8</h3>
-            <div class="price">₫8080</div>
-            <div class="rating">★★★☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 3</h3>
-            <div class="price">₫3080</div>
-            <div class="rating">★★★☆☆</div>
-            <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 4</h3>
-            <div class="price">₫4080</div>
+            <img src="../img/noibuon.jpg" />
+            <h3>Nổi buồn chiến tranh</h3>
+            <div class="price">₫115,000</div>
             <div class="rating">★★★★☆</div>
             <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
+              <a class="btn" href="product2guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
             </div>
           </div>
           <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 5</h3>
-            <div class="price">₫5080</div>
+            <img src="../img/tuoitre.jpg" />
+            <h3>Tuổi trẻ đáng giá bao nhiêu</h3>
+            <div class="price">₫95,000</div>
             <div class="rating">★★★★★</div>
             <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
+              <a class="btn" href="product1guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
             </div>
           </div>
           <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 6</h3>
-            <div class="price">₫6080</div>
+            <img src="../img/dacnhantam.jpg" />
+            <h3>Đắc nhân tâm</h3>
+            <div class="price">₫125,000</div>
             <div class="rating">★☆☆☆☆</div>
             <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
+              <a class="btn" href="product2guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
             </div>
           </div>
           <div class="card">
-            <img src="../img/prod3.jpg" />
-            <h3>Tiểu thuyết 7</h3>
-            <div class="price">₫7080</div>
+            <img src="../img/nhagiakim.jpg" />
+            <h3>Nhà giả kim</h3>
+            <div class="price">₫100,000</div>
             <div class="rating">★★☆☆☆</div>
             <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product1guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
+              <a class="btn" href="product1guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
             </div>
           </div>
           <div class="card">
-            <img src="../img/prod4.jpg" />
-            <h3>Tiểu thuyết 8</h3>
-            <div class="price">₫8080</div>
+            <img src="../img/hatgiong.jpg" />
+            <h3>Hạt giống tâm hồn-16</h3>
+            <div class="price">₫85,000</div>
             <div class="rating">★★★☆☆</div>
             <div style="display: flex; gap: 8px; margin-top: 8px">
-              <a class="btn" href="product2guest.html">Details</a
-              ><button class="btn ghost" onclick="alert('Login or register to continue!');">Add to cart</button>
+              <a class="btn" href="product2guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../img/thep.jpg" />
+            <h3>Thép đã tôi thế đấy</h3>
+            <div class="price">₫100,000</div>
+            <div class="rating">★★★☆☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../img/vutru.jpg" />
+            <h3>Vũ trụ trong vỏ hạt dẻ</h3>
+            <div class="price">₫140,000</div>
+            <div class="rating">★★★★☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../img/demen.jpg" />
+            <h3>Dế mèn phiêu lưu ký</h3>
+            <div class="price">₫80,000</div>
+            <div class="rating">★★★★★</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../img/harry.jpg" />
+            <h3>Harry Potter and the Sorcerer’s Stone</h3>
+            <div class="price">₫120,000</div>
+            <div class="rating">★★★★☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../img/chipheo.jpg" />
+            <h3>Chí Phèo</h3>
+            <div class="price">₫70,000</div>
+            <div class="rating">★★☆☆☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product1guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../img/tatden.jpg" />
+            <h3>Tắt đèn</h3>
+            <div class="price">₫80,000</div>
+            <div class="rating">★★★☆☆</div>
+            <div style="display: flex; gap: 8px; margin-top: 8px">
+              <a class="btn" href="product2guest.html">Chi tiết</a
+              ><button
+                class="btn ghost"
+                onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
+              >
+                Thêm vào giỏ
+              </button>
             </div>
           </div>
         </div>
       </section>
-      <div class="pagination">
-        <a href="shop1guest.html">&laquo;</a>
-        <a href="shop1guest.html">1</a>
-        <a href="shop2guest.html">2</a>
-        <a href="shop1guest.html">3</a>
-        <a href="shop2guest.html">4</a>
-        <a href="shop1guest.html">5</a>
-        <a href="shop2guest.html">&raquo;</a>
+    </div>
+
+    <div id="login-popup" class="popup">
+      <div class="popup-box">
+        <span class="close-btn" onclick="closeLoginPopup()">×</span>
+        <h2>Đăng nhập tài khoản</h2>
+        <form class="popup-form">
+          <input type="text" placeholder="Tên đăng nhập" />
+          <input type="password" placeholder="Mật khẩu" />
+          <button
+            type="button"
+            class="btn btn--primary"
+            style="width: 100%"
+            onclick="location.href='home_loggedin.html'"
+          >
+            Đăng nhập
+          </button>
+          <p style="text-align: center; margin-top: 10px; font-size: 14px">
+            Chưa có tài khoản?
+            <a href="#" onclick="switchToRegister()">Đăng ký ngay</a>
+          </p>
+        </form>
       </div>
     </div>
+
+    <!-- POPUP ĐĂNG KÝ -->
+    <div id="register-popup" class="popup">
+      <div class="popup-box">
+        <span class="close-btn" onclick="closeRegisterPopup()">×</span>
+        <h2>Tạo tài khoản mới</h2>
+        <form class="popup-form">
+          <input type="text" placeholder="Tên đăng nhập" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Mật khẩu" />
+          <button
+            type="button"
+            class="btn btn--primary"
+            style="width: 100%"
+            onclick="location.href='home_loggedin.html'"
+          >
+            Đăng ký
+          </button>
+          <p style="text-align: center; margin-top: 10px; font-size: 14px">
+            Đã có tài khoản?
+            <a href="#" onclick="switchToLogin()">Đăng nhập</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function openLoginPopup() {
+        document.getElementById("login-popup").style.display = "flex";
+      }
+      function closeLoginPopup() {
+        document.getElementById("login-popup").style.display = "none";
+      }
+      function openRegisterPopup() {
+        document.getElementById("register-popup").style.display = "flex";
+      }
+      function closeRegisterPopup() {
+        document.getElementById("register-popup").style.display = "none";
+      }
+
+      /* Đóng khi click ra ngoài */
+      window.addEventListener("click", function (e) {
+        const login = document.getElementById("login-popup");
+        const register = document.getElementById("register-popup");
+        if (e.target === login) closeLoginPopup();
+        if (e.target === register) closeRegisterPopup();
+      });
+
+      /* Chuyển qua lại giữa 2 popup */
+      function switchToRegister() {
+        closeLoginPopup();
+        setTimeout(openRegisterPopup, 200);
+      }
+      function switchToLogin() {
+        closeRegisterPopup();
+        setTimeout(openLoginPopup, 200);
+      }
+    </script>
   </body>
 </html>

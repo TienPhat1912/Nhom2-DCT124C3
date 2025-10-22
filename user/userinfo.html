@@ -4,25 +4,66 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>User Info</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
-        <div class="logo" onclick="location.href='home_loggedin.html'">
-          <img src="../img/logo.png" />
-          <h1>Green Bookstore</h1>
+        <!-- Left -->
+        <div class="header-left">
+          <div class="logo" onclick="location.href='home_loggedin.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
+            <h1>Nhà Sách FACABA</h1>
+          </div>
         </div>
-        <nav class="nav">
-          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
-          ><a href="cart.html">Cart</a
-          ><a href="userinfo.html">Cao Thai Phuong Thanh</a
-          ><a href="../home.html">Log out</a>
-        </nav>
+
+        <!-- Center -->
+        <div class="header-center">
+          <a href="home_loggedin.html" class="dropbtn">Trang chủ</a>
+          <div class="dropdown">
+            <button class="dropbtn">Thể loại ▼</button>
+            <div class="dropdown-content">
+              <a class="btn--light" href="home_loggedin.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1.html">Manga</a>
+              <a class="btn--light" href="shop1.html">Khoa học</a>
+              <a class="btn--light" href="home_loggedin.html">Lịch sử</a>
+              <a class="btn--light" href="shop1.html">Tâm lý học</a>
+              <a class="btn--light" href="home_loggedin.html">Giáo dục</a>
+              <a class="btn--light" href="shop1.html">Tài liệu</a>
+              <a class="btn--light" href="home_loggedin.html">Tham khảo</a>
+              <a class="btn--light" href="shop1.html">Hướng dẫn</a>
+              <a class="btn--light" href="home_loggedin.html">Light Novel</a>
+            </div>
+          </div>
+
+          <div class="search">
+            <input placeholder="Tìm kiếm sách..." />
+            <a class="btn" href="search.html">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropbtn">Thanh Cao ▼</button>
+            <div class="dropdown-content">
+              <button class="btn btn--light" onclick="location='userinfo.html'">
+                Chi tiết
+              </button>
+              <button class="btn btn--light" onclick="location='../home.html'">
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+          <button id="cart-btn" class="dropbtn" onclick="location='cart.html'">
+            🛒 <span id="cart-count">0</span>
+          </button>
+        </div>
       </div>
     </header>
     <main class="container">
-      <div class="form" style="display: flex; align-items: center; gap: 32px">
+      <h1 style="text-align: center; color: #166939;font-size: 45px;">Thông tin khách hàng</h1>
+      <div class="form" style="display: flex; align-items: center; gap: 32px; ">
         <img
           src="../img/avatar.png"
           style="
@@ -34,24 +75,24 @@
         />
         <div>
           <p>ID: C001</p>
-          <p>First Name: Cao</p>
-          <p>Last Name: Thai Phuong Thanh</p>
-          <p>Birth: 1990-01-01</p>
+          <p>Họ: Cao</p>
+          <p>Tên: Thai Phuong Thanh</p>
+          <p>Ngày sinh: 1990-01-01</p>
           <p>Email: thanhcao@gmail.com</p>
-          <p>Phone: 0909 022 966</p>
-          <p>Address: 273, An Duong Vuong, District 5, Ho Chi Minh City</p>
+          <p>Số điện thoại : 0909 022 966</p>
+          <p>Địa chỉ: 273, An Duong Vuong, phuong Cho Quan, TP.Ho Chi Minh</p>
           <div style="margin-top: 12px">
             <button
               class="btn"
               onclick="location.href='useredit.html'"
               style="min-width: 120px"
             >
-              Edit Info
+              Chỉnh sửa
             </button>
           </div>
         </div>
       </div>
-       <h2 style="margin: 0">Orders history</h2>
+       <h2 style="text-align: center; color: #166939;font-size: 45px;">Lịch sử mua hàng</h2>
        
       <div class="container">
         <div
@@ -64,32 +105,32 @@
         >
         <table class="table">
           <tr>
-            <th>Order ID</th>
-            <th>Date</th>
-            <th>total</th>
-            <th>Status</th>
-            <th>Action</th>
+            <th>Mã đơn hàng</th>
+            <th>Ngày mua</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th></th>
           </tr>
           <tr>
             <td>O001</td>
             <td>2025-01-25</td>
             <td>₫445,000</td>
-            <td>Delivered</td>
-            <td><a class="btn" href="order_detail.html">Detail</a></td>
+            <td>Đã giao</td>
+            <td><a class="btn" href="order_detail.html">Chi tiết</a></td>
           </tr>
           <tr>
             <td>O002</td>
             <td>2025-01-26</td>
             <td>₫310,000</td>
-            <td>Cancelled</td>
-            <td><a class="btn" href="order_detail2.html">Detail</a></td>
+            <td>Đã hủy</td>
+            <td><a class="btn" href="order_detail2.html">Chi tiết</a></td>
           </tr>
           <tr>
             <td>O011</td>
             <td>2025-10-01</td>
             <td>₫225,000</td>
-            <td>Processing</td>
-            <td><a class="btn" href="order_detail.html">Detail</a></td>
+            <td>Đang xử lí</td>
+            <td><a class="btn" href="order_detail.html">Chi tiết</a></td>
           </tr>
         </table>
       </div>

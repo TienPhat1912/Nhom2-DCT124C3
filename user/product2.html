@@ -3,93 +3,147 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nỗi Buồn Chiến Tranh</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <title>Số Đỏ</title>
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
-        <div class="logo" onclick="location.href='home_loggedin.html'">
-          <img src="../img/logo.png" />
-          <h1>Green Bookstore</h1>
+        <!-- Left -->
+        <div class="header-left">
+          <div class="logo" onclick="location.href='home_loggedin.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
+            <h1>Nhà Sách FACABA</h1>
+          </div>
         </div>
-        <nav class="nav">
-          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
-          ><a href="cart.html">Cart</a
-          ><a href="userinfo.html">Cao Thai Phuong Thanh</a
-          ><a href="../home.html">Log out</a>
-        </nav>
-        <div class="search">
-          <input placeholder="Search..." /><button
-            onclick="location.href='search.html'"
-          >
-            Search
+
+        <!-- Center -->
+        <div class="header-center">
+          <a href="home_loggedin.html" class="dropbtn">Trang chủ</a>
+          <div class="dropdown">
+            <button class="dropbtn">Thể loại ▼</button>
+            <div class="dropdown-content">
+              <a class="btn--light" href="home_loggedin.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1.html">Manga</a>
+              <a class="btn--light" href="shop1.html">Khoa học</a>
+              <a class="btn--light" href="home_loggedin.html">Lịch sử</a>
+              <a class="btn--light" href="shop1.html">Tâm lý học</a>
+              <a class="btn--light" href="home_loggedin.html">Giáo dục</a>
+              <a class="btn--light" href="shop1.html">Tài liệu</a>
+              <a class="btn--light" href="home_loggedin.html">Tham khảo</a>
+              <a class="btn--light" href="shop1.html">Hướng dẫn</a>
+              <a class="btn--light" href="home_loggedin.html">Light Novel</a>
+            </div>
+          </div>
+
+          <div class="search">
+            <input placeholder="Tìm kiếm sách..." />
+            <a class="btn" href="search.html">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropbtn">Thanh Cao ▼</button>
+            <div class="dropdown-content">
+              <button class="btn btn--light" onclick="location='userinfo.html'">
+                Chi tiết
+              </button>
+              <button class="btn btn--light" onclick="location='../home.html'">
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+          <button id="cart-btn" class="dropbtn" onclick="location='cart.html'">
+            🛒 <span id="cart-count">0</span>
           </button>
         </div>
       </div>
     </header>
     <main class="container">
-      <div class="category">
-        <a href="shop1.html">Novel</a><a href="shop2.html">Science</a>
-        <a href="shop1.html">History</a><a href="shop2.html">Psychology</a>
-        <a href="shop1.html">Education</a><a href="shop2.html">Documents</a>
-        <a href="shop1.html">Reference</a><a href="shop1.html">Guides</a>
-        <a href="shop2.html">Manga</a><a href="shop1.html">Light Novel</a>
-      </div>
       <div class="detail">
         <img src="../img/noibuon.jpg" />
         <div class="info">
           <h2>Nỗi Buồn Chiến Tranh</h2>
-          <p><strong>Product Code:</strong> NB-002</p>
-          <p><strong>Author:</strong> Bảo Ninh</p>
-          <p><strong>Publish year:</strong> 2022</p>
-          <p><strong>Publisher:</strong> NXB Văn Học</p>
-          <p><strong>Age:</strong> 18+</p>
-          <p><strong>Origin:</strong> Việt Nam</p>
-          <p><strong>Genre:</strong> Tiểu thuyết</p>
+          <p><strong>Mã sản phẩm:</strong> NB-002</p>
+          <p><strong>Tác giả:</strong> Bảo Ninh</p>
+          <p><strong>Năm xuất bản:</strong> 2022</p>
+          <p><strong>Nhà xuất bản:</strong> NXB Văn Học</p>
+          <p><strong>Độ tuổi phù hợp:</strong> 18+</p>
+          <p><strong>Xuất xứ:</strong> Việt Nam</p>
+          <p><strong>Thể loại:</strong> Tiểu thuyết</p>
           <p>
-            <strong>Short:</strong> Tiểu thuyết sâu sắc về hậu quả chiến tranh.
+            <strong>Mô tả:</strong> Tiểu thuyết sâu sắc về hậu quả chiến tranh.
           </p>
-          <p style="margin-top: 8px"><strong>Price:</strong> ₫150,000</p>
+          <p style="margin-top: 8px; font-size: 18px">
+            <strong>Giá:</strong>
+            <span style="font-size: 22px; font-weight: bold; color: #20c030">
+              ₫150,000
+            </span>
+          </p>
           <div style="margin-top: 12px; display: flex; gap: 8px">
-            <a class="btn" href="cart.html">Add to cart</a
-            ><a class="btn ghost" href="checkout.html">Buy now</a>
+            <button class="btn ghost" onclick="alert('Đã thêm vào giỏ!')">
+              Thêm vào giỏ
+            </button>
+            <button class="btn" onclick="location.href='cart.html'">
+              Mua ngay
+            </button>
           </div>
+
           <hr style="margin: 16px 0" />
-          <h3>Rating</h3>
-          <div id="s2" style="font-size: 24px; cursor: pointer">
-            <span onclick="set2(1)">☆</span><span onclick="set2(2)">☆</span
-            ><span onclick="set2(3)">☆</span><span onclick="set2(4)">☆</span
-            ><span onclick="set2(5)">☆</span>
+          <h3>Đánh giá</h3>
+          <div id="s1" style="font-size: 24px; cursor: pointer">
+            <span onclick="set(1)">☆</span><span onclick="set(2)">☆</span
+            ><span onclick="set(3)">☆</span><span onclick="set(4)">☆</span
+            ><span onclick="set(5)">☆</span>
           </div>
           <div>
             <textarea
               class="comment"
-              placeholder="Write your review..."
+              placeholder="Viết đánh giá của bạn..."
             ></textarea>
           </div>
           <div style="margin-top: 8px">
-            <button class="btn" onclick="submit2()">Send</button>
+            <button class="btn" onclick="submit()">Gửi</button>
           </div>
         </div>
       </div>
     </main>
+
     <script>
-      let r2 = 0;
-      function set2(n) {
-        r2 = n;
-        const sp = document.querySelectorAll("#s2 span");
+      /* Rating star */
+      let r = 0;
+      function set(n) {
+        r = n;
+        const sp = document.querySelectorAll("#s1 span");
         for (let i = 0; i < 5; i++) {
           sp[i].textContent = i < n ? "★" : "☆";
         }
       }
-      function submit2() {
-        if (r2 === 0) {
-          alert("Please select a rating star!");
-          return;
-        }
-        alert("Thank you for your review!");
+      function submit() {
+        alert("Cảm ơn bạn đã gửi đánh giá!");
       }
+
+      let cartCount = 0;
+      const cartCountSpan = document.getElementById("cart-count");
+
+      // Lấy tất cả nút "Thêm vào giỏ"
+      const addToCartButtons = document.querySelectorAll(".btn.ghost");
+
+      // Gắn sự kiện click 1 lần duy nhất
+      addToCartButtons.forEach((button) => {
+        // Loại bỏ sự kiện cũ (nếu có)
+        button.onclick = null;
+
+        // Gắn sự kiện mới
+        button.addEventListener("click", () => {
+          cartCount++;
+          cartCountSpan.textContent = cartCount;
+          alert("Đã thêm vào giỏ hàng"); // Chỉ hiện 1 lần
+        });
+      });
+      yb;
     </script>
   </body>
 </html>

@@ -4,46 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Order Detail</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
-        <div class="logo" onclick="location.href='home_loggedin.html'">
-          <img src="../img/logo.png" />
-          <h1>Green Bookstore</h1>
+        <!-- Left -->
+        <div class="header-left">
+          <div class="logo" onclick="location.href='home_loggedin.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
+            <h1>Nhà Sách FACABA</h1>
+          </div>
         </div>
-        <nav class="nav">
-          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
-          ><a href="cart.html">Cart</a
-          ><a href="userinfo.html">Cao Thai Phuong Thanh</a
-          ><a href="../home.html">Log out</a>
-        </nav>
+
+        <!-- Center -->
+        <div class="header-center">
+          <a href="home_loggedin.html" class="dropbtn">Trang chủ</a>
+          <div class="dropdown">
+            <button class="dropbtn">Thể loại ▼</button>
+            <div class="dropdown-content">
+              <a class="btn--light" href="home_loggedin.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1.html">Manga</a>
+              <a class="btn--light" href="shop1.html">Khoa học</a>
+              <a class="btn--light" href="home_loggedin.html">Lịch sử</a>
+              <a class="btn--light" href="shop1.html">Tâm lý học</a>
+              <a class="btn--light" href="home_loggedin.html">Giáo dục</a>
+              <a class="btn--light" href="shop1.html">Tài liệu</a>
+              <a class="btn--light" href="home_loggedin.html">Tham khảo</a>
+              <a class="btn--light" href="shop1.html">Hướng dẫn</a>
+              <a class="btn--light" href="home_loggedin.html">Light Novel</a>
+            </div>
+          </div>
+
+          <div class="search">
+            <input placeholder="Tìm kiếm sách..." />
+            <a class="btn" href="search.html">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropbtn">Thanh Cao ▼</button>
+            <div class="dropdown-content">
+              <button class="btn btn--light" onclick="location='userinfo.html'">
+                Chi tiết
+              </button>
+              <button class="btn btn--light" onclick="location='../home.html'">
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+          <button id="cart-btn" class="dropbtn" onclick="location='cart.html'">
+            🛒 <span id="cart-count">0</span>
+          </button>
         </div>
       </div>
     </header>
     <main class="container">
       <form class="form">
-        <h2>Order Detail</h2>
+        <h2 style="text-align: center;">Chi Tiết Đơn Hàng</h2>
 
-        <p><b>Order ID:</b> O002</p>
-        <p><b>Customer:</b> Cao Thai Phuong Thanh</p>
+        <p><b>Mã đơn hàng:</b> O002</p>
+        <p><b>Khách hàng:</b> Cao Thai Phuong Thanh</p>
         <p><b>Email:</b> thanhcao@gmail.com</p>
-        <p><b>Phone:</b> 0909 022 966</p>
+        <p><b>Số điện thoại:</b> 0909 022 966</p>
+        <p><b>Trạng thái:</b> <span class="badge">Đã hủy</span></p>
         <p>
-          <b>Delivery Address:</b> 273 An Duong Vuong, District 5, Ho Chi Minh
-          City
+          <b>Địa chỉ giao hàng:</b> 273 An Duong Vuong, phuong Cho Quan, TP.Ho Chi Minh
         </p>
-        <p><b>Order Date:</b> 2025-01-26</p>
-        <p><b>Status:</b> <span class="badge">Cancelled</span></p>
+        <p><b>Ngày giao:</b> 2025-01-26</p>
+        
 
-  <table class="table">
+        <table class="table">
   <tr>
-    <th>Product ID</th>
-    <th>Product Name</th>
-    <th>Quantity</th>
-    <th>Unit Price</th>
-    <th>Total</th>
+    <th>Mã sản phẩm</th>
+    <th>Tên </th>
+    <th>Số lượng</th>
+    <th>Đơn giá</th>
+    <th>Tổng tiền</th>
   </tr>
   <tr>
     <td>P004</td>

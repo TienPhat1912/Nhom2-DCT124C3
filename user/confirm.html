@@ -4,53 +4,90 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Confirm</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
-        <div class="logo" onclick="location.href='home_loggedin.html'">
-          <img src="../img/logo.png" />
-          <h1>Green Bookstore</h1>
+        <!-- Left -->
+        <div class="header-left">
+          <div class="logo" onclick="location.href='home_loggedin.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
+            <h1>Nhà Sách FACABA</h1>
+          </div>
         </div>
-        <nav class="nav">
-          <a href="home_loggedin.html">Home</a><a href="shop1.html">Shop</a
-          ><a href="cart.html">Cart</a
-          ><a href="userinfo.html">Cao Thai Phuong Thanh</a>
-        </nav>
-        <div class="search">
-          <input placeholder="Search..." /><button
-            onclick="location.href='shop1.html'"
-          >
-            Search
+
+        <!-- Center -->
+        <div class="header-center">
+          <a href="home_loggedin.html" class="dropbtn">Trang chủ</a>
+          <div class="dropdown">
+            <button class="dropbtn">Thể loại ▼</button>
+            <div class="dropdown-content">
+              <a class="btn--light" href="home_loggedin.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1.html">Manga</a>
+              <a class="btn--light" href="shop1.html">Khoa học</a>
+              <a class="btn--light" href="home_loggedin.html">Lịch sử</a>
+              <a class="btn--light" href="shop1.html">Tâm lý học</a>
+              <a class="btn--light" href="home_loggedin.html">Giáo dục</a>
+              <a class="btn--light" href="shop1.html">Tài liệu</a>
+              <a class="btn--light" href="home_loggedin.html">Tham khảo</a>
+              <a class="btn--light" href="shop1.html">Hướng dẫn</a>
+              <a class="btn--light" href="home_loggedin.html">Light Novel</a>
+            </div>
+          </div>
+
+          <div class="search">
+            <input placeholder="Tìm kiếm sách..." />
+            <a class="btn" href="search.html">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropbtn">Thanh Cao ▼</button>
+            <div class="dropdown-content">
+              <button class="btn btn--light" onclick="location='userinfo.html'">
+                Chi tiết
+              </button>
+              <button class="btn btn--light" onclick="location='../home.html'">
+                Đăng xuất
+              </button>
+            </div>
+          </div>
+          <button id="cart-btn" class="dropbtn" onclick="location='cart.html'">
+            🛒 <span id="cart-count">0</span>
           </button>
         </div>
       </div>
     </header>
     <main class="container" style="text-align: left; padding: 100px 0">
       <div class="form">
-        <h2 style="text-align: center">Order Summary</h2>
-        <p><strong>Order Code:</strong> O011</p>
-        <p><strong>Customer:</strong> Cao Thai Phuong Thanh</p>
+        <h2 style="text-align: center">Tóm tắt đơn hàng</h2>
+        <p><strong>Mã đơn hàng:</strong> O011</p>
+        <p><strong>Khách hàng:</strong> Cao Thai Phuong Thanh</p>
         <p><strong>Email:</strong> thanhcao@gmail.com</p>
-        <p><strong>Phone:</strong> 0909 022 966</p>
+        <p><strong>Điện thoại:</strong> 0909 022 966</p>
         <p>
-          <strong>Address:</strong> 273, An Duong Vuong, District 5, HCM City
+          <strong>Địa chỉ:</strong> 273, An Duong Vuong, Quan 5, Tp. Ho Chi Minh
         </p>
-        <p><strong>Payment Method:</strong> Cash on Delivery</p>
-        <p><strong>Status:</strong> Confirmed</p>
-        <p><strong>Order Date:</strong> 2025-10-01</p>
+        <p><strong>Phương thức thanh toán:</strong> Thanh toán khi nhận hàng</p>
+        <p><strong>Trạng thái:</strong> Đã xác nhận</p>
+        <p><strong>Ngày đặt hàng:</strong> 2025-10-01</p>
         <table class="table">
           <tr>
-            <th>Product</th>
-            <th style="text-align: right">Price</th>
+            <th>Sản phẩm</th>
+            <th>số lượng</th>
+            <th style="text-align: right">Giá</th>
           </tr>
           <tr>
             <td>Số Đỏ</td>
+            <td>1</td>
             <td style="text-align: right">₫110,000</td>
           </tr>
           <tr>
             <td>Nỗi Buồn Chiến Tranh</td>
+            <td>1</td>
             <td style="text-align: right">₫115,000</td>
           </tr>
           <tr

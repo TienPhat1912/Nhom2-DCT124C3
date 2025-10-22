@@ -4,25 +4,59 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Số Đỏ</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
-        <div class="logo" onclick="location.href='../home.html'">
-          <img src="../img/logo.png" />
-          <h1>Green Bookstore</h1>
+        <!-- Left -->
+        <div class="header-left">
+          <div class="logo" onclick="location.href='../home.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
+            <h1>Nhà Sách FACABA</h1>
+          </div>
         </div>
-        <nav class="nav">
-          <a href="../home.html">Home</a><a href="shop1guest.html">Shop</a
-          ><a href="emptycartguest.html">Cart</a><a href="login.html">login</a
-          ><a href="register.html">register</a>
-        </nav>
-        <div class="search">
-          <input placeholder="Search..." /><button
-            onclick="location.href='shop1guest.html'"
-          >
-            Search
+
+        <!-- Center -->
+        <div class="header-center">
+          <a href="../home.html" class="dropbtn">Trang chủ</a>
+          <div class="dropdown">
+            <button class="dropbtn">Thể loại ▼</button>
+            <div class="dropdown-content">
+              <a class="btn--light" href="../home.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1guest.html">Manga</a>
+              <a class="btn--light" href="shop1guest.html">Khoa học</a>
+              <a class="btn--light" href="../home.html">Lịch sử</a>
+              <a class="btn--light" href="shop1guest.html">Tâm lý học</a>
+              <a class="btn--light" href="../home.html">Giáo dục</a>
+              <a class="btn--light" href="shop1guest.html">Tài liệu</a>
+              <a class="btn--light" href="../home.html">Tham khảo</a>
+              <a class="btn--light" href="shop1guest.html">Hướng dẫn</a>
+              <a class="btn--light" href="../home.html">Light Novel</a>
+            </div>
+          </div>
+
+          <div class="search">
+            <input placeholder="Tìm kiếm sách..." />
+            <a class="btn" href="searchguest.html">Tìm kiếm</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+          <div class="dropdown">
+            <button class="dropbtn">Tài khoản ▼</button>
+            <div class="dropdown-content">
+              <button class="btn btn--light" onclick="openLoginPopup()">
+                Đăng nhập
+              </button>
+              <button class="btn btn--light" onclick="openRegisterPopup()">
+                Đăng ký
+              </button>
+            </div>
+          </div>
+          <button class="dropbtn" onclick="location='emptycartguest.html'">
+            🛒
           </button>
         </div>
       </div>
@@ -32,34 +66,38 @@
         <img src="../img/sodod.jpg" />
         <div class="info">
           <h2>Số Đỏ</h2>
-          <p><strong>Product Code:</strong> SD-001</p>
-          <p><strong>Author:</strong> Vũ Trọng Phụng</p>
-          <p><strong>Publish year:</strong> 2022</p>
-          <p><strong>Publisher:</strong> NXB Văn Học</p>
-          <p><strong>Age:</strong> 16+</p>
-          <p><strong>Origin:</strong> Việt Nam</p>
-          <p><strong>Genre:</strong> Tiểu thuyết</p>
-          <p>
-            <strong>Description:</strong> Tác phẩm châm biếm xã hội nổi tiếng.
+          <p><strong>Mã sản phẩm:</strong> SD-001</p>
+          <p><strong>Tác giả:</strong> Vũ Trọng Phụng</p>
+          <p><strong>Năm xuất bản:</strong> 2022</p>
+          <p><strong>Nhà xuất bản:</strong> NXB Văn Học</p>
+          <p><strong>Độ tuổi phù hợp:</strong> 16+</p>
+          <p><strong>Xuất xứ:</strong> Việt Nam</p>
+          <p><strong>Thể loại:</strong> Tiểu thuyết</p>
+          <p><strong>Mô tả:</strong> Tác phẩm châm biếm xã hội nổi tiếng.</p>
+          <p style="margin-top: 8px; font-size: 18px">
+            <strong>Giá:</strong>
+            <span style="font-size: 22px; font-weight: bold; color: #20c030"
+              >₫110,000</span
+            >
           </p>
-          <p style="margin-top: 8px"><strong>Price:</strong> ₫110,000</p>
+
           <div style="margin-top: 12px; display: flex; gap: 8px">
             <button
               class="btn"
-              onclick="alert('Login or register to continue!')"
+              onclick="alert('Đăng nhập hoặc Đăng kí để tiếp tục!')"
             >
-              Add to cart
+              Thêm vào giỏ
             </button>
             <button
               class="btn ghost"
-              onclick="alert('Login or register to continue!')"
+              onclick="alert('Đăng nhập hoặc Đăng kí để tiếp tục!')"
             >
-              Buy now
+              Mua ngay
             </button>
           </div>
 
           <hr style="margin: 16px 0" />
-          <h3>Rating</h3>
+          <h3>Đánh giá</h3>
           <div id="s1" style="font-size: 24px; cursor: pointer">
             <span onclick="set(1)">☆</span><span onclick="set(2)">☆</span
             ><span onclick="set(3)">☆</span><span onclick="set(4)">☆</span
@@ -68,16 +106,96 @@
           <div>
             <textarea
               class="comment"
-              placeholder="Write your review..."
+              placeholder="Viết đánh giá của bạn..."
             ></textarea>
           </div>
           <div style="margin-top: 8px">
-            <button class="btn" onclick="submit()">Send</button>
+            <button class="btn" onclick="submit()">Gửi</button>
           </div>
         </div>
       </div>
     </main>
+    <!-- POPUP ĐĂNG NHẬP -->
+    <div id="login-popup" class="popup">
+      <div class="popup-box">
+        <span class="close-btn" onclick="closeLoginPopup()">×</span>
+        <h2>Đăng nhập tài khoản</h2>
+        <form class="popup-form">
+          <input type="text" placeholder="Tên đăng nhập" />
+          <input type="password" placeholder="Mật khẩu" />
+          <button
+            type="button"
+            class="btn btn--primary"
+            style="width: 100%"
+            onclick="location.href='home_loggedin.html'"
+          >
+            Đăng nhập
+          </button>
+          <p style="text-align: center; margin-top: 10px; font-size: 14px">
+            Chưa có tài khoản?
+            <a href="#" onclick="switchToRegister()">Đăng ký ngay</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- POPUP ĐĂNG KÝ -->
+    <div id="register-popup" class="popup">
+      <div class="popup-box">
+        <span class="close-btn" onclick="closeRegisterPopup()">×</span>
+        <h2>Tạo tài khoản mới</h2>
+        <form class="popup-form">
+          <input type="text" placeholder="Tên đăng nhập" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Mật khẩu" />
+          <button
+            type="button"
+            class="btn btn--primary"
+            style="width: 100%"
+            onclick="location.href='home_loggedin.html'"
+          >
+            Đăng ký
+          </button>
+          <p style="text-align: center; margin-top: 10px; font-size: 14px">
+            Đã có tài khoản?
+            <a href="#" onclick="switchToLogin()">Đăng nhập</a>
+          </p>
+        </form>
+      </div>
+    </div>
     <script>
+      function openLoginPopup() {
+        document.getElementById("login-popup").style.display = "flex";
+      }
+      function closeLoginPopup() {
+        document.getElementById("login-popup").style.display = "none";
+      }
+      function openRegisterPopup() {
+        document.getElementById("register-popup").style.display = "flex";
+      }
+      function closeRegisterPopup() {
+        document.getElementById("register-popup").style.display = "none";
+      }
+
+      /* Đóng khi click ra ngoài */
+      window.addEventListener("click", function (e) {
+        const login = document.getElementById("login-popup");
+        const register = document.getElementById("register-popup");
+        if (e.target === login) closeLoginPopup();
+        if (e.target === register) closeRegisterPopup();
+      });
+
+      /* Chuyển qua lại giữa 2 popup */
+      function switchToRegister() {
+        closeLoginPopup();
+        setTimeout(openRegisterPopup, 200);
+      }
+      function switchToLogin() {
+        closeRegisterPopup();
+        setTimeout(openLoginPopup, 200);
+      }
+
+      /* Rating star */
       let r = 0;
       function set(n) {
         r = n;
@@ -87,11 +205,7 @@
         }
       }
       function submit() {
-        if (r === 0) {
-          alert("Please select a rating star!");
-          return;
-        }
-        alert("Login or register to continue!");
+        alert("Đăng nhập hoặc Đăng kí để tiếp tục!");
       }
     </script>
   </body>
