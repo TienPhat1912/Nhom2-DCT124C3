@@ -1,46 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Prices by Category</title>
+    <title>Giá sản phẩm theo thể loại</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
+
   <body>
     <header class="header">
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" alt="logo" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
         <nav class="nav">
-          <a href="dashboard.html">Dashboard</a>
+          <a href="dashboard.html">Trang chủ</a>
         </nav>
       </div>
     </header>
 
     <main class="container">
-      <h2>Products in Category</h2>
+      <h2>Giá sản phẩm theo thể loại</h2>
 
       <button class="btn ghost" onclick="location.href='price.html'">
-        ← Back to Categories
+        ← Quay lại
       </button>
 
       <h3 style="margin-top: 15px">
-        Found 10 products in category <span style="color: blue">"Novel"</span>
+        Tìm thấy 10 sản phẩm thuộc thể loại
+        <span style="color: blue">"Tiểu thuyết"</span>
       </h3>
 
-      <table class="table">
+      <table class="table" id="priceTable">
         <tr>
-          <th>Product ID</th>
-          <th>Product Name</th>
-          <th>Cost Price</th>
-          <th>Selling Price</th>
-          <th>Profit Margin (%)</th>
-          <th>Action</th>
+          <th>Mã SP</th>
+          <th>Tên sản phẩm</th>
+          <th>Giá nhập</th>
+          <th>Giá bán</th>
+          <th>Lợi nhuận (%)</th>
+          <th>Thao tác</th>
         </tr>
 
-        <!-- ví dụ dòng 1 -->
         <tr>
           <td>P001</td>
           <td>Số Đỏ</td>
@@ -48,9 +49,7 @@
           <td>₫110,000</td>
           <td>29.41%</td>
           <td>
-            <button class="btn" onclick="openModal('P001','85','110')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
         <tr>
@@ -60,9 +59,7 @@
           <td>₫115,000</td>
           <td>27.78%</td>
           <td>
-            <button class="btn" onclick="openModal('P002','90','115')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
         <tr>
@@ -72,9 +69,7 @@
           <td>₫95,000</td>
           <td>35.71%</td>
           <td>
-            <button class="btn" onclick="openModal('P003','70','95')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
         <tr>
@@ -84,9 +79,7 @@
           <td>₫125,000</td>
           <td>31.58%</td>
           <td>
-            <button class="btn" onclick="openModal('P004','95','125')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
         <tr>
@@ -96,9 +89,7 @@
           <td>₫100,000</td>
           <td>25.00%</td>
           <td>
-            <button class="btn" onclick="openModal('P005','80','100')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
         <tr>
@@ -108,9 +99,7 @@
           <td>₫85,000</td>
           <td>30.77%</td>
           <td>
-            <button class="btn" onclick="openModal('P006','65','85')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
         <tr>
@@ -120,9 +109,7 @@
           <td>₫100,000</td>
           <td>28.21%</td>
           <td>
-            <button class="btn" onclick="openModal('P007','78','100')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
         <tr>
@@ -132,9 +119,7 @@
           <td>₫140,000</td>
           <td>27.27%</td>
           <td>
-            <button class="btn" onclick="openModal('P008','110','140')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
         <tr>
@@ -144,43 +129,38 @@
           <td>₫80,000</td>
           <td>33.33%</td>
           <td>
-            <button class="btn" onclick="openModal('P009','60','80')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
         <tr>
           <td>P010</td>
-          <td>Harry Potter and the Sorcerer’s Stone</td>
+          <td>Harry Potter và Hòn Đá Phù Thủy</td>
           <td>₫120,000</td>
           <td>₫150,000</td>
           <td>25.00%</td>
           <td>
-            <button class="btn" onclick="openModal('P010','120','150')">
-              Edit
-            </button>
+            <button class="btn" onclick="openModal(this)">Chỉnh sửa</button>
           </td>
         </tr>
       </table>
     </main>
 
-    <!-- Modal -->
+    <!-- ===== MODAL ===== -->
     <div class="modal" id="editModal">
       <div class="modal-content">
-        <h3>Edit Product Profit</h3>
+        <h3>Chỉnh sửa Giá / Lợi nhuận</h3>
 
-        <label><b>Product ID:</b></label>
+        <label><b>Mã sản phẩm:</b></label>
         <input type="text" id="prodId" readonly />
 
-        <label><b>Cost Price (₫):</b></label>
+        <label><b>Giá nhập (₫):</b></label>
         <input type="number" id="costPrice" readonly />
 
-        <label><b>New Profit Margin (%):</b></label>
-        <input type="number" id="newMargin" />
+        <label><b>Giá bán (₫):</b></label>
+        <input type="number" id="sellPrice" oninput="updateMargin()" />
 
-        <p>
-          <b>Suggested Selling Price:</b> ₫<span id="suggestedPrice">0</span>
-        </p>
+        <label><b>Lợi nhuận (%):</b></label>
+        <input type="number" id="newMargin" oninput="updatePrice()" />
 
         <div
           style="
@@ -190,24 +170,32 @@
             margin-top: 10px;
           "
         >
-          <button class="btn ghost" onclick="closeModal()">Cancel</button>
-          <button class="btn" onclick="saveModal()">Save</button>
+          <button class="btn ghost" onclick="closeModal()">Hủy</button>
+          <button class="btn" onclick="saveModal()">Lưu</button>
         </div>
       </div>
     </div>
 
     <script>
-      function openModal(pid, cost, sell) {
-        // hiển thị modal và điền dữ liệu
-        document.getElementById("prodId").value = pid;
-        document.getElementById("costPrice").value = cost * 1000;
-        document.getElementById("newMargin").value = (
-          ((sell - cost) / cost) *
-          100
-        ).toFixed(2);
-        document.getElementById("suggestedPrice").innerText = (
-          sell * 1000
-        ).toLocaleString("vi-VN");
+      let currentRow = null;
+
+      function parseNumber(str) {
+        return parseFloat(str.replace(/[₫,]/g, ""));
+      }
+
+      function openModal(button) {
+        currentRow = button.closest("tr");
+        const cells = currentRow.cells;
+
+        const id = cells[0].innerText;
+        const cost = parseNumber(cells[2].innerText);
+        const sell = parseNumber(cells[3].innerText);
+        const margin = parseFloat(cells[4].innerText);
+
+        document.getElementById("prodId").value = id;
+        document.getElementById("costPrice").value = cost;
+        document.getElementById("sellPrice").value = sell;
+        document.getElementById("newMargin").value = margin;
 
         document.getElementById("editModal").style.display = "flex";
       }
@@ -216,14 +204,38 @@
         document.getElementById("editModal").style.display = "none";
       }
 
-      function saveModal() {
-        const id = document.getElementById("prodId").value;
-        const margin = document.getElementById("newMargin").value;
-        alert(`Saved new margin ${margin}% for product ${id} (demo)`);
-        closeModal();
+      function updateMargin() {
+        const cost = parseFloat(document.getElementById("costPrice").value);
+        const sell = parseFloat(document.getElementById("sellPrice").value);
+        if (!cost || !sell) return;
+        const margin = ((sell - cost) / cost) * 100;
+        document.getElementById("newMargin").value = margin.toFixed(2);
       }
 
-      // click ra ngoài để tắt modal
+      function updatePrice() {
+        const cost = parseFloat(document.getElementById("costPrice").value);
+        const margin = parseFloat(document.getElementById("newMargin").value);
+        if (!cost || isNaN(margin)) return;
+        const sell = cost * (1 + margin / 100);
+        document.getElementById("sellPrice").value = sell.toFixed(0);
+      }
+
+      function saveModal() {
+        if (!currentRow) return;
+        const sell = parseFloat(document.getElementById("sellPrice").value);
+        const margin = parseFloat(document.getElementById("newMargin").value);
+
+        currentRow.cells[3].innerHTML = "₫" + sell.toLocaleString("vi-VN");
+        currentRow.cells[4].innerHTML = margin.toFixed(2) + "%";
+
+        currentRow.style.transition = "background 0.6s";
+        currentRow.style.background = "#fff3cd";
+        setTimeout(() => (currentRow.style.background = ""), 800);
+
+        closeModal();
+        alert("Đã cập nhật thành công!");
+      }
+
       window.onclick = function (e) {
         const modal = document.getElementById("editModal");
         if (e.target === modal) closeModal();

@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Import Receipt</title>
+    <title>Chỉnh Sửa Phiếu Nhập Hàng</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/slim-select@2.7.0/dist/slimselect.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/slim-select@2.7.0/dist/slimselect.min.js"></script>
   </head>
 
   <body>
@@ -12,50 +17,59 @@
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
         <nav class="nav">
-          <a href="dashboard.html">Dashboard</a>
-          <a href="import_list.html">Import Receipts</a>
+          <a href="dashboard.html">Trang chủ</a>
         </nav>
       </div>
     </header>
 
     <main class="container">
-      <h2>Edit Import Receipt</h2>
+      <h2>Chỉnh Sửa Phiếu Nhập Hàng</h2>
 
       <form class="form">
         <div style="display: flex; gap: 16px; flex-wrap: wrap">
           <div style="flex: 1; min-width: 250px">
-            <label><b>Import Date</b></label
+            <label><b>Ngày Nhập</b></label
             ><br />
             <input type="date" value="2025-10-10" />
           </div>
+
           <div style="flex: 1; min-width: 250px">
-            <label><b>Supplier</b></label
+            <label><b>Nhà Cung Cấp</b></label
             ><br />
-            <input type="text" value="FAHASA" />
+            <select id="supplier-select">
+              <option value="FAHASA">FAHASA</option>
+              <option value="Phương Nam Book">Phương Nam Book</option>
+              <option value="Alpha Books">Alpha Books</option>
+              <option value="NXB Trẻ">NXB Trẻ</option>
+              <option value="Tân Việt Books">Tân Việt Books</option>
+              <option value="Kim Đồng Publisher">Nhà Xuất Bản Kim Đồng</option>
+              <option value="ADC Book Distributor">
+                Nhà Phân Phối Sách ADC
+              </option>
+            </select>
           </div>
+
           <div style="flex: 1; min-width: 250px">
-            <label><b>Handled By</b></label
+            <label><b>Người Xử Lý</b></label
             ><br />
             <input type="text" value="Trần Tiến Phát" />
           </div>
         </div>
 
-        <h3 style="margin-top: 20px">Product List</h3>
+        <h3 style="margin-top: 20px">Danh Sách Sản Phẩm</h3>
 
         <table class="table" id="productTable">
           <tr>
-            <th>Product ID</th>
-            <th>Product Name</th>
-            <th>Quantity</th>
-            <th>Unit Cost</th>
-            <th>Action</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Số Lượng</th>
+            <th>Đơn Giá Nhập</th>
+            <th>Thao Tác</th>
           </tr>
 
           <tr>
-            <td>P001</td>
             <td>Số Đỏ</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="85000" /></td>
@@ -65,12 +79,11 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
           <tr>
-            <td>P002</td>
             <td>Nỗi Buồn Chiến Tranh</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="90000" /></td>
@@ -80,12 +93,11 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
           <tr>
-            <td>P003</td>
             <td>Tuổi Trẻ Đáng Giá Bao Nhiêu</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="70000" /></td>
@@ -95,12 +107,11 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
           <tr>
-            <td>P004</td>
             <td>Đắc Nhân Tâm</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="95000" /></td>
@@ -110,12 +121,11 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
           <tr>
-            <td>P005</td>
             <td>Nhà Giả Kim</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="80000" /></td>
@@ -125,12 +135,11 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
           <tr>
-            <td>P006</td>
             <td>Hạt Giống Tâm Hồn</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="65000" /></td>
@@ -140,12 +149,11 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
           <tr>
-            <td>P007</td>
             <td>Thép Đã Tôi Thế Đấy</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="78000" /></td>
@@ -155,12 +163,11 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
           <tr>
-            <td>P008</td>
             <td>Vũ Trụ Trong Vỏ Hạt Dẻ</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="110000" /></td>
@@ -170,12 +177,11 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
           <tr>
-            <td>P009</td>
             <td>Dế Mèn Phiêu Lưu Ký</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="60000" /></td>
@@ -185,12 +191,11 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
           <tr>
-            <td>P010</td>
             <td>Harry Potter and the Sorcerer’s Stone</td>
             <td><input type="number" value="100" /></td>
             <td><input type="number" value="120000" /></td>
@@ -200,7 +205,7 @@
                 type="button"
                 onclick="this.closest('tr').remove()"
               >
-                Remove
+                Xóa
               </button>
             </td>
           </tr>
@@ -208,12 +213,12 @@
 
         <div style="margin-top: 10px">
           <button type="button" class="btn" onclick="addRow()">
-            + Add Product
+            + Thêm Sản Phẩm
           </button>
         </div>
 
         <div style="margin-top: 20px; text-align: right; font-weight: bold">
-          Total Amount: ₫85,300,000
+          Tổng Tiền: ₫85,300,000
         </div>
 
         <div
@@ -229,29 +234,36 @@
             class="btn ghost"
             onclick="location.href='receiptconfirm.html'"
           >
-            Cancel
+            Hủy
           </button>
           <button
             type="button"
             class="btn"
             onclick="location.href='receiptconfirm.html'"
           >
-            Save Changes
+            Lưu Thay Đổi
           </button>
         </div>
       </form>
     </main>
 
     <script>
+      new SlimSelect({
+        select: "#supplier-select",
+        settings: {
+          showSearch: true,
+          searchPlaceholder: "Tìm kiếm nhà cung cấp...",
+        },
+      });
+
       function addRow() {
         const table = document.getElementById("productTable");
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td><input type="text" placeholder="P00X" /></td>
-          <td><input type="text" placeholder="Book Title" /></td>
+          <td><input type="text" placeholder="Tên Sách" /></td>
           <td><input type="number" min="1" placeholder="0" /></td>
           <td><input type="number" min="0" placeholder="0" /></td>
-          <td><button type="button" class="btn ghost" onclick="this.closest('tr').remove()">Remove</button></td>
+          <td><button type="button" class="btn ghost" onclick="this.closest('tr').remove()">Xóa</button></td>
         `;
         table.appendChild(row);
       }

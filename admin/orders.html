@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orders Management</title>
+    <title>Quản lý Đơn hàng</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
@@ -12,184 +12,192 @@
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
-        <nav class="nav"><a href="dashboard.html">Dashboard</a></nav>
+        <nav class="nav"><a href="dashboard.html">Trang chủ</a></nav>
       </div>
     </header>
 
     <main class="container">
-      <h2>Orders Management</h2>
+      <h2>Quản lý Đơn hàng</h2>
 
-      <!-- ====== Filter section ====== -->
-      <div class="filter">
-        <label><b>Filter by Status:</b></label>
-        <select id="statusFilter">
-          <option value="">All</option>
-          <option>New</option>
-          <option>Processing</option>
-          <option>Delivered</option>
-          <option>Cancelled</option>
-        </select>
+      <!-- ====== Bộ lọc ====== -->
+      <div
+        class="form"
+        style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end"
+      >
+        <div style="flex: 1; min-width: 200px">
+          <label><b>Trạng thái</b></label
+          ><br />
+          <select id="statusFilter">
+            <option value="">Tất cả</option>
+            <option>Mới</option>
+            <option>Đang xử lý</option>
+            <option>Đã giao</option>
+            <option>Đã hủy</option>
+          </select>
+        </div>
 
-        <label><b>Date Range:</b></label>
-        <input type="date" id="fromDate" />
-        <span>to</span>
-        <input type="date" id="toDate" />
+        <div style="flex: 1; min-width: 200px">
+          <label><b>Từ ngày</b></label
+          ><br />
+          <input type="date" id="fromDate" />
+        </div>
 
-        <a class="btn" href="orders_filtered.html">Filter</a>
+        <div style="flex: 1; min-width: 200px">
+          <label><b>Đến ngày</b></label
+          ><br />
+          <input type="date" id="toDate" />
+        </div>
+
+        <div>
+          <button class="btn" type="button" onclick="filterRandom()">
+            Lọc
+          </button>
+        </div>
       </div>
 
-      <!-- ====== Orders Table ====== -->
+      <!-- ====== Bảng đơn hàng ====== -->
       <table class="table">
         <thead>
           <tr>
-            <th>Order ID</th>
-            <th>Customer</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Total</th>
-            <th>Action</th>
+            <th>Mã đơn</th>
+            <th>Khách hàng</th>
+            <th>Ngày đặt</th>
+            <th>Trạng thái</th>
+            <th>Tổng tiền</th>
+            <th>Thao tác</th>
           </tr>
         </thead>
 
         <tbody id="orderTable">
           <tr>
             <td>O001</td>
-            <td>Cao Thai Phuong Thanh</td>
+            <td>Cao Thái Phương Thanh</td>
             <td>2025-01-25</td>
-            <td><span class="badge">Delivered</span></td>
+            <td><span class="badge">Đã giao</span></td>
             <td>₫445,000</td>
             <td>
-              <a class="btn" href="order_detail.html">Detail</a>
+              <a class="btn" href="order_detail.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O001')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
-
           <tr>
             <td>O002</td>
-            <td>Cao Thai Phuong Thanh</td>
+            <td>Cao Thái Phương Thanh</td>
             <td>2025-01-26</td>
-            <td><span class="badge">Cancelled</span></td>
+            <td><span class="badge">Đã hủy</span></td>
             <td>₫310,000</td>
             <td>
-              <a class="btn" href="order_detail2.html">Detail</a>
+              <a class="btn" href="order_detail2.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O002')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
-
           <tr>
             <td>O003</td>
-            <td>Phan Tan Quoc</td>
+            <td>Phan Tấn Quốc</td>
             <td>2025-01-27</td>
-            <td><span class="badge">Delivered</span></td>
+            <td><span class="badge">Đã giao</span></td>
             <td>₫600,000</td>
             <td>
-              <a class="btn" href="order_detail.html">Detail</a>
+              <a class="btn" href="order_detail.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O003')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
-
           <tr>
             <td>O004</td>
-            <td>Pham The Bao</td>
+            <td>Phạm Thế Bảo</td>
             <td>2025-01-27</td>
-            <td><span class="badge">Cancelled</span></td>
+            <td><span class="badge">Đã hủy</span></td>
             <td>₫280,000</td>
             <td>
-              <a class="btn" href="order_detail2.html">Detail</a>
+              <a class="btn" href="order_detail2.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O004')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
-
           <tr>
             <td>O005</td>
-            <td>Trinh Tan Dat</td>
+            <td>Trịnh Tấn Đạt</td>
             <td>2025-01-28</td>
-            <td><span class="badge">Processing</span></td>
+            <td><span class="badge">Đang xử lý</span></td>
             <td>₫520,000</td>
             <td>
-              <a class="btn" href="order_detail.html">Detail</a>
+              <a class="btn" href="order_detail.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O005')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
-
           <tr>
             <td>O006</td>
-            <td>Hoang Manh Ha</td>
+            <td>Hoàng Mạnh Hà</td>
             <td>2025-01-28</td>
-            <td><span class="badge">New</span></td>
+            <td><span class="badge">Mới</span></td>
             <td>₫310,000</td>
             <td>
-              <a class="btn" href="order_detail.html">Detail</a>
+              <a class="btn" href="order_detail.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O006')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
-
           <tr>
             <td>O007</td>
-            <td>Do Thi Nhu Loan</td>
+            <td>Đỗ Thị Như Loan</td>
             <td>2025-01-29</td>
-            <td><span class="badge">Delivered</span></td>
+            <td><span class="badge">Đã giao</span></td>
             <td>₫750,000</td>
             <td>
-              <a class="btn" href="order_detail.html">Detail</a>
+              <a class="btn" href="order_detail.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O007')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
-
           <tr>
             <td>O008</td>
-            <td>Nguyen Hoa</td>
+            <td>Nguyễn Hoà</td>
             <td>2025-01-29</td>
-            <td><span class="badge">Processing</span></td>
+            <td><span class="badge">Đang xử lý</span></td>
             <td>₫270,000</td>
             <td>
-              <a class="btn" href="order_detail.html">Detail</a>
+              <a class="btn" href="order_detail.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O008')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
-
           <tr>
             <td>O009</td>
-            <td>Huynh Minh Tri</td>
+            <td>Huỳnh Minh Trí</td>
             <td>2025-01-30</td>
-            <td><span class="badge">Delivered</span></td>
+            <td><span class="badge">Đã giao</span></td>
             <td>₫830,000</td>
             <td>
-              <a class="btn" href="order_detail.html">Detail</a>
+              <a class="btn" href="order_detail.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O009')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
-
           <tr>
             <td>O010</td>
-            <td>Huynh Van Phuoc</td>
+            <td>Huỳnh Vạn Phước</td>
             <td>2025-01-30</td>
-            <td><span class="badge">Delivered</span></td>
+            <td><span class="badge">Đã giao</span></td>
             <td>₫880,000</td>
             <td>
-              <a class="btn" href="order_detail.html">Detail</a>
+              <a class="btn" href="order_detail.html">Chi tiết</a>
               <button class="btn ghost" onclick="updateStatus('O010')">
-                Update
+                Cập nhật
               </button>
             </td>
           </tr>
@@ -197,26 +205,28 @@
       </table>
     </main>
 
-    <!-- ====== Modal (Update Status) ====== -->
+    <!-- ====== Hộp thoại Cập nhật Trạng thái ====== -->
     <div class="modal" id="statusModal">
       <div class="modal-content">
-        <h3>Update Order Status</h3>
+        <h3>Cập nhật Trạng thái Đơn hàng</h3>
         <form>
-          <label><b>Order ID:</b></label>
+          <label><b>Mã đơn hàng:</b></label>
           <input type="text" id="modalOrderId" readonly />
-          <label><b>New Status:</b></label>
+
+          <label><b>Trạng thái mới:</b></label>
           <select id="newStatus">
-            <option>New</option>
-            <option>Processing</option>
-            <option>Delivered</option>
-            <option>Cancelled</option>
+            <option>Mới</option>
+            <option>Đang xử lý</option>
+            <option>Đã giao</option>
+            <option>Đã hủy</option>
           </select>
+
           <div class="modal-actions">
             <button type="button" class="btn ghost" onclick="closeModal()">
-              Cancel
+              Hủy
             </button>
             <button type="button" class="btn" onclick="saveStatus()">
-              Save
+              Lưu
             </button>
           </div>
         </form>
@@ -224,6 +234,14 @@
     </div>
 
     <script>
+      document.querySelectorAll(".badge").forEach((badge) => {
+        const text = badge.textContent.trim();
+
+        if (text === "Mới") badge.classList.add("moi");
+        else if (text === "Đang xử lý") badge.classList.add("xuly");
+        else if (text === "Đã giao") badge.classList.add("dagiao");
+        else if (text === "Đã hủy") badge.classList.add("dahuy");
+      });
       function updateStatus(id) {
         document.getElementById("modalOrderId").value = id;
         document.getElementById("statusModal").style.display = "flex";
@@ -234,8 +252,33 @@
       }
 
       function saveStatus() {
-        alert("Order status updated successfully!");
+        const id = document.getElementById("modalOrderId").value;
+        const status = document.getElementById("newStatus").value;
+        const rows = document.querySelectorAll("#orderTable tr");
+
+        rows.forEach((row) => {
+          if (row.cells[0].textContent === id) {
+            const badge = row.querySelector(".badge");
+            badge.textContent = status;
+            badge.className = "badge"; // reset class
+            if (status === "Mới") badge.classList.add("moi");
+            if (status === "Đang xử lý") badge.classList.add("xuly");
+            if (status === "Đã giao") badge.classList.add("dagiao");
+            if (status === "Đã hủy") badge.classList.add("dahuy");
+          }
+        });
+
+        alert("✅ Đã cập nhật trạng thái đơn hàng!");
         closeModal();
+      }
+
+      // ====== Lọc ngẫu nhiên ======
+      function filterRandom() {
+        const rows = document.querySelectorAll("#orderTable tr");
+        rows.forEach((row) => {
+          // 50% cơ hội bị ẩn ngẫu nhiên
+          row.style.display = Math.random() > 0.5 ? "none" : "";
+        });
       }
     </script>
   </body>

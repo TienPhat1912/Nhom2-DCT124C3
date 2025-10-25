@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Revenue - This Month</title>
+    <title>Doanh thu - Tháng này</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
@@ -12,119 +12,118 @@
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" alt="logo" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
         <nav class="nav">
-          <a href="dashboard.html">Dashboard</a>
+          <a href="dashboard.html">Trang chủ</a>
         </nav>
       </div>
     </header>
 
     <main class="container">
-      <h2>Revenue - This Month</h2>
-      <p class="text-muted">Showing revenue for <b>October 2025</b></p>
+      <h2>Doanh thu - Tháng này</h2>
+      <p class="text-muted">Hiển thị doanh thu cho <b>Tháng 10 năm 2025</b></p>
 
-      <!-- FILTER BUTTONS (reuse same classes) -->
+      <!-- NÚT LỌC -->
       <div class="revenue-filter">
         <button class="btn ghost" onclick="location.href='revenue.html'">
-          Today
+          Hôm nay
         </button>
         <button class="btn ghost" onclick="location.href='revenue_week.html'">
-          This Week
+          Tuần này
         </button>
-        <button class="btn active">This Month</button>
+        <button class="btn active">Tháng này</button>
         <button class="btn ghost" id="btnRange" onclick="toggleRange()">
-          Custom Range
+          Khoảng tùy chọn
         </button>
       </div>
 
-      <!-- RANGE BOX (hidden by default, toggled by JS) -->
+      <!-- CHỌN KHOẢNG NGÀY -->
       <div id="rangeForm" class="range-box">
-        <label><b>Select Date Range:</b></label>
+        <label><b>Chọn khoảng thời gian:</b></label>
         <div class="range-inputs">
           <input type="date" id="fromDate" />
-          <span>to</span>
+          <span>đến</span>
           <input type="date" id="toDate" />
-          <button class="btn" onclick="goRange()">Search</button>
+          <button class="btn" onclick="goRange()">Tìm kiếm</button>
         </div>
       </div>
 
-      <!-- SUMMARY CARDS -->
+      <!-- THÔNG TIN TỔNG HỢP -->
       <section class="summary-grid">
         <div class="summary-card card-blue">
-          <h3>Total Orders</h3>
+          <h3>Tổng đơn hàng</h3>
           <p>128</p>
         </div>
 
         <div class="summary-card card-green">
-          <h3>Books Sold</h3>
+          <h3>Sách đã bán</h3>
           <p>436</p>
         </div>
 
         <div class="summary-card card-yellow">
-          <h3>Total Revenue</h3>
+          <h3>Tổng doanh thu</h3>
           <p>₫62,540,000</p>
         </div>
 
         <div class="summary-card card-purple">
-          <h3>Estimated Profit</h3>
+          <h3>Lợi nhuận ước tính</h3>
           <p>₫13,280,000</p>
         </div>
       </section>
 
-      <!-- TOP SELLING TABLE -->
-      <!-- CATEGORY REVENUE TABLE -->
+      <!-- BẢNG DOANH THU -->
       <section class="table-section">
-        <h3>Revenue by Category (This Month)</h3>
+        <h3>Doanh thu theo danh mục (Tháng này)</h3>
         <table class="table">
           <thead>
             <tr>
-              <th>Category</th>
-              <th>Books Sold</th>
-              <th>Total Revenue</th>
-              <th>Profit (Est.)</th>
+              <th>Danh mục</th>
+              <th>Số lượng bán</th>
+              <th>Tổng doanh thu</th>
+              <th>Lợi nhuận (ước tính)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Novel</td>
+              <td>Tiểu thuyết</td>
               <td>160</td>
               <td>₫24,200,000</td>
               <td>₫4,800,000</td>
             </tr>
             <tr>
-              <td>Psychology</td>
+              <td>Tâm lý</td>
               <td>85</td>
               <td>₫12,600,000</td>
               <td>₫2,300,000</td>
             </tr>
             <tr>
-              <td>Education</td>
+              <td>Giáo dục</td>
               <td>60</td>
               <td>₫9,000,000</td>
               <td>₫1,500,000</td>
             </tr>
             <tr>
-              <td>Documents</td>
+              <td>Tài liệu</td>
               <td>45</td>
               <td>₫6,200,000</td>
               <td>₫900,000</td>
             </tr>
             <tr>
-              <td>Science</td>
+              <td>Khoa học</td>
               <td>38</td>
               <td>₫5,100,000</td>
               <td>₫780,000</td>
             </tr>
             <tr>
-              <td>History</td>
+              <td>Lịch sử</td>
               <td>28</td>
               <td>₫3,440,000</td>
               <td>₫620,000</td>
             </tr>
           </tbody>
         </table>
-        <p class="total-footer">Total Revenue (This Month): ₫62,540,000</p>
+        <p class="total-footer">Tổng doanh thu (Tháng này): ₫62,540,000</p>
       </section>
     </main>
 
@@ -136,12 +135,7 @@
       }
 
       function goRange() {
-        const from = document.getElementById("fromDate").value;
-        const to = document.getElementById("toDate").value;
-        if (!from || !to) {
-          alert("Please select both start and end dates!");
-          return;
-        }
+        // Bỏ kiểm tra bắt buộc chọn ngày
         location.href = "revenue_range.html";
       }
     </script>

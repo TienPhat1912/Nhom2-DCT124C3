@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customers</title>
+    <title>Quản lí khách hàng</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
@@ -11,172 +11,144 @@
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
-        <nav class="nav"><a href="dashboard.html">Dashboard</a></nav>
+        <nav class="nav"><a href="dashboard.html">Trang Chủ</a></nav>
       </div>
     </header>
     <main class="container">
-      <h2>Customers</h2>
+      <h1 style="text-align: center; font-size: 36px">KHÁCH HÀNG</h1>
       <table class="table">
         <tr>
           <th>ID</th>
-          <th>Name</th>
-          <th>Last Purchase</th>
-          <th>Status</th>
-          <th>Action</th>
+          <th>Tên</th>
+          <th>Lượt mua gần nhất</th>
+          <th>Trạng Thái</th>
+          <th></th>
         </tr>
         <tr>
           <td>C001</td>
           <td>Cao Thai Phuong Thanh</td>
           <td>2025-09-01</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
         <tr>
           <td>C002</td>
           <td>Phan Tan Quoc</td>
           <td>2025-09-02</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
         <tr>
           <td>C003</td>
           <td>Pham The Bao</td>
           <td>2025-09-03</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
         <tr>
           <td>C004</td>
           <td>Trinh Tan Dat</td>
           <td>2025-09-04</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
         <tr>
           <td>C005</td>
           <td>Hoang Manh Ha</td>
           <td>2025-09-05</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
         <tr>
           <td>C006</td>
           <td>Nguyen Hoa</td>
           <td>2025-09-06</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
         <tr>
           <td>C007</td>
           <td>Do Thi Nhu Loan</td>
           <td>2025-09-07</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
         <tr>
           <td>C008</td>
           <td>Nguyen Thanh Dai</td>
           <td>2025-09-08</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
         <tr>
           <td>C009</td>
           <td>Le Dang Tien</td>
           <td>2025-09-09</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
         <tr>
           <td>C010</td>
           <td>Luu Luong Manh Dung</td>
           <td>2025-09-10</td>
-          <td>Active</td>
+          <td class="status">Đang hoạt động</td>
           <td>
-            <a class="btn" href="customer_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Customer Blocked'); location.href='customer_block.html';"
-            >
-              Block
-            </button>
+            <a class="btn" href="customer_detail.html">Chi tiết</a>
+            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
           </td>
         </tr>
       </table>
     </main>
+    <script>
+      function toggleStatus(btn) {
+        const row = btn.closest("tr");
+        const statusCell = row.querySelector(".status");
+
+        // Xác nhận hành động
+        const action =
+          statusCell.textContent === "Đang hoạt động" ? "khóa" : "mở khóa";
+        if (!confirm(`Bạn có chắc chắn muốn ${action} khách hàng này?`)) {
+          return; // Nếu nhấn Cancel, không làm gì cả
+        }
+
+        // Thay đổi trạng thái
+        if (statusCell.textContent === "Đang hoạt động") {
+          statusCell.textContent = "Đã khóa";
+          btn.textContent = "Mở khóa";
+        } else {
+          statusCell.textContent = "Đang hoạt động";
+          btn.textContent = "Khóa";
+        }
+      }
+    </script>
   </body>
 </html>

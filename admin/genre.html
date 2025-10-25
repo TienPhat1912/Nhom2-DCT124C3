@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Genre Management</title>
+    <title>Quản lý Thể loại</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
@@ -12,296 +12,237 @@
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
         <nav class="nav">
-          <a href="dashboard.html">Dashboard</a>
+          <a href="dashboard.html">Trang chủ</a>
         </nav>
       </div>
     </header>
 
     <main class="container">
-      <h2>Genre Management</h2>
+      <h2>Quản Lý Thể Loại</h2>
 
       <div style="margin-bottom: 16px">
-        <button class="btn" id="openAddModal">Add Genre</button>
+        <button class="btn" id="openAddModal">Thêm thể loại</button>
       </div>
 
       <table class="table">
         <tr>
-          <th>Genre Name</th>
-          <th>Number of Books</th>
-          <th>Status</th>
-          <th>Action</th>
+          <th>Tên thể loại</th>
+          <th>Số lượng sách</th>
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
         </tr>
 
         <tr>
-          <td>Novel</td>
+          <td>Tiểu thuyết</td>
           <td>25</td>
-          <td style="color: green; font-weight: 600">Active</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Novel','Active')">
-              Edit
-            </button>
-            <button class="btn" onclick="confirmDelete('Novel')">Delete</button>
             <button
               class="btn"
-              onclick="alert('Genre Hidden'); location.reload();"
+              onclick="openEditModal('Tiểu thuyết','Hoạt động')"
             >
-              Hide
+              Sửa
             </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
-          <td>Science</td>
+          <td>Khoa học</td>
           <td>18</td>
-          <td style="color: green; font-weight: 600">Active</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Science','Active')">
-              Edit
+            <button class="btn" onclick="openEditModal('Khoa học','Hoạt động')">
+              Sửa
             </button>
-            <button class="btn" onclick="confirmDelete('Science')">
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Genre Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
-          <td>History</td>
+          <td>Lịch sử</td>
           <td>12</td>
-          <td style="color: green; font-weight: 600">Active</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('History','Active')">
-              Edit
+            <button class="btn" onclick="openEditModal('Lịch sử','Hoạt động')">
+              Sửa
             </button>
-            <button class="btn" onclick="confirmDelete('History')">
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Genre Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
-          <td>Psychology</td>
+          <td>Tâm lý học</td>
           <td>14</td>
-          <td style="color: green; font-weight: 600">Active</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Psychology','Active')">
-              Edit
-            </button>
-            <button class="btn" onclick="confirmDelete('Psychology')">
-              Delete
-            </button>
             <button
               class="btn"
-              onclick="alert('Genre Hidden'); location.reload();"
+              onclick="openEditModal('Tâm lý học','Hoạt động')"
             >
-              Hide
+              Sửa
             </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
-          <td>Education</td>
+          <td>Giáo dục</td>
           <td>20</td>
-          <td style="color: green; font-weight: 600">Active</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Education','Active')">
-              Edit
+            <button class="btn" onclick="openEditModal('Giáo dục','Hoạt động')">
+              Sửa
             </button>
-            <button class="btn" onclick="confirmDelete('Education')">
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Genre Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
-          <td>Documents</td>
+          <td>Tài liệu</td>
           <td>10</td>
-          <td style="color: orange; font-weight: 600">Inactive</td>
+          <td><hoạt class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Documents','Inactive')">
-              Edit
-            </button>
-            <button class="btn" onclick="confirmDelete('Documents')">
-              Delete
-            </button>
             <button
               class="btn"
-              onclick="alert('Genre Unhidden'); location.reload();"
+              onclick="openEditModal('Tài liệu','Hoạt động')"
             >
-              Unhide
+              Sửa
             </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
-          <td>Reference</td>
+          <td>Tham khảo</td>
           <td>8</td>
-          <td style="color: green; font-weight: 600">Active</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Reference','Active')">
-              Edit
-            </button>
-            <button class="btn" onclick="confirmDelete('Reference')">
-              Delete
-            </button>
             <button
               class="btn"
-              onclick="alert('Genre Hidden'); location.reload();"
+              onclick="openEditModal('Tham khảo','Hoạt động')"
             >
-              Hide
+              Sửa
             </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
-          <td>Guides</td>
+          <td>Hướng dẫn</td>
           <td>15</td>
-          <td style="color: green; font-weight: 600">Active</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Guides','Active')">
-              Edit
-            </button>
-            <button class="btn" onclick="confirmDelete('Guides')">
-              Delete
-            </button>
             <button
               class="btn"
-              onclick="alert('Genre Hidden'); location.reload();"
+              onclick="openEditModal('Hướng dẫn','Hoạt động')"
             >
-              Hide
+              Sửa
             </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
-          <td>Manga</td>
+          <td>Truyện tranh</td>
           <td>30</td>
-          <td style="color: green; font-weight: 600">Active</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Manga','Active')">
-              Edit
-            </button>
-            <button class="btn" onclick="confirmDelete('Manga')">Delete</button>
             <button
               class="btn"
-              onclick="alert('Genre Hidden'); location.reload();"
+              onclick="openEditModal('Truyện tranh','Hoạt động')"
             >
-              Hide
+              Sửa
             </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
           <td>Light Novel</td>
           <td>22</td>
-          <td style="color: green; font-weight: 600">Active</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Light Novel','Active')">
-              Edit
-            </button>
-            <button class="btn" onclick="confirmDelete('Light Novel')">
-              Delete
-            </button>
             <button
               class="btn"
-              onclick="alert('Genre Hidden'); location.reload();"
+              onclick="openEditModal('Light Novel','Hoạt động')"
             >
-              Hide
+              Sửa
             </button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
         </tr>
       </table>
     </main>
 
-    <!-- Popup: Add Genre -->
+    <!-- Popup: Thêm thể loại -->
     <div class="modal" id="addModal">
       <div class="modal-content">
-        <h3>Add New Genre</h3>
+        <h3>Thêm thể loại mới</h3>
         <form id="addGenreForm">
-          <label>Genre Name:</label>
+          <label>Tên thể loại:</label>
           <input
             type="text"
             id="addGenreName"
-            placeholder="Enter genre name"
+            placeholder="Nhập tên thể loại"
             required
           />
 
-          <label>Description:</label>
-          <textarea
-            id="addGenreDesc"
-            placeholder="Short description..."
-            rows="3"
-          ></textarea>
-
-          <label>Status:</label>
+          <label>Trạng thái:</label>
           <select id="addGenreStatus">
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
+            <option value="Hoạt động">Hoạt động</option>
+            <option value="Không hoạt động">Không hoạt động</option>
           </select>
 
           <div class="modal-actions">
-            <button type="button" class="btn" id="saveAddGenre">Save</button>
+            <button type="button" class="btn" id="saveAddGenre">Lưu</button>
             <button
               type="button"
               class="btn ghost"
               onclick="closeModal('addModal')"
             >
-              Cancel
+              Hủy
             </button>
           </div>
         </form>
       </div>
     </div>
 
-    <!-- Popup: Edit Genre -->
+    <!-- Popup: Sửa thể loại -->
     <div class="modal" id="editModal">
       <div class="modal-content">
-        <h3>Edit Genre</h3>
+        <h3>Chỉnh sửa thể loại</h3>
         <form id="editGenreForm">
-          <label>Genre Name:</label>
+          <label>Tên thể loại:</label>
           <input type="text" id="editGenreName" required />
 
-          <label>Description:</label>
-          <textarea
-            id="editGenreDesc"
-            placeholder="Short description..."
-            rows="3"
-          ></textarea>
-
-          <label>Status:</label>
+          <label>Trạng thái:</label>
           <select id="editGenreStatus">
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
+            <option value="Hoạt động">Hoạt động</option>
+            <option value="Không hoạt động">Không hoạt động</option>
           </select>
 
           <div class="modal-actions">
-            <button type="button" class="btn" id="saveEditGenre">Save</button>
+            <button type="button" class="btn" id="saveEditGenre">Lưu</button>
             <button
               type="button"
               class="btn ghost"
               onclick="closeModal('editModal')"
             >
-              Cancel
+              Hủy
             </button>
           </div>
         </form>
@@ -309,13 +250,14 @@
     </div>
 
     <script>
-      // Mở và đóng modal
+      // 🪄 Mở modal thêm
       const openAddModalBtn = document.getElementById("openAddModal");
       const addModal = document.getElementById("addModal");
       const editModal = document.getElementById("editModal");
 
       openAddModalBtn.onclick = () => (addModal.style.display = "flex");
 
+      // Đóng modal
       function closeModal(id) {
         document.getElementById(id).style.display = "none";
       }
@@ -328,19 +270,44 @@
       // Thêm thể loại mới
       document.getElementById("saveAddGenre").onclick = () => {
         const name = document.getElementById("addGenreName").value;
-        alert(`Genre "${name}" added successfully!`);
+        alert(`Đã thêm thể loại "${name}" thành công!`);
         closeModal("addModal");
       };
 
       // Xóa thể loại
-      function confirmDelete(name) {
-        if (confirm(`Are you sure you want to delete "${name}"?`)) {
-          alert(`Genre "${name}" deleted.`);
-          location.reload();
+      function deleteGenre(btn) {
+        const name = btn.closest("tr").querySelector("td").textContent;
+        if (confirm(`Bạn có chắc muốn xóa thể loại "${name}" không?`)) {
+          btn.closest("tr").remove();
+          alert(`Đã xóa thể loại "${name}"!`);
         }
       }
 
-      // Mở modal chỉnh sửa
+      // Ẩn / Hiện thể loại
+      function toggleGenre(btn) {
+        const row = btn.closest("tr");
+        const statusCell = row.querySelector(".status");
+
+        if (row.classList.contains("hidden-row")) {
+          row.classList.remove("hidden-row");
+          statusCell.textContent = "Hoạt động";
+          btn.textContent = "Ẩn";
+          alert("Thể loại đã được hiển thị lại!");
+        } else {
+          if (
+            confirm(
+              "Bạn có chắc muốn ẩn thể loại này khỏi cửa hàng không?"
+            )
+          ) {
+            row.classList.add("hidden-row");
+            statusCell.textContent = "Không hoạt động";
+            btn.textContent = "Hiện";
+            alert("Thể loại đã được ẩn!");
+          }
+        }
+      }
+
+      // Mở modal sửa
       function openEditModal(name, status) {
         document.getElementById("editGenreName").value = name;
         document.getElementById("editGenreStatus").value = status;
@@ -350,7 +317,7 @@
       // Lưu chỉnh sửa
       document.getElementById("saveEditGenre").onclick = () => {
         const name = document.getElementById("editGenreName").value;
-        alert(`Genre "${name}" updated successfully!`);
+        alert(`Đã cập nhật thông tin thể loại "${name}"!`);
         closeModal("editModal");
       };
     </script>

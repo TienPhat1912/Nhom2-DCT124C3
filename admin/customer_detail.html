@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customer Detail</title>
+    <title>Thông tin khách hàng</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
@@ -11,13 +11,13 @@
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÍ NHÀ SÁCH</h1>
         </div>
-        <nav class="nav"><a href="dashboard.html">Dashboard</a></nav>
+        <nav class="nav"><a href="dashboard.html">Trang chủ</a></nav>
       </div>
     </header>
     <main class="container">
-      <h2>Customer Detail</h2>
+      <h2>Thông tin chi tiết</h2>
       <div class="form" style="display: flex; align-items: center; gap: 32px">
         <img
           src="../img/avatar.png"
@@ -30,66 +30,30 @@
         />
         <div>
           <p>ID: C001</p>
-          <p>First Name: Cao</p>
-          <p>Last Name:Thai Phuong Thanh</p>
-          <p>Birth: 1990-01-01</p>
+          <p>Họ: Cao</p>
+          <p>Tên:Thai Phuong Thanh</p>
+          <p>Ngày sinh: 1990-01-01</p>
           <p>Email: thanhcao@gmail.com</p>
-          <p>Phone: 0909 022 966</p>
-          <p>Address: 273, An Duong Vuong, District 5, Ho Chi Minh City</p>
+          <p>Số điện thoại: 0909 022 966</p>
+          <p>Địa chỉ: 273, An Duong Vuong, District 5, Ho Chi Minh City</p>
         </div>
       </div>
-      <h3>Password</h3>
-
-      <div class="form">
-        <p>
-          Password:
-          <span id="password" style="letter-spacing: 2px">••••••••</span>
-          <button class="btn" type="button" onclick="togglePassword()">
-            View
-          </button>
-        </p>
-        <script>
-          function togglePassword() {
-            const pwdSpan = document.getElementById("password");
-            if (pwdSpan.textContent === "••••••••") {
-              pwdSpan.textContent = "ToiyeuSGU"; // Replace with actual password if available
-            } else {
-              pwdSpan.textContent = "••••••••";
-            }
-          }
-        </script>
-        <div class="row">
-          <label>New Password</label>
-          <input type="password" />
-        </div>
-        <div class="row">
-          <label>Confirm Password</label>
-          <input type="password" />
-        </div>
-        <button
-          class="btn"
-          onclick="alert('Password Updated'); location.href='customers.html';"
-        >
-          Update Password
-        </button>
-      </div>
-
-      <h3>Orders</h3>
+      <h3>Lịch sử mua hàng</h3>
       <table class="table">
         <tr>
-          <th>Order ID</th>
-          <th>Date</th>
-          <th>Action</th>
+          <th>Mã đơn hàng</th>
+          <th>Ngày mua</th>
+          <th></th>
         </tr>
         <tr>
           <td>O001</td>
-          <td>2025-09-01</td>
-          <td><a class="btn" href="order_detail.html">Detail</a></td>
+          <td>2025-01-25</td>
+          <td><a class="btn" href="order_detail.html">Chi tiết</a></td>
         </tr>
         <tr>
           <td>O002</td>
-          <td>2025-09-10</td>
-          <td><a class="btn" href="order_detail2.html">Detail</a></td>
+          <td>2025-01-26</td>
+          <td><a class="btn" href="order_detail2.html">Chi tiết</a></td>
         </tr>
       </table>
     </main>

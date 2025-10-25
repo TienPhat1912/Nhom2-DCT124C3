@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inventory Management</title>
+    <title>Tra cứu Tồn kho</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
+
   <body>
     <header class="header">
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
         <nav class="nav">
-          <a href="dashboard.html">Dashboard</a>
+          <a href="dashboard.html">Trang chủ</a>
         </nav>
       </div>
     </header>
@@ -22,235 +23,111 @@
     <main>
       <!-- ===================== TRA CỨU TỒN KHO ===================== -->
       <section class="container" style="margin-top: 30px">
-        <h2>Inventory Lookup</h2>
+        <h2>Tra cứu Tồn kho</h2>
 
-        <!-- Nút chuyển giữa 2 form -->
-        <div style="display: flex; gap: 10px; margin-bottom: 20px">
-          <button
-            id="btnDate"
-            class="btn"
-            style="
-              flex: 1;
-              padding: 10px;
-              border-radius: 8px;
-              background: #2d6cdf;
-              color: #fff;
-            "
-            onclick="showForm('date')"
-          >
-            Lookup by Date
-          </button>
-          <button
-            id="btnRange"
-            class="btn ghost"
-            style="flex: 1; padding: 10px; border-radius: 8px"
-            onclick="showForm('range')"
-          >
-            Lookup by Date Range
-          </button>
-        </div>
-
-        <!-- ==== FORM THEO NGÀY ==== -->
         <div
-          id="formDate"
+          class="form"
           style="
-            display: block;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
             background: #fff;
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
           "
         >
-          <form
-            class="form"
-            style="display: flex; flex-direction: column; gap: 14px"
-          >
-            <div>
-              <label><b>Search Mode:</b></label>
-              <div
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 24px;
-                  margin-top: 6px;
-                "
-              >
-                <label style="display: flex; align-items: center; gap: 6px">
-                  <input
-                    type="radio"
-                    name="searchMode"
-                    value="product"
-                    checked
-                  />
-                  <span>By Product</span>
-                </label>
-                <label style="display: flex; align-items: center; gap: 6px">
-                  <input type="radio" name="searchMode" value="category" />
-                  <span>By Category</span>
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <label><b>Product ID or Name:</b></label
-              ><br />
-              <input
-                type="text"
-                id="productName"
-                placeholder="Enter product ID or name..."
-                style="
-                  width: 100%;
-                  padding: 8px;
-                  border-radius: 6px;
-                  border: 1px solid #ccc;
-                "
-              />
-            </div>
-
-            <div>
-              <label><b>Product Category:</b></label
-              ><br />
-              <select
-                id="productType"
-                style="
-                  width: 100%;
-                  padding: 8px;
-                  border-radius: 6px;
-                  border: 1px solid #ccc;
-                "
-              >
-                <option value="">Select category...</option>
-                <option>Novel</option>
-                <option>Science</option>
-                <option>History</option>
-                <option>Psychology</option>
-                <option>Education</option>
-                <option>Documents</option>
-                <option>Reference</option>
-                <option>Guides</option>
-                <option>Manga</option>
-                <option>Light Novel</option>
-              </select>
-            </div>
-
-            <div>
-              <label><b>Date:</b></label
-              ><br />
-              <input
-                type="date"
-                id="lookupDate"
-                style="
-                  width: 100%;
-                  padding: 8px;
-                  border-radius: 6px;
-                  border: 1px solid #ccc;
-                "
-              />
-            </div>
-
-            <button class="btn" type="button" onclick="handleSearch()">
-              Search
-            </button>
-          </form>
-        </div>
-
-        <!-- ==== FORM THEO KHOẢNG NGÀY ==== -->
-        <div
-          id="formRange"
-          style="
-            display: none;
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-          "
-        >
-          <form
-            class="form"
-            style="display: flex; flex-direction: column; gap: 14px"
-          >
-            <div>
-              <label><b>Date Range:</b></label
-              ><br />
-              <div style="display: flex; align-items: center; gap: 8px">
-                <input
-                  type="date"
-                  id="fromDate"
-                  style="
-                    flex: 1;
-                    padding: 8px;
-                    border-radius: 6px;
-                    border: 1px solid #ccc;
-                  "
-                />
-                <span>to</span>
-                <input
-                  type="date"
-                  id="toDate"
-                  style="
-                    flex: 1;
-                    padding: 8px;
-                    border-radius: 6px;
-                    border: 1px solid #ccc;
-                  "
-                />
-              </div>
-            </div>
-
-            <div>
-              <label><b>Product ID or Name:</b></label
-              ><br />
-              <input
-                type="text"
-                id="productCodeRange"
-                placeholder="Enter product ID or name..."
-                style="
-                  width: 100%;
-                  padding: 8px;
-                  border-radius: 6px;
-                  border: 1px solid #ccc;
-                "
-              />
-            </div>
-
-            <button
-              class="btn"
-              type="button"
-              style="margin-top: 6px"
-              onclick="handleRangeSearch()"
+          <!-- ===== Chế độ tìm kiếm ===== -->
+          <div>
+            <label><b>Chế độ tra cứu:</b></label>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                margin-top: 6px;
+              "
             >
-              Search by Range
-            </button>
-          </form>
+              <label style="display: flex; align-items: center; gap: 6px">
+                <input type="radio" name="searchMode" value="product" checked />
+                <span>Theo sản phẩm</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px">
+                <input type="radio" name="searchMode" value="category" />
+                <span>Theo thể loại</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- ===== Theo sản phẩm ===== -->
+          <div>
+            <label><b>Mã hoặc tên sản phẩm:</b></label
+            ><br />
+            <input
+              type="text"
+              id="productName"
+              placeholder="Nhập mã hoặc tên sản phẩm..."
+              style="
+                width: 100%;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+              "
+            />
+          </div>
+
+          <!-- ===== Theo thể loại ===== -->
+          <div>
+            <label><b>Thể loại:</b></label
+            ><br />
+            <select
+              id="productType"
+              style="
+                width: 100%;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+              "
+            >
+              <option value="">Chọn thể loại...</option>
+              <option>Tiểu thuyết</option>
+              <option>Khoa học</option>
+              <option>Lịch sử</option>
+              <option>Tâm lý</option>
+              <option>Giáo dục</option>
+              <option>Tài liệu</option>
+              <option>Tham khảo</option>
+              <option>Hướng dẫn</option>
+              <option>Truyện tranh</option>
+              <option>Light Novel</option>
+            </select>
+          </div>
+
+          <!-- ===== Ngày tra cứu ===== -->
+          <div>
+            <label><b>Ngày tra cứu:</b></label
+            ><br />
+            <input
+              type="date"
+              id="lookupDate"
+              style="
+                width: 100%;
+                padding: 8px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+              "
+            />
+          </div>
+
+          <button class="btn" type="button" onclick="handleSearch()">
+            Tra cứu
+          </button>
         </div>
       </section>
 
       <!-- ===== SCRIPT ===== -->
       <script>
-        const btnDate = document.getElementById("btnDate");
-        const btnRange = document.getElementById("btnRange");
-        const formDate = document.getElementById("formDate");
-        const formRange = document.getElementById("formRange");
-
-        function showForm(type) {
-          if (type === "date") {
-            formDate.style.display = "block";
-            formRange.style.display = "none";
-            btnDate.style.background = "#2d6cdf";
-            btnDate.style.color = "#fff";
-            btnRange.style.background = "#fff";
-            btnRange.style.color = "#2d6cdf";
-          } else {
-            formDate.style.display = "none";
-            formRange.style.display = "block";
-            btnRange.style.background = "#2d6cdf";
-            btnRange.style.color = "#fff";
-            btnDate.style.background = "#fff";
-            btnDate.style.color = "#2d6cdf";
-          }
-        }
-
-        // === điều khiển chọn mode product/category ===
+        // Điều khiển chọn chế độ tra cứu
         const input = document.getElementById("productName");
         const category = document.getElementById("productType");
         const radios = document.getElementsByName("searchMode");
@@ -271,7 +148,7 @@
         radios.forEach((radio) => radio.addEventListener("change", updateMode));
         updateMode();
 
-        // === tìm kiếm theo ngày ===
+        // Xử lý khi nhấn tra cứu
         function handleSearch() {
           const mode = document.querySelector(
             'input[name="searchMode"]:checked'
@@ -281,11 +158,6 @@
           } else {
             location.href = "stock_category.html";
           }
-        }
-
-        // === tìm kiếm theo khoảng ngày ===
-        function handleRangeSearch() {
-          location.href = "stock_range.html";
         }
       </script>
     </main>

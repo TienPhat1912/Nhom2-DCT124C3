@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products Management</title>
+    <title>Quản lý sản phẩm</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
@@ -11,48 +11,41 @@
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
-        <nav class="nav"><a href="dashboard.html">Dashboard</a></nav>
+        <nav class="nav"><a href="dashboard.html">Trang chủ</a></nav>
       </div>
     </header>
 
     <main class="container">
-      <h2>Products</h2>
+      <h2>Danh sách sản phẩm</h2>
       <button class="btn" onclick="location.href='add_product.html'">
-        Add Product
+        ➕ Thêm sản phẩm
       </button>
       <button class="btn" onclick="location.href='genre.html'">
-        Genre management
+        🗂️ Quản lý thể loại
       </button>
+
       <table class="table">
         <tr>
-          <th>Product ID</th>
-          <th>Book Title</th>
-          <th>Stock</th>
-          <th>Status</th>
-          <th>Action</th>
+          <th>Mã SP</th>
+          <th>Tên sách</th>
+          <th>Tồn kho</th>
+          <th>Giá bán</th>
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
         </tr>
 
         <tr>
           <td>P001</td>
           <td>Số Đỏ</td>
           <td>80</td>
-          <td style="color: green; font-weight: 600">Available</td>
+          <td>120.000đ</td>
+          <td style="color: green; font-weight: 600">Còn hàng</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
 
@@ -60,21 +53,12 @@
           <td>P002</td>
           <td>Nỗi Buồn Chiến Tranh</td>
           <td>10</td>
-          <td style="color: orange; font-weight: 600">Medium</td>
+          <td>150.000đ</td>
+          <td style="color: orange; font-weight: 600">Sắp hết</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
 
@@ -82,21 +66,12 @@
           <td>P003</td>
           <td>Tuổi Trẻ Đáng Giá Bao Nhiêu</td>
           <td>50</td>
-          <td style="color: green; font-weight: 600">Available</td>
+          <td>100.000đ</td>
+          <td style="color: green; font-weight: 600">Còn hàng</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
 
@@ -104,21 +79,12 @@
           <td>P004</td>
           <td>Đắc Nhân Tâm</td>
           <td>40</td>
-          <td style="color: green; font-weight: 600">Available</td>
+          <td>90.000đ</td>
+          <td style="color: green; font-weight: 600">Còn hàng</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
 
@@ -126,21 +92,12 @@
           <td>P005</td>
           <td>Nhà Giả Kim</td>
           <td>5</td>
-          <td style="color: red; font-weight: 600">Low Stock</td>
+          <td>85.000đ</td>
+          <td style="color: red; font-weight: 600">Sắp hết hàng</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
 
@@ -148,21 +105,12 @@
           <td>P006</td>
           <td>Hạt Giống Tâm Hồn</td>
           <td>30</td>
-          <td style="color: orange; font-weight: 600">Medium</td>
+          <td>110.000đ</td>
+          <td style="color: orange; font-weight: 600">Sắp hết</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
 
@@ -170,21 +118,12 @@
           <td>P007</td>
           <td>Thép Đã Tôi Thế Đấy</td>
           <td>5</td>
-          <td style="color: red; font-weight: 600">Low Stock</td>
+          <td>70.000đ</td>
+          <td style="color: red; font-weight: 600">Sắp hết hàng</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
 
@@ -192,21 +131,12 @@
           <td>P008</td>
           <td>Vũ Trụ Trong Vỏ Hạt Dẻ</td>
           <td>30</td>
-          <td style="color: orange; font-weight: 600">Medium</td>
+          <td>200.000đ</td>
+          <td style="color: orange; font-weight: 600">Sắp hết</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
 
@@ -214,46 +144,64 @@
           <td>P009</td>
           <td>Dế Mèn Phiêu Lưu Ký</td>
           <td>20</td>
-          <td style="color: orange; font-weight: 600">Medium</td>
+          <td>60.000đ</td>
+          <td style="color: orange; font-weight: 600">Sắp hết</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
 
         <tr>
           <td>P010</td>
-          <td>Harry Potter and the Sorcerer’s Stone</td>
+          <td>Harry Potter và Hòn Đá Phù Thủy</td>
           <td>50</td>
-          <td style="color: green; font-weight: 600">Available</td>
+          <td>250.000đ</td>
+          <td style="color: green; font-weight: 600">Còn hàng</td>
           <td>
-            <a class="btn" href="product_detail.html">Detail</a>
-            <button
-              class="btn"
-              onclick="alert('Deleted'); location.href='product_del.html';"
-            >
-              Delete
-            </button>
-            <button
-              class="btn"
-              onclick="alert('Product Hidden'); location.reload();"
-            >
-              Hide
-            </button>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
         </tr>
       </table>
     </main>
+
+    <script>
+      // 🗑️ Xóa sản phẩm
+      function deleteProduct(btn) {
+        if (
+          confirm("Bạn có chắc muốn xóa sản phẩm này khỏi danh sách không?")
+        ) {
+          const row = btn.closest("tr");
+          row.remove();
+          alert("Sản phẩm đã được xóa thành công!");
+        }
+      }
+
+      // 👁️ Ẩn / Hiện sản phẩm
+      function hideProduct(btn) {
+        const row = btn.closest("tr");
+
+        // Nếu đang bị ẩn => Hiện lại
+        if (row.classList.contains("hidden-row")) {
+          row.classList.remove("hidden-row");
+          btn.textContent = "Ẩn";
+          alert("Sản phẩm đã được hiển thị lại trong cửa hàng!");
+          return;
+        }
+
+        // Nếu đang hiện => hỏi trước khi ẩn
+        const confirmHide = confirm(
+          "Bạn có chắc muốn ẩn sản phẩm này khỏi cửa hàng không?"
+        );
+        if (confirmHide) {
+          row.classList.add("hidden-row");
+          btn.textContent = "Hiện";
+          alert("Sản phẩm đã được ẩn!");
+        }
+      }
+    </script>
   </body>
 </html>

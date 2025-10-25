@@ -1,59 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>View Product</title>
+    <title>Xem sản phẩm</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
+
   <body>
     <header class="header">
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÍ NHÀ SÁCH</h1>
         </div>
-        <nav class="nav"><a href="dashboard.html">Dashboard</a></nav>
+        <nav class="nav">
+          <a href="dashboard.html">Trang chủ</a>
+        </nav>
       </div>
     </header>
 
     <main class="product-two-col container">
-  <aside class="image-panel">
-    <div class="image-box">
-      <img src="../img/sodod.jpg" alt="Book cover preview" />
-    </div>
-    <p class="hint">Ảnh bìa minh hoạ. (Có thể thay bằng ảnh thật của sách)</p>
-  </aside>
+      <!-- Cột ảnh -->
+      <aside class="image-panel">
+        <div class="image-box">
+          <img src="../img/sodod.jpg" alt="Book cover preview" />
+        </div>
+        <p class="hint">
+          Ảnh bìa minh hoạ (có thể thay bằng ảnh thật của sách).
+        </p>
+      </aside>
 
-  <div class="right-col">
+      <!-- Cột thông tin -->
+      <div class="right-col">
+        <div class="form">
+          <h2>Thông tin sản phẩm</h2>
 
-      <div class="form">
-        <h2>View Product</h2>
+          <p class="label">Mã sản phẩm</p>
+          <div class="row">
+            <input value="P001" readonly />
+          </div>
 
-        <div class="row"><label>Product ID</label><input value="P001" readonly /></div>
-        <div class="row"><label>Name</label><input value="So do" readonly /></div>
-        <div class="row"><label>Category</label><input value="Novel" readonly /></div>
+          <p class="label">Tên sách</p>
+          <div class="row">
+            <input value="Số Đỏ" readonly />
+          </div>
 
-        <div class="row"><label>Author</label><input value="Vu Trong Phung" readonly /></div>
-        <div class="row"><label>Year</label><input value="1944" readonly /></div>
-        <div class="row"><label>Publisher</label><input value="NXB Tre" readonly /></div>
+          <p class="label">Thể loại</p>
+          <div class="row">
+            <input value="Tiểu thuyết" readonly />
+          </div>
 
-        <div class="row"><label>Age Rating</label><input value="16+" readonly /></div>
+          <p class="label">Tác giả</p>
+          <div class="row">
+            <input value="Vũ Trọng Phụng" readonly />
+          </div>
 
-        <div class="row"><label>Country</label><input value="Vietnam" readonly /></div>
-        <div class="row"><label>Description</label><textarea readonly>Description here...</textarea></div>
-        <button class="btn" onclick="location.href='products.html'">
-          Back
-        </button>
+          <p class="label">Năm xuất bản</p>
+          <div class="row">
+            <input value="1944" readonly />
+          </div>
 
-        <button class="btn" onclick="location.href='edit_product.html'" style="background: #007bff; margin-top: 10px">
-          Edit
-        </button>
+          <p class="label">Nhà xuất bản</p>
+          <div class="row">
+            <input value="NXB Trẻ" readonly />
+          </div>
+
+          <p class="label">Độ tuổi phù hợp</p>
+          <div class="row">
+            <input value="16+" readonly />
+          </div>
+
+          <p class="label">Quốc gia</p>
+          <div class="row">
+            <input value="Việt Nam" readonly />
+          </div>
+
+          <p class="label">Mô tả</p>
+          <div class="row">
+            <textarea readonly>
+Một tác phẩm kinh điển của văn học Việt Nam, phản ánh xã hội thành thị những năm 1930 với giọng văn châm biếm sắc bén.
+            </textarea>
+          </div>
+
+          <div style="margin-top: 16px">
+            <button class="btn" onclick="location.href='products.html'">
+              ← Quay lại
+            </button>
+
+            <button
+              class="btn"
+              style="background: #007bff; margin-left: 10px"
+              onclick="location.href='edit_product.html'"
+            >
+              Chỉnh sửa
+            </button>
+          </div>
+        </div>
       </div>
-    
-  </div>
-</main>
+    </main>
   </body>
-</html>
-                    
 </html>

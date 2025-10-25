@@ -1,56 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products Found</title>
+    <title>Kết quả Tra cứu Tồn kho</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
+
   <body>
     <header class="header">
       <div class="inner">
         <div class="logo" onclick="location.href='dashboard.html'">
           <img src="../img/logo.png" />
-          <h1>BOOKSTORE MANAGEMENT</h1>
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
         <nav class="nav">
-          <a href="dashboard.html">Dashboard</a>
+          <a href="dashboard.html">Trang chủ</a>
         </nav>
       </div>
     </header>
 
     <main class="container">
-      <h2>Inventory Lookup Result</h2>
+      <h2>Kết quả Tra cứu Tồn kho</h2>
 
       <div style="margin-bottom: 16px">
-        <button class="btn" onclick="location.href='stock.html'">
-          Back to Lookup
+        <button class="btn" onclick="location.href='inventory.html'">
+          Quay lại Tra cứu
         </button>
         <button class="btn ghost" onclick="location.href='import.html'">
-          View Import Receipts
+          Xem Phiếu nhập hàng
         </button>
       </div>
 
       <h3>
-        Found 1 match <span style="color: blue">"P001"</span> on
-        <span style="color: green">2025-10-19</span>
+        Tìm thấy <b>1 sản phẩm</b> trùng khớp với mã
+        <span style="color: blue">"P001"</span> vào ngày
+        <span style="color: green">19/10/2025</span>
       </h3>
 
       <table class="table">
         <tr>
-          <th>Product ID</th>
-          <th>Product Name</th>
-          <th>In Stock</th>
-          <th>Status</th>
-          <th>Action</th>
+          <th>Mã SP</th>
+          <th>Tên sản phẩm</th>
+          <th>Số lượng tồn</th>
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
         </tr>
 
         <tr>
           <td>P001</td>
           <td>Số Đỏ</td>
           <td>80</td>
-          <td style="color: green; font-weight: bold">Available</td>
-          <td><a class="btn" href="product_detail.html">Detail</a></td>
+          <td style="color: green; font-weight: bold">Còn hàng</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
         </tr>
       </table>
     </main>
