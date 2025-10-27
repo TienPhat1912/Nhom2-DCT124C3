@@ -40,12 +40,7 @@
           <td>25</td>
           <td class="status">Hoạt động</td>
           <td>
-            <button
-              class="btn"
-              onclick="openEditModal('Tiểu thuyết','Hoạt động')"
-            >
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -56,9 +51,7 @@
           <td>18</td>
           <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Khoa học','Hoạt động')">
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -69,9 +62,7 @@
           <td>12</td>
           <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Lịch sử','Hoạt động')">
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -82,12 +73,7 @@
           <td>14</td>
           <td class="status">Hoạt động</td>
           <td>
-            <button
-              class="btn"
-              onclick="openEditModal('Tâm lý học','Hoạt động')"
-            >
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -98,9 +84,7 @@
           <td>20</td>
           <td class="status">Hoạt động</td>
           <td>
-            <button class="btn" onclick="openEditModal('Giáo dục','Hoạt động')">
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -109,14 +93,9 @@
         <tr>
           <td>Tài liệu</td>
           <td>10</td>
-          <td><hoạt class="status">Hoạt động</td>
+          <td class="status">Hoạt động</td>
           <td>
-            <button
-              class="btn"
-              onclick="openEditModal('Tài liệu','Hoạt động')"
-            >
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -127,12 +106,7 @@
           <td>8</td>
           <td class="status">Hoạt động</td>
           <td>
-            <button
-              class="btn"
-              onclick="openEditModal('Tham khảo','Hoạt động')"
-            >
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -143,12 +117,7 @@
           <td>15</td>
           <td class="status">Hoạt động</td>
           <td>
-            <button
-              class="btn"
-              onclick="openEditModal('Hướng dẫn','Hoạt động')"
-            >
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -159,12 +128,7 @@
           <td>30</td>
           <td class="status">Hoạt động</td>
           <td>
-            <button
-              class="btn"
-              onclick="openEditModal('Truyện tranh','Hoạt động')"
-            >
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -175,12 +139,7 @@
           <td>22</td>
           <td class="status">Hoạt động</td>
           <td>
-            <button
-              class="btn"
-              onclick="openEditModal('Light Novel','Hoạt động')"
-            >
-              Sửa
-            </button>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
             <button class="btn" onclick="deleteGenre(this)">Xóa</button>
             <button class="btn" onclick="toggleGenre(this)">Ẩn</button>
           </td>
@@ -250,12 +209,13 @@
     </div>
 
     <script>
-      // 🪄 Mở modal thêm
-      const openAddModalBtn = document.getElementById("openAddModal");
       const addModal = document.getElementById("addModal");
       const editModal = document.getElementById("editModal");
+      let currentRow = null;
 
-      openAddModalBtn.onclick = () => (addModal.style.display = "flex");
+      // 🪄 Mở modal thêm
+      document.getElementById("openAddModal").onclick = () =>
+        (addModal.style.display = "flex");
 
       // Đóng modal
       function closeModal(id) {
@@ -267,57 +227,75 @@
         if (e.target === editModal) editModal.style.display = "none";
       };
 
-      // Thêm thể loại mới
+      // ➕ Thêm thể loại
       document.getElementById("saveAddGenre").onclick = () => {
         const name = document.getElementById("addGenreName").value;
+        const status = document.getElementById("addGenreStatus").value;
+        const table = document.querySelector(".table");
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = `
+          <td>${name}</td>
+          <td>0</td>
+          <td class="status">${status}</td>
+          <td>
+            <button class="btn" onclick="openEditModal(this)">Sửa</button>
+            <button class="btn" onclick="deleteGenre(this)">Xóa</button>
+            <button class="btn" onclick="toggleGenre(this)">${
+              status === "Hoạt động" ? "Ẩn" : "Hiện"
+            }</button>
+          </td>
+        `;
+        table.appendChild(newRow);
         alert(`Đã thêm thể loại "${name}" thành công!`);
+        document.getElementById("addGenreForm").reset();
         closeModal("addModal");
       };
 
-      // Xóa thể loại
+      // 🗑️ Xóa thể loại
       function deleteGenre(btn) {
         const name = btn.closest("tr").querySelector("td").textContent;
-        if (confirm(`Bạn có chắc muốn xóa thể loại "${name}" không?`)) {
-          btn.closest("tr").remove();
-          alert(`Đã xóa thể loại "${name}"!`);
-        }
+        btn.closest("tr").remove();
+        alert(`Đã xóa thể loại "${name}"!`);
       }
 
-      // Ẩn / Hiện thể loại
+      // 👁️ Ẩn / Hiện thể loại
       function toggleGenre(btn) {
         const row = btn.closest("tr");
         const statusCell = row.querySelector(".status");
 
-        if (row.classList.contains("hidden-row")) {
+        if (statusCell.textContent === "Hoạt động") {
+          row.classList.add("hidden-row");
+          statusCell.textContent = "Không hoạt động";
+          btn.textContent = "Hiện";
+          alert("Thể loại đã được ẩn!");
+        } else {
           row.classList.remove("hidden-row");
           statusCell.textContent = "Hoạt động";
           btn.textContent = "Ẩn";
           alert("Thể loại đã được hiển thị lại!");
-        } else {
-          if (
-            confirm(
-              "Bạn có chắc muốn ẩn thể loại này khỏi cửa hàng không?"
-            )
-          ) {
-            row.classList.add("hidden-row");
-            statusCell.textContent = "Không hoạt động";
-            btn.textContent = "Hiện";
-            alert("Thể loại đã được ẩn!");
-          }
         }
       }
 
-      // Mở modal sửa
-      function openEditModal(name, status) {
+      // ✏️ Mở modal sửa
+      function openEditModal(btn) {
+        currentRow = btn.closest("tr");
+        const name = currentRow.querySelector("td").textContent;
+        const status = currentRow.querySelector(".status").textContent;
         document.getElementById("editGenreName").value = name;
         document.getElementById("editGenreStatus").value = status;
         editModal.style.display = "flex";
       }
 
-      // Lưu chỉnh sửa
+      // 💾 Lưu chỉnh sửa
       document.getElementById("saveEditGenre").onclick = () => {
+        if (!currentRow) return;
         const name = document.getElementById("editGenreName").value;
-        alert(`Đã cập nhật thông tin thể loại "${name}"!`);
+        const status = document.getElementById("editGenreStatus").value;
+        currentRow.querySelector("td").textContent = name;
+        currentRow.querySelector(".status").textContent = status;
+        const toggleBtn = currentRow.querySelector("button:last-child");
+        toggleBtn.textContent = status === "Hoạt động" ? "Ẩn" : "Hiện";
+        alert(`Đã cập nhật thể loại "${name}"!`);
         closeModal("editModal");
       };
     </script>
