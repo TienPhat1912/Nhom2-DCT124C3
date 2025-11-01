@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nhà Sách FACABA</title>
+    <title>Manga - Nhà Sách FACABA</title>
+    <meta
+      name="description"
+      content="Nhà Sách FACABA - Cửa hàng sách online chuyên Manga, truyện tranh Nhật Bản: One Piece, Naruto, Attack on Titan, Demon Slayer và nhiều hơn nữa."
+    />
     <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
@@ -23,15 +27,15 @@
           <div class="dropdown">
             <button class="dropbtn">Thể loại ▼</button>
             <div class="dropdown-content">
-              <a class="btn--light" href="home_loggedin.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop2.html">Tiểu thuyết</a>
               <a class="btn--light" href="shop1.html">Manga</a>
-              <a class="btn--light" href="home_loggedin.html">Lịch sử</a>
+              <a class="btn--light" href="shop2.html">Lịch sử</a>
               <a class="btn--light" href="shop1.html">Tâm lý học</a>
-              <a class="btn--light" href="home_loggedin.html">Giáo dục</a>
+              <a class="btn--light" href="shop2.html">Giáo dục</a>
               <a class="btn--light" href="shop1.html">Tài liệu</a>
-              <a class="btn--light" href="home_loggedin.html">Tham khảo</a>
+              <a class="btn--light" href="shop2.html">Tham khảo</a>
               <a class="btn--light" href="shop1.html">Hướng dẫn</a>
-              <a class="btn--light" href="home_loggedin.html">Light Novel</a>
+              <a class="btn--light" href="shop2.html">Light Novel</a>
               <a class="btn--light" href="shop1.html">Khoa học</a>
             </div>
           </div>
@@ -62,15 +66,14 @@
       </div>
     </header>
 
-    <div class="slider">
-      <div class="slides">
-        <img class="slide" src="../img/banner.jpg" alt="Banner 1" />
-        <img class="slide" src="../img/banner2.jpg" alt="Banner 2" />
-        <img class="slide" src="../img/banner3.jpg" alt="Banner 3" />
-        <img class="slide" src="../img/banner4.jpg" alt="Banner 4" />
-        <img class="slide" src="../img/banner5.jpg" alt="Banner 5" />
-        <img class="slide" src="../img/banner6.jpg" alt="Banner 6" />
-      </div>
+    <h1 style="text-align:center; color:#d32f2f;">📚 Thể loại Manga</h1>
+    <p style="text-align:center; margin-top:-10px; color:#555;">
+      Các bộ truyện tranh nổi bật dành cho bạn!
+    </p>
+
+    <div style="text-align:center; background:#fff8e1; padding:12px; border-radius:10px; margin-top:20px;">
+      <b>🔥 Khám phá bộ sưu tập Manga hấp dẫn nhất của FACABA!</b>
+    </div>
       <button class="nav-btn prev" onclick="moveSlide(-1)">❮</button>
       <button class="nav-btn next" onclick="moveSlide(1)">❯</button>
     </div>
@@ -222,13 +225,13 @@
         </div>
       </div>
       <div class="pagination">
-        <a href="home_loggedin.html">&laquo;</a>
-        <a href="home_loggedin.html">1</a>
+        <a href="shop2.html">&laquo;</a>
+        <a href="shop2.html">1</a>
         <a href="shop1.html">2</a>
-        <a href="home_loggedin.html">3</a>
+        <a href="shop2.html">3</a>
         <a href="shop1.html">4</a>
-        <a href="home_loggedin.html">5</a>
-        <a href="shop1.html">&raquo;</a>
+        <a href="shop2.html">5</a>
+        <a href="shop2.html">&raquo;</a>
       </div>
     </main>
     <footer class="footer">
@@ -281,19 +284,6 @@
           alert("Đã thêm vào giỏ hàng"); // Chỉ hiện 1 lần
         });
       });
-
-      // SLIDER
-      let index = 0;
-      const slides = document.querySelector(".slides");
-      const slideCount = document.querySelectorAll(".slide").length;
-
-      function moveSlide(direction) {
-        index = (index + direction + slideCount) % slideCount;
-        slides.style.transform = `translateX(-${index * 100}%)`;
-      }
-
-      // Tự động chạy mỗi 4 giây
-      setInterval(() => moveSlide(1), 4000);
     </script>
   </body>
 </html>

@@ -3,42 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nhà Sách FACABA</title>
-    <link rel="stylesheet" href="css/user.css" />
+    <title>Tiểu thuyết - Nhà Sách FACABA</title>
+    <meta
+      name="description"
+      content="Nhà Sách FACABA - Khám phá kho tàng tiểu thuyết đặc sắc: Số Đỏ, Nỗi Buồn Chiến Tranh, Nhà Giả Kim, Tuổi Trẻ Đáng Giá Bao Nhiêu và nhiều tác phẩm nổi tiếng khác."
+    />
+    <link rel="stylesheet" href="../css/user.css" />
   </head>
   <body>
     <header class="header">
       <div class="inner">
         <!-- Left -->
         <div class="header-left">
-          <div class="logo" onclick="location.href='index.html'">
-            <img src="img/logo.png" alt="FACABA logo" />
+          <div class="logo" onclick="location.href='../index.html'">
+            <img src="../img/logo.png" alt="FACABA logo" />
             <h1>Nhà Sách FACABA</h1>
           </div>
         </div>
 
         <!-- Center -->
         <div class="header-center">
-          <a href="index.html" class="dropbtn">Trang chủ</a>
+          <a href="../index.html" class="dropbtn">Trang chủ</a>
           <div class="dropdown">
             <button class="dropbtn">Thể loại ▼</button>
             <div class="dropdown-content">
-              <a class="btn--light" href="user/shop2guest.html">Tiểu thuyết</a>
-              <a class="btn--light" href="user/shop1guest.html">Manga</a>
-              <a class="btn--light" href="user/shop2guest.html">Lịch sử</a>
-              <a class="btn--light" href="user/shop1guest.html">Tâm lý học</a>
-              <a class="btn--light" href="user/shop2guest.html">Giáo dục</a>
-              <a class="btn--light" href="user/shop1guest.html">Tài liệu</a>
-              <a class="btn--light" href="user/shop2guest.html">Tham khảo</a>
-              <a class="btn--light" href="user/shop1guest.html">Hướng dẫn</a>
-              <a class="btn--light" href="user/shop2guest.html">Light Novel</a>
-              <a class="btn--light" href="user/shop1guest.html">Khoa học</a>
+              <a class="btn--light" href="shop2guest.html">Tiểu thuyết</a>
+              <a class="btn--light" href="shop1guest.html">Manga</a>
+              <a class="btn--light" href="shop2guest.html">Lịch sử</a>
+              <a class="btn--light" href="shop1guest.html">Tâm lý học</a>
+              <a class="btn--light" href="shop2guest.html">Giáo dục</a>
+              <a class="btn--light" href="shop1guest.html">Tài liệu</a>
+              <a class="btn--light" href="shop2guest.html">Tham khảo</a>
+              <a class="btn--light" href="shop1guest.html">Hướng dẫn</a>
+              <a class="btn--light" href="shop2guest.html">Light Novel</a>
+              <a class="btn--light" href="shop1guest.html">Khoa học</a>
             </div>
           </div>
 
           <div class="search">
             <input placeholder="Tìm kiếm sách..." />
-            <a class="btn" href="user/searchguest.html">Tìm kiếm</a>
+            <a class="btn" href="searchguest.html">Tìm kiếm</a>
           </div>
         </div>
 
@@ -55,36 +59,39 @@
               </button>
             </div>
           </div>
-          <button class="dropbtn" onclick="location='user/emptycartguest.html'">
+          <button class="dropbtn" onclick="location='emptycartguest.html'">
             🛒
           </button>
         </div>
       </div>
     </header>
 
-    <!-- SLIDER NHỎ GỌN, TỰ ĐỘNG + NÚT -->
-    <div class="slider">
-      <div class="slides">
-        <img class="slide" src="img/banner.jpg" alt="Banner 1" />
-        <img class="slide" src="img/banner2.jpg" alt="Banner 2" />
-        <img class="slide" src="img/banner3.jpg" alt="Banner 3" />
-        <img class="slide" src="img/banner4.jpg" alt="Banner 4" />
-        <img class="slide" src="img/banner5.jpg" alt="Banner 5" />
-        <img class="slide" src="img/banner6.jpg" alt="Banner 6" />
-      </div>
-      <button class="nav-btn prev" onclick="moveSlide(-1)">❮</button>
-      <button class="nav-btn next" onclick="moveSlide(1)">❯</button>
+    <h1 style="text-align: center; color: #d32f2f">📚 Thể Loại Tiểu Thuyết</h1>
+    <p style="text-align: center; margin-top: -10px; color: #555">
+      Các tập Tiểu Thuyết nổi bật dành cho bạn!
+    </p>
+
+    <div
+      style="
+        text-align: center;
+        background: #fff8e1;
+        padding: 12px;
+        border-radius: 10px;
+        margin-top: 20px;
+      "
+    >
+      <b>🔥 Khám phá bộ sưu tập Tiểu Thuyết hấp dẫn nhất của FACABA!</b>
     </div>
 
     <main class="container">
       <div class="grid">
         <div class="card">
-          <img src="img/sodod.jpg" />
+          <img src="../img/sodod.jpg" />
           <h3>Số đỏ</h3>
           <div class="price">₫110,000</div>
           <div class="rating">★★★★☆</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product1guest.html">Chi tiết</a
+            <a class="btn" href="product1guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -94,12 +101,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/noibuon.jpg" />
+          <img src="../img/noibuon.jpg" />
           <h3>Nổi buồn chiến tranh</h3>
           <div class="price">₫115,000</div>
           <div class="rating">★★★★☆</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product2guest.html">Chi tiết</a
+            <a class="btn" href="product2guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -109,12 +116,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/tuoitre.jpg" />
+          <img src="../img/tuoitre.jpg" />
           <h3>Tuổi trẻ đáng giá bao nhiêu</h3>
           <div class="price">₫95,000</div>
           <div class="rating">★★★★★</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product1guest.html">Chi tiết</a
+            <a class="btn" href="product1guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -124,12 +131,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/dacnhantam.jpg" />
+          <img src="../img/dacnhantam.jpg" />
           <h3>Đắc nhân tâm</h3>
           <div class="price">₫125,000</div>
           <div class="rating">★☆☆☆☆</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product2guest.html">Chi tiết</a
+            <a class="btn" href="product2guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -139,12 +146,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/nhagiakim.jpg" />
+          <img src="../img/nhagiakim.jpg" />
           <h3>Nhà giả kim</h3>
           <div class="price">₫100,000</div>
           <div class="rating">★★☆☆☆</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product1guest.html">Chi tiết</a
+            <a class="btn" href="product1guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -154,12 +161,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/hatgiong.jpg" />
+          <img src="../img/hatgiong.jpg" />
           <h3>Hạt giống tâm hồn-16</h3>
           <div class="price">₫85,000</div>
           <div class="rating">★★★☆☆</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product2guest.html">Chi tiết</a
+            <a class="btn" href="product2guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -169,12 +176,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/thep.jpg" />
+          <img src="../img/thep.jpg" />
           <h3>Thép đã tôi thế đấy</h3>
           <div class="price">₫100,000</div>
           <div class="rating">★★★☆☆</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product1guest.html">Chi tiết</a
+            <a class="btn" href="product1guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -184,12 +191,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/vutru.jpg" />
+          <img src="../img/vutru.jpg" />
           <h3>Vũ trụ trong vỏ hạt dẻ</h3>
           <div class="price">₫140,000</div>
           <div class="rating">★★★★☆</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product2guest.html">Chi tiết</a
+            <a class="btn" href="product2guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -199,12 +206,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/demen.jpg" />
+          <img src="../img/demen.jpg" />
           <h3>Dế mèn phiêu lưu ký</h3>
           <div class="price">₫80,000</div>
           <div class="rating">★★★★★</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product1guest.html">Chi tiết</a
+            <a class="btn" href="product1guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -214,7 +221,7 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/harry.jpg" />
+          <img src="../img/harry.jpg" />
           <h3>Harry Potter and the Sorcerer’s Stone</h3>
           <div class="price">₫120,000</div>
           <div class="rating">★★★★☆</div>
@@ -229,12 +236,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/chipheo.jpg" />
+          <img src="../img/chipheo.jpg" />
           <h3>Chí Phèo</h3>
           <div class="price">₫70,000</div>
           <div class="rating">★★☆☆☆</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product1guest.html">Chi tiết</a
+            <a class="btn" href="product1guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -244,12 +251,12 @@
           </div>
         </div>
         <div class="card">
-          <img src="img/tatden.jpg" />
+          <img src="../img/tatden.jpg" />
           <h3>Tắt đèn</h3>
           <div class="price">₫80,000</div>
           <div class="rating">★★★☆☆</div>
           <div style="display: flex; gap: 8px; margin-top: 8px">
-            <a class="btn" href="user/product2guest.html">Chi tiết</a
+            <a class="btn" href="product2guest.html">Chi tiết</a
             ><button
               class="btn ghost"
               onclick="alert('Đăng nhập hoặc đăng kí để tiếp tục!');"
@@ -260,13 +267,13 @@
         </div>
       </div>
       <div class="pagination">
-        <a href="user/shop1guest.html">&laquo;</a>
-        <a href="user/shop2guest.html">1</a>
-        <a href="user/shop1guest.html">2</a>
-        <a href="user/shop2guest.html">3</a>
-        <a href="user/shop1guest.html">4</a>
-        <a href="user/shop2guest.html">5</a>
-        <a href="user/shop1guest.html">&raquo;</a>
+        <a href="shop1guest.html">&laquo;</a>
+        <a href="shop1guest.html">1</a>
+        <a href="shop2guest.html">2</a>
+        <a href="shop1guest.html">3</a>
+        <a href="shop2guest.html">4</a>
+        <a href="shop1guest.html">5</a>
+        <a href="shop1guest.html">&raquo;</a>
       </div>
     </main>
     <footer class="footer">
@@ -318,7 +325,7 @@
             type="button"
             class="btn btn--primary"
             style="width: 100%"
-            onclick="location.href='user/home_loggedin.html'"
+            onclick="location.href='home_loggedin.html'"
           >
             Đăng nhập
           </button>
@@ -343,7 +350,7 @@
             type="button"
             class="btn btn--primary"
             style="width: 100%"
-            onclick="location.href='user/home_loggedin.html'"
+            onclick="location.href='home_loggedin.html'"
           >
             Đăng ký
           </button>
@@ -385,19 +392,6 @@
         closeRegisterPopup();
         setTimeout(openLoginPopup, 200);
       }
-
-      // SLIDER
-      let index = 0;
-      const slides = document.querySelector(".slides");
-      const slideCount = document.querySelectorAll(".slide").length;
-
-      function moveSlide(direction) {
-        index = (index + direction + slideCount) % slideCount;
-        slides.style.transform = `translateX(-${index * 100}%)`;
-      }
-
-      // Tự động chạy mỗi 4 giây
-      setInterval(() => moveSlide(1), 4000);
     </script>
   </body>
 </html>

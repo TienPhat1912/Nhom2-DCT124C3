@@ -384,26 +384,36 @@ a:hover {
   gap: 10px;
   transition: transform var(--dur-2) var(--ease),
     box-shadow var(--dur-2) var(--ease);
+  cursor: pointer; /* 👈 hiển thị tay khi di chuột */
 }
+
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
+
 .card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
 }
+
 .card h3 {
   font-size: 17px;
   margin: 6px 0 0;
   color: var(--green-900);
+  overflow: hidden; /* 👇 giữ tối đa 2 dòng */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
+
 .price {
   color: var(--accent-2);
   font-weight: 700;
 }
+
 .rating {
   color: #f59e0b;
   font-size: 14px;
