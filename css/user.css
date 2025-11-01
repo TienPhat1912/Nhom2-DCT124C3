@@ -372,6 +372,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--gap);
+  grid-auto-rows: 1fr;
 }
 
 .card {
@@ -385,6 +386,7 @@ a:hover {
   transition: transform var(--dur-2) var(--ease),
     box-shadow var(--dur-2) var(--ease);
   cursor: pointer; /* 👈 hiển thị tay khi di chuột */
+  justify-content: space-between;
 }
 
 .card:hover {
