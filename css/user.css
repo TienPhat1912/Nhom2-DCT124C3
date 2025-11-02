@@ -371,22 +371,21 @@ a:hover {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--gap);
-  grid-auto-rows: 1fr;
+  gap: var(--gap, 20px);
+  align-items: start; /* 👈 Không kéo giãn card theo chiều dọc */
 }
 
+/* ---------- CARD ---------- */
 .card {
-  background: var(--card);
+  background: var(--card, #fff);
   padding: 14px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: var(--radius, 12px);
+  box-shadow: var(--shadow, 0 2px 10px rgba(0, 0, 0, 0.08));
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: transform var(--dur-2) var(--ease),
-    box-shadow var(--dur-2) var(--ease);
-  cursor: pointer; /* 👈 hiển thị tay khi di chuột */
-  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer; /* 👈 Hiện con trỏ tay khi hover */
 }
 
 .card:hover {
@@ -394,6 +393,7 @@ a:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
+/* ---------- IMAGE ---------- */
 .card img {
   width: 100%;
   height: 300px;
@@ -401,24 +401,34 @@ a:hover {
   border-radius: 10px;
 }
 
+/* ---------- TITLE ---------- */
 .card h3 {
   font-size: 17px;
   margin: 6px 0 0;
-  color: var(--green-900);
-  overflow: hidden; /* 👇 giữ tối đa 2 dòng */
+  color: var(--green-900, #1b4332);
+  overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 2; /* 👈 Giới hạn 2 dòng */
   -webkit-box-orient: vertical;
+  min-height: 44px; /* 👈 Giữ chiều cao ổn định giữa các card */
 }
 
+/* ---------- PRICE ---------- */
 .price {
-  color: var(--accent-2);
+  color: var(--accent-2, #1b5e20);
   font-weight: 700;
 }
 
+/* ---------- RATING ---------- */
 .rating {
   color: #f59e0b;
   font-size: 14px;
+}
+
+/* ---------- BUTTON ---------- */
+.card .btn {
+  margin-top: auto; /* 👈 Đẩy nút xuống cuối */
+  align-self: start;
 }
 
 /* ---------- Forms ---------- */
@@ -844,4 +854,202 @@ a:hover {
 
 .label:hover {
   color: var(--accent-2);
+}
+
+/* Modal nền mờ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+}
+
+/* Hộp nội dung */
+.modal-content {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Nút đóng (x) */
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #000;
+}
+
+/* Lưới form */
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.filter-item label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.filter-item input,
+.filter-item select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+/* Khoảng giá */
+.price-section {
+  margin-top: 20px;
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.price-inputs input {
+  width: 120px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+/* ========== Thanh khoảng giá (Range Slider) ========== */
+.range-container {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+/* Track nền */
+.slider-track {
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  background: linear-gradient(to right, #ddd 0%, #43a047 50%, #ddd 100%);
+  z-index: 1;
+}
+
+/* Thanh input range */
+.range-container input[type="range"] {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-appearance: none;
+  background: none;
+  pointer-events: none;
+  z-index: 2; /* trên track */
+}
+
+/* Nút trượt (thumb) */
+.range-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #43a047;
+  border: 3px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.range-container input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #388e3c;
+}
+
+/* Firefox */
+.range-container input[type="range"]::-moz-range-thumb {
+  pointer-events: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #43a047;
+  border: 3px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+/* Ẩn phần track mặc định để hiển thị track tùy chỉnh */
+.range-container input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: transparent;
+}
+
+/* Nút tìm */
+.filter-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.filter-btn {
+  background: #43a047;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn:hover {
+  background: #2e7d32;
+}
+
+.filter-btn.ghost {
+  background: transparent;
+  border: 1px solid #43a047;
+  color: #43a047;
+  margin-left: 10px;
+}
+
+.filter-btn.ghost:hover {
+  background: #43a047;
+  color: #fff;
 }
