@@ -446,6 +446,10 @@ a:hover {
   cursor: pointer;
   transition: transform var(--dur-1) var(--easing),
     filter var(--dur-1) var(--easing), box-shadow var(--dur-1) var(--easing);
+
+  /* 👇 Thêm 2 dòng này để các nút bằng nhau */
+  min-width: 100px;
+  text-align: center;
 }
 .btn:hover {
   transform: translateY(-2px);
@@ -1057,4 +1061,23 @@ tr.hidden-row td:not(:last-child) {
 
 .badge.dahuy {
   background-color: #dc3545; /* Đỏ đã hủy */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.search-bar .btn {
+  padding: 8px 16px;
 }

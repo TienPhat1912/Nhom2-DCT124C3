@@ -45,7 +45,20 @@
           <img src="../img/logo.png" />
           <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
-        <nav class="nav"><a href="dashboard.html">Trang chủ</a></nav>
+        <nav class="nav">
+          <a href="dashboard.html">Trang chủ</a>
+          <a
+            onclick="
+  if (document.referrer) {
+    window.history.back();
+  } else {
+    location.href = 'dashboard.html';
+  }
+"
+          >
+            ⬅️ Quay lại
+          </a>
+        </nav>
       </div>
     </header>
 

@@ -13,18 +13,46 @@
           <img src="../img/logo.png" />
           <h1>QUẢN LÝ NHÀ SÁCH</h1>
         </div>
-        <nav class="nav"><a href="dashboard.html">Trang chủ</a></nav>
+        <nav class="nav">
+          <a href="dashboard.html">Trang chủ</a>
+          <a
+            onclick="
+  if (document.referrer) {
+    window.history.back();
+  } else {
+    location.href = 'dashboard.html';
+  }
+"
+          >
+            ⬅️ Quay lại
+          </a>
+        </nav>
       </div>
     </header>
 
     <main class="container">
       <h2>Danh sách sản phẩm</h2>
-      <button class="btn" onclick="location.href='add_product.html'">
-        ➕ Thêm sản phẩm
-      </button>
-      <button class="btn" onclick="location.href='genre.html'">
-        🗂️ Quản lý thể loại
-      </button>
+
+      <div
+        class="search-bar"
+        style="display: flex; gap: 10px; max-width: 500px"
+      >
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Nhập mã hoặc tên sản phẩm..."
+          style="flex: 1"
+        />
+        <button class="btn" id="searchBtn">Tìm</button>
+      </div>
+      <div style="margin-bottom: 20px">
+        <button class="btn" onclick="location.href='add_product.html'">
+          ➕ Thêm sản phẩm
+        </button>
+        <button class="btn" onclick="location.href='genre.html'">
+          🗂️ Quản lý thể loại
+        </button>
+      </div>
 
       <table class="table">
         <tr>
@@ -40,7 +68,7 @@
           <td>P001</td>
           <td>Số Đỏ</td>
           <td>80</td>
-          <td>120.000đ</td>
+          <td>110,000đ</td>
           <td style="color: green; font-weight: 600">Còn hàng</td>
           <td>
             <a class="btn" href="product_detail.html">Chi tiết</a>
@@ -53,7 +81,7 @@
           <td>P002</td>
           <td>Nỗi Buồn Chiến Tranh</td>
           <td>10</td>
-          <td>150.000đ</td>
+          <td>115,000đ</td>
           <td style="color: orange; font-weight: 600">Sắp hết</td>
           <td>
             <a class="btn" href="product_detail.html">Chi tiết</a>
@@ -66,7 +94,7 @@
           <td>P003</td>
           <td>Tuổi Trẻ Đáng Giá Bao Nhiêu</td>
           <td>50</td>
-          <td>100.000đ</td>
+          <td>95,000đ</td>
           <td style="color: green; font-weight: 600">Còn hàng</td>
           <td>
             <a class="btn" href="product_detail.html">Chi tiết</a>
@@ -79,7 +107,7 @@
           <td>P004</td>
           <td>Đắc Nhân Tâm</td>
           <td>40</td>
-          <td>90.000đ</td>
+          <td>125,000đ</td>
           <td style="color: green; font-weight: 600">Còn hàng</td>
           <td>
             <a class="btn" href="product_detail.html">Chi tiết</a>
@@ -92,7 +120,7 @@
           <td>P005</td>
           <td>Nhà Giả Kim</td>
           <td>5</td>
-          <td>85.000đ</td>
+          <td>100,000đ</td>
           <td style="color: red; font-weight: 600">Sắp hết hàng</td>
           <td>
             <a class="btn" href="product_detail.html">Chi tiết</a>
@@ -105,7 +133,7 @@
           <td>P006</td>
           <td>Hạt Giống Tâm Hồn</td>
           <td>30</td>
-          <td>110.000đ</td>
+          <td>85,000đ</td>
           <td style="color: orange; font-weight: 600">Sắp hết</td>
           <td>
             <a class="btn" href="product_detail.html">Chi tiết</a>
@@ -118,7 +146,7 @@
           <td>P007</td>
           <td>Thép Đã Tôi Thế Đấy</td>
           <td>5</td>
-          <td>70.000đ</td>
+          <td>100,000đ</td>
           <td style="color: red; font-weight: 600">Sắp hết hàng</td>
           <td>
             <a class="btn" href="product_detail.html">Chi tiết</a>
@@ -131,7 +159,7 @@
           <td>P008</td>
           <td>Vũ Trụ Trong Vỏ Hạt Dẻ</td>
           <td>30</td>
-          <td>200.000đ</td>
+          <td>140,000đ</td>
           <td style="color: orange; font-weight: 600">Sắp hết</td>
           <td>
             <a class="btn" href="product_detail.html">Chi tiết</a>
@@ -144,10 +172,10 @@
           <td>P009</td>
           <td>Dế Mèn Phiêu Lưu Ký</td>
           <td>20</td>
-          <td>60.000đ</td>
+          <td>80,000đ</td>
           <td style="color: orange; font-weight: 600">Sắp hết</td>
           <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <a class="btn" href="product_detail,html">Chi tiết</a>
             <button class="btn" onclick="deleteProduct(this)">Xóa</button>
             <button class="btn" onclick="hideProduct(this)">Ẩn</button>
           </td>
@@ -155,9 +183,33 @@
 
         <tr>
           <td>P010</td>
-          <td>Harry Potter và Hòn Đá Phù Thủy</td>
+          <td>Harry Potter and the Sorcerer's Stone</td>
           <td>50</td>
-          <td>250.000đ</td>
+          <td>120,000đ</td>
+          <td style="color: green; font-weight: 600">Còn hàng</td>
+          <td>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+          </td>
+        </tr>
+        <tr>
+          <td>P011</td>
+          <td>Chí Phèo</td>
+          <td>65</td>
+          <td>70,000đ</td>
+          <td style="color: green; font-weight: 600">Còn hàng</td>
+          <td>
+            <a class="btn" href="product_detail.html">Chi tiết</a>
+            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+          </td>
+        </tr>
+        <tr>
+          <td>P012</td>
+          <td>Tắt Đèn</td>
+          <td>75</td>
+          <td>80,000đ</td>
           <td style="color: green; font-weight: 600">Còn hàng</td>
           <td>
             <a class="btn" href="product_detail.html">Chi tiết</a>
@@ -202,6 +254,25 @@
           alert("Sản phẩm đã được ẩn!");
         }
       }
+
+      // 🔍 Giả lập tìm kiếm (ẩn random)
+      const searchBtn = document.getElementById("searchBtn");
+      const resetBtn = document.getElementById("resetBtn");
+      const rows = document.querySelectorAll("table tr:not(:first-child)");
+
+      searchBtn.addEventListener("click", () => {
+        rows.forEach((row) => {
+          if (Math.random() > 0.5) {
+            row.style.display = "none";
+          } else {
+            row.style.display = "table-row";
+          }
+        });
+      });
+
+      resetBtn.addEventListener("click", () => {
+        rows.forEach((row) => (row.style.display = "table-row"));
+      });
     </script>
   </body>
 </html>
