@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quản lý sản phẩm</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .table-wrapper {
+        min-height: 480px;
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -17,12 +23,12 @@
           <a href="dashboard.html">Trang chủ</a>
           <a
             onclick="
-  if (document.referrer) {
-    window.history.back();
-  } else {
-    location.href = 'dashboard.html';
-  }
-"
+    if (document.referrer) {
+      window.history.back();
+    } else {
+      location.href = 'dashboard.html';
+    }
+  "
           >
             ⬅️ Quay lại
           </a>
@@ -54,170 +60,181 @@
         </button>
       </div>
 
-      <table class="table">
-        <tr>
-          <th>Mã SP</th>
-          <th>Tên sách</th>
-          <th>Tồn kho</th>
-          <th>Giá bán</th>
-          <th>Trạng thái</th>
-          <th>Thao tác</th>
-        </tr>
+      <div class="table-wrapper">
+        <table class="table">
+          <tr>
+            <th>Mã SP</th>
+            <th>Tên sách</th>
+            <th>Tồn kho</th>
+            <th>Giá bán</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+          </tr>
 
-        <tr>
-          <td>P001</td>
-          <td>Số Đỏ</td>
-          <td>80</td>
-          <td>110,000đ</td>
-          <td style="color: green; font-weight: 600">Còn hàng</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
+          <tr>
+            <td>P001</td>
+            <td>Số Đỏ</td>
+            <td>80</td>
+            <td>110,000đ</td>
+            <td style="color: green; font-weight: 600">Còn hàng</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
 
-        <tr>
-          <td>P002</td>
-          <td>Nỗi Buồn Chiến Tranh</td>
-          <td>10</td>
-          <td>115,000đ</td>
-          <td style="color: orange; font-weight: 600">Sắp hết</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
+          <tr>
+            <td>P002</td>
+            <td>Nỗi Buồn Chiến Tranh</td>
+            <td>10</td>
+            <td>115,000đ</td>
+            <td style="color: orange; font-weight: 600">Sắp hết</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
 
-        <tr>
-          <td>P003</td>
-          <td>Tuổi Trẻ Đáng Giá Bao Nhiêu</td>
-          <td>50</td>
-          <td>95,000đ</td>
-          <td style="color: green; font-weight: 600">Còn hàng</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
+          <tr>
+            <td>P003</td>
+            <td>Tuổi Trẻ Đáng Giá Bao Nhiêu</td>
+            <td>50</td>
+            <td>95,000đ</td>
+            <td style="color: green; font-weight: 600">Còn hàng</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
 
-        <tr>
-          <td>P004</td>
-          <td>Đắc Nhân Tâm</td>
-          <td>40</td>
-          <td>125,000đ</td>
-          <td style="color: green; font-weight: 600">Còn hàng</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
+          <tr>
+            <td>P004</td>
+            <td>Đắc Nhân Tâm</td>
+            <td>40</td>
+            <td>125,000đ</td>
+            <td style="color: green; font-weight: 600">Còn hàng</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
 
-        <tr>
-          <td>P005</td>
-          <td>Nhà Giả Kim</td>
-          <td>5</td>
-          <td>100,000đ</td>
-          <td style="color: red; font-weight: 600">Sắp hết hàng</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
+          <tr>
+            <td>P005</td>
+            <td>Nhà Giả Kim</td>
+            <td>5</td>
+            <td>100,000đ</td>
+            <td style="color: red; font-weight: 600">Sắp hết hàng</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
 
-        <tr>
-          <td>P006</td>
-          <td>Hạt Giống Tâm Hồn</td>
-          <td>30</td>
-          <td>85,000đ</td>
-          <td style="color: orange; font-weight: 600">Sắp hết</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
+          <tr>
+            <td>P006</td>
+            <td>Hạt Giống Tâm Hồn</td>
+            <td>30</td>
+            <td>85,000đ</td>
+            <td style="color: orange; font-weight: 600">Sắp hết</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
 
-        <tr>
-          <td>P007</td>
-          <td>Thép Đã Tôi Thế Đấy</td>
-          <td>5</td>
-          <td>100,000đ</td>
-          <td style="color: red; font-weight: 600">Sắp hết hàng</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
+          <tr>
+            <td>P007</td>
+            <td>Thép Đã Tôi Thế Đấy</td>
+            <td>5</td>
+            <td>100,000đ</td>
+            <td style="color: red; font-weight: 600">Sắp hết hàng</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
 
-        <tr>
-          <td>P008</td>
-          <td>Vũ Trụ Trong Vỏ Hạt Dẻ</td>
-          <td>30</td>
-          <td>140,000đ</td>
-          <td style="color: orange; font-weight: 600">Sắp hết</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
+          <tr>
+            <td>P008</td>
+            <td>Vũ Trụ Trong Vỏ Hạt Dẻ</td>
+            <td>30</td>
+            <td>140,000đ</td>
+            <td style="color: orange; font-weight: 600">Sắp hết</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
 
-        <tr>
-          <td>P009</td>
-          <td>Dế Mèn Phiêu Lưu Ký</td>
-          <td>20</td>
-          <td>80,000đ</td>
-          <td style="color: orange; font-weight: 600">Sắp hết</td>
-          <td>
-            <a class="btn" href="product_detail,html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
+          <tr>
+            <td>P009</td>
+            <td>Dế Mèn Phiêu Lưu Ký</td>
+            <td>20</td>
+            <td>80,000đ</td>
+            <td style="color: orange; font-weight: 600">Sắp hết</td>
+            <td>
+              <a class="btn" href="product_detail,html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
 
-        <tr>
-          <td>P010</td>
-          <td>Harry Potter and the Sorcerer's Stone</td>
-          <td>50</td>
-          <td>120,000đ</td>
-          <td style="color: green; font-weight: 600">Còn hàng</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
-        <tr>
-          <td>P011</td>
-          <td>Chí Phèo</td>
-          <td>65</td>
-          <td>70,000đ</td>
-          <td style="color: green; font-weight: 600">Còn hàng</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
-        <tr>
-          <td>P012</td>
-          <td>Tắt Đèn</td>
-          <td>75</td>
-          <td>80,000đ</td>
-          <td style="color: green; font-weight: 600">Còn hàng</td>
-          <td>
-            <a class="btn" href="product_detail.html">Chi tiết</a>
-            <button class="btn" onclick="deleteProduct(this)">Xóa</button>
-            <button class="btn" onclick="hideProduct(this)">Ẩn</button>
-          </td>
-        </tr>
-      </table>
+          <tr>
+            <td>P010</td>
+            <td>Harry Potter and the Sorcerer's Stone</td>
+            <td>50</td>
+            <td>120,000đ</td>
+            <td style="color: green; font-weight: 600">Còn hàng</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
+          <tr>
+            <td>P011</td>
+            <td>Chí Phèo</td>
+            <td>65</td>
+            <td>70,000đ</td>
+            <td style="color: green; font-weight: 600">Còn hàng</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
+          <tr>
+            <td>P012</td>
+            <td>Tắt Đèn</td>
+            <td>75</td>
+            <td>80,000đ</td>
+            <td style="color: green; font-weight: 600">Còn hàng</td>
+            <td>
+              <a class="btn" href="product_detail.html">Chi tiết</a>
+              <button class="btn" onclick="deleteProduct(this)">Xóa</button>
+              <button class="btn" onclick="hideProduct(this)">Ẩn</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="pagination">
+        <button class="page-btn" data-page="1">&laquo;</button>
+        <button class="page-btn" data-page="1">1</button>
+        <button class="page-btn" data-page="2">2</button>
+        <button class="page-btn" data-page="3">3</button>
+        <button class="page-btn" data-page="4">4</button>
+        <button class="page-btn" data-page="5">5</button>
+        <button class="page-btn" data-page="5">&raquo;</button>
+      </div>
     </main>
 
     <script>
@@ -270,8 +287,36 @@
         });
       });
 
-      resetBtn.addEventListener("click", () => {
-        rows.forEach((row) => (row.style.display = "table-row"));
+      // 🎲 Giả lập chuyển trang bằng cách xáo trộn các dòng
+      const pageBtns = document.querySelectorAll(".page-btn");
+      const table = document.querySelector("table");
+
+      pageBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const rows = Array.from(
+            table.querySelectorAll("tr:not(:first-child)")
+          );
+
+          // Xáo trộn mảng (thuật toán Fisher-Yates)
+          for (let i = rows.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [rows[i], rows[j]] = [rows[j], rows[i]];
+          }
+
+          // Xóa các dòng cũ rồi thêm lại theo thứ tự mới
+          rows.forEach((row) => table.appendChild(row));
+
+          // Làm hiệu ứng mượt như đổi trang thật
+          table.style.opacity = "0.5";
+          setTimeout(() => (table.style.opacity = "1"), 200);
+
+          // Đánh dấu nút đang chọn
+          pageBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          // 🆙 Cuộn về đầu trang
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
       });
     </script>
   </body>

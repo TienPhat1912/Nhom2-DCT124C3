@@ -35,6 +35,12 @@
           opacity: 1;
         }
       }
+
+      .table th:nth-child(4),
+      .table td:nth-child(4) {
+        text-align: right;
+        padding-right: 12px;
+      }
     </style>
   </head>
 
@@ -77,86 +83,97 @@
         <button class="btn ghost" onclick="resetFake()">Hiển thị tất cả</button>
       </div>
 
-      <table class="table" id="receiptTable">
-        <tr>
-          <th>Mã phiếu</th>
-          <th>Nhà cung cấp</th>
-          <th>Ngày nhập</th>
-          <th>Tổng tiền</th>
-          <th>Thao tác</th>
-        </tr>
+      <div class="table-wrapper">
+        <table class="table" id="receiptTable">
+          <tr>
+            <th>Mã phiếu</th>
+            <th>Nhà cung cấp</th>
+            <th>Ngày nhập</th>
+            <th>Tổng tiền</th>
+            <th>Thao tác</th>
+          </tr>
 
-        <tr>
-          <td>I20251010</td>
-          <td>FAHASA</td>
-          <td>2025-10-10</td>
-          <td>₫85,300,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-        <tr>
-          <td>I20250909</td>
-          <td>Phương Nam Book</td>
-          <td>2025-09-09</td>
-          <td>₫80,500,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-        <tr>
-          <td>I20250808</td>
-          <td>Alpha Books</td>
-          <td>2025-08-08</td>
-          <td>₫120,000,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-        <tr>
-          <td>I20250707</td>
-          <td>NXB Trẻ</td>
-          <td>2025-07-07</td>
-          <td>₫90,200,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-        <tr>
-          <td>I20250606</td>
-          <td>Tân Việt Books</td>
-          <td>2025-06-06</td>
-          <td>₫60,800,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-        <tr>
-          <td>I20250505</td>
-          <td>Kim Đồng Publisher</td>
-          <td>2025-05-05</td>
-          <td>₫110,400,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-        <tr>
-          <td>I20250404</td>
-          <td>ADC Book Distributor</td>
-          <td>2025-04-04</td>
-          <td>₫70,600,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-        <tr>
-          <td>I20250303</td>
-          <td>Alpha Books</td>
-          <td>2025-03-03</td>
-          <td>₫130,200,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-        <tr>
-          <td>I20250202</td>
-          <td>FAHASA</td>
-          <td>2025-02-02</td>
-          <td>₫50,700,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-        <tr>
-          <td>I20250501</td>
-          <td>Phương Nam Book</td>
-          <td>2025-05-01</td>
-          <td>₫90,900,000</td>
-          <td><a class="btn" href="receipt.html">Chi tiết</a></td>
-        </tr>
-      </table>
+          <tr>
+            <td>I20251010</td>
+            <td>FAHASA</td>
+            <td>2025-10-10</td>
+            <td>₫85,300,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>I20250909</td>
+            <td>Phương Nam Book</td>
+            <td>2025-09-09</td>
+            <td>₫80,500,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>I20250808</td>
+            <td>Alpha Books</td>
+            <td>2025-08-08</td>
+            <td>₫120,000,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>I20250707</td>
+            <td>NXB Trẻ</td>
+            <td>2025-07-07</td>
+            <td>₫90,200,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>I20250606</td>
+            <td>Tân Việt Books</td>
+            <td>2025-06-06</td>
+            <td>₫60,800,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>I20250505</td>
+            <td>Kim Đồng Publisher</td>
+            <td>2025-05-05</td>
+            <td>₫110,400,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>I20250404</td>
+            <td>ADC Book Distributor</td>
+            <td>2025-04-04</td>
+            <td>₫70,600,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>I20250303</td>
+            <td>Alpha Books</td>
+            <td>2025-03-03</td>
+            <td>₫130,200,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>I20250202</td>
+            <td>FAHASA</td>
+            <td>2025-02-02</td>
+            <td>₫50,700,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>I20250501</td>
+            <td>Phương Nam Book</td>
+            <td>2025-05-01</td>
+            <td>₫90,900,000</td>
+            <td><a class="btn" href="receipt.html">Chi tiết</a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="pagination">
+        <button class="page-btn" data-page="1">&laquo;</button>
+        <button class="page-btn" data-page="1">1</button>
+        <button class="page-btn" data-page="2">2</button>
+        <button class="page-btn" data-page="3">3</button>
+        <button class="page-btn" data-page="4">4</button>
+        <button class="page-btn" data-page="5">5</button>
+        <button class="page-btn" data-page="5">&raquo;</button>
+      </div>
     </main>
 
     <script>
@@ -183,6 +200,38 @@
           rows[i].classList.remove("hidden-row");
         }
       }
+
+      // 🎲 Giả lập chuyển trang bằng cách xáo trộn các dòng
+      const pageBtns = document.querySelectorAll(".page-btn");
+      const table = document.querySelector("table");
+
+      pageBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const rows = Array.from(
+            table.querySelectorAll("tr:not(:first-child)")
+          );
+
+          // Xáo trộn mảng (thuật toán Fisher-Yates)
+          for (let i = rows.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [rows[i], rows[j]] = [rows[j], rows[i]];
+          }
+
+          // Xóa các dòng cũ rồi thêm lại theo thứ tự mới
+          rows.forEach((row) => table.appendChild(row));
+
+          // Làm hiệu ứng mượt như đổi trang thật
+          table.style.opacity = "0.5";
+          setTimeout(() => (table.style.opacity = "1"), 200);
+
+          // Đánh dấu nút đang chọn
+          pageBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          // 🆙 Cuộn về đầu trang
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
     </script>
   </body>
 </html>

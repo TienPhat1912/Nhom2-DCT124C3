@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kết quả tra cứu giá sản phẩm</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* ✅ Căn phải các cột số liệu: Giá nhập, Giá bán, Lợi nhuận */
+      .table th:nth-child(3),
+      .table td:nth-child(3),
+      .table th:nth-child(4),
+      .table td:nth-child(4),
+      .table th:nth-child(5),
+      .table td:nth-child(5) {
+        text-align: right;
+      }
+
+      /* Căn giữa cột Thao tác */
+      .table th:nth-child(6),
+      .table td:nth-child(6) {
+        text-align: center;
+      }
+
+      /* Làm nổi bật các ô giá và phần trăm */
+      .table td:nth-child(3),
+      .table td:nth-child(4),
+      .table td:nth-child(5) {
+        font-weight: 500;
+      }
+    </style>
   </head>
 
   <body>

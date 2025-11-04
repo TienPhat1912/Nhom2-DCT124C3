@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quản lý Đơn hàng</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* ✅ Căn phải các cột có số liệu (Tổng tiền) */
+      .table th:nth-child(5),
+      .table td:nth-child(5) {
+        text-align: right;
+      }
+
+      /* Nếu muốn cột Số lượng (nếu có) cũng căn phải, thêm: 
+      .table th:nth-child(3),
+      .table td:nth-child(3) {
+        text-align: right;
+      } */
+
+      /* Căn giữa trạng thái */
+      .table th:nth-child(4),
+      .table td:nth-child(4) {
+        text-align: center;
+      }
+
+      /* Canh giữa cột thao tác */
+      .table th:nth-child(6),
+      .table td:nth-child(6) {
+        text-align: center;
+      }
+
+      /* Làm nổi bật tiền */
+      .table td:nth-child(5) {
+        font-weight: 500;
+      }
+    </style>
   </head>
 
   <body>
@@ -71,151 +101,162 @@
       </div>
 
       <!-- ====== Bảng đơn hàng ====== -->
-      <table class="table" style="margin-top: 14px">
-        <thead>
-          <tr>
-            <th>Mã đơn</th>
-            <th>Khách hàng</th>
-            <th>Ngày đặt</th>
-            <th>Trạng thái</th>
-            <th>Tổng tiền</th>
-            <th>Thao tác</th>
-          </tr>
-        </thead>
+      <div class="table-wrapper">
+        <table class="table" style="margin-top: 14px">
+          <thead>
+            <tr>
+              <th>Mã đơn</th>
+              <th>Khách hàng</th>
+              <th>Ngày đặt</th>
+              <th>Trạng thái</th>
+              <th>Tổng tiền</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
 
-        <tbody id="orderTable">
-          <tr>
-            <td>O001</td>
-            <td>Cao Thái Phương Thanh</td>
-            <td>2025-01-25</td>
-            <td><span class="badge">Đã giao</span></td>
-            <td>₫445,000</td>
-            <td>
-              <a class="btn" href="order_detail.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O001')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>O002</td>
-            <td>Cao Thái Phương Thanh</td>
-            <td>2025-01-26</td>
-            <td><span class="badge">Đã hủy</span></td>
-            <td>₫310,000</td>
-            <td>
-              <a class="btn" href="order_detail2.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O002')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>O003</td>
-            <td>Phan Tấn Quốc</td>
-            <td>2025-01-27</td>
-            <td><span class="badge">Đã giao</span></td>
-            <td>₫600,000</td>
-            <td>
-              <a class="btn" href="order_detail.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O003')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>O004</td>
-            <td>Phạm Thế Bảo</td>
-            <td>2025-01-27</td>
-            <td><span class="badge">Đã hủy</span></td>
-            <td>₫280,000</td>
-            <td>
-              <a class="btn" href="order_detail2.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O004')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>O005</td>
-            <td>Trịnh Tấn Đạt</td>
-            <td>2025-01-28</td>
-            <td><span class="badge">Đang xử lý</span></td>
-            <td>₫520,000</td>
-            <td>
-              <a class="btn" href="order_detail.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O005')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>O006</td>
-            <td>Hoàng Mạnh Hà</td>
-            <td>2025-01-28</td>
-            <td><span class="badge">Mới</span></td>
-            <td>₫310,000</td>
-            <td>
-              <a class="btn" href="order_detail.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O006')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>O007</td>
-            <td>Đỗ Thị Như Loan</td>
-            <td>2025-01-29</td>
-            <td><span class="badge">Đã giao</span></td>
-            <td>₫750,000</td>
-            <td>
-              <a class="btn" href="order_detail.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O007')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>O008</td>
-            <td>Nguyễn Hoà</td>
-            <td>2025-01-29</td>
-            <td><span class="badge">Đang xử lý</span></td>
-            <td>₫270,000</td>
-            <td>
-              <a class="btn" href="order_detail.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O008')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>O009</td>
-            <td>Huỳnh Minh Trí</td>
-            <td>2025-01-30</td>
-            <td><span class="badge">Đã giao</span></td>
-            <td>₫830,000</td>
-            <td>
-              <a class="btn" href="order_detail.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O009')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>O010</td>
-            <td>Huỳnh Vạn Phước</td>
-            <td>2025-01-30</td>
-            <td><span class="badge">Đã giao</span></td>
-            <td>₫880,000</td>
-            <td>
-              <a class="btn" href="order_detail.html">Chi tiết</a>
-              <button class="btn ghost" onclick="updateStatus('O010')">
-                Cập nhật
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          <tbody id="orderTable">
+            <tr>
+              <td>O001</td>
+              <td>Cao Thái Phương Thanh</td>
+              <td>2025-01-25</td>
+              <td><span class="badge">Đã giao</span></td>
+              <td>₫445,000</td>
+              <td>
+                <a class="btn" href="order_detail.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O001')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>O002</td>
+              <td>Cao Thái Phương Thanh</td>
+              <td>2025-01-26</td>
+              <td><span class="badge">Đã hủy</span></td>
+              <td>₫310,000</td>
+              <td>
+                <a class="btn" href="order_detail2.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O002')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>O003</td>
+              <td>Phan Tấn Quốc</td>
+              <td>2025-01-27</td>
+              <td><span class="badge">Đã giao</span></td>
+              <td>₫600,000</td>
+              <td>
+                <a class="btn" href="order_detail.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O003')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>O004</td>
+              <td>Phạm Thế Bảo</td>
+              <td>2025-01-27</td>
+              <td><span class="badge">Đã hủy</span></td>
+              <td>₫280,000</td>
+              <td>
+                <a class="btn" href="order_detail2.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O004')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>O005</td>
+              <td>Trịnh Tấn Đạt</td>
+              <td>2025-01-28</td>
+              <td><span class="badge">Đang xử lý</span></td>
+              <td>₫520,000</td>
+              <td>
+                <a class="btn" href="order_detail.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O005')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>O006</td>
+              <td>Hoàng Mạnh Hà</td>
+              <td>2025-01-28</td>
+              <td><span class="badge">Mới</span></td>
+              <td>₫310,000</td>
+              <td>
+                <a class="btn" href="order_detail.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O006')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>O007</td>
+              <td>Đỗ Thị Như Loan</td>
+              <td>2025-01-29</td>
+              <td><span class="badge">Đã giao</span></td>
+              <td>₫750,000</td>
+              <td>
+                <a class="btn" href="order_detail.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O007')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>O008</td>
+              <td>Nguyễn Hoà</td>
+              <td>2025-01-29</td>
+              <td><span class="badge">Đang xử lý</span></td>
+              <td>₫270,000</td>
+              <td>
+                <a class="btn" href="order_detail.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O008')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>O009</td>
+              <td>Huỳnh Minh Trí</td>
+              <td>2025-01-30</td>
+              <td><span class="badge">Đã giao</span></td>
+              <td>₫830,000</td>
+              <td>
+                <a class="btn" href="order_detail.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O009')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>O010</td>
+              <td>Huỳnh Vạn Phước</td>
+              <td>2025-01-30</td>
+              <td><span class="badge">Đã giao</span></td>
+              <td>₫880,000</td>
+              <td>
+                <a class="btn" href="order_detail.html">Chi tiết</a>
+                <button class="btn ghost" onclick="updateStatus('O010')">
+                  Cập nhật
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button class="page-btn" data-page="1">&laquo;</button>
+        <button class="page-btn" data-page="1">1</button>
+        <button class="page-btn" data-page="2">2</button>
+        <button class="page-btn" data-page="3">3</button>
+        <button class="page-btn" data-page="4">4</button>
+        <button class="page-btn" data-page="5">5</button>
+        <button class="page-btn" data-page="5">&raquo;</button>
+      </div>
     </main>
 
     <!-- ====== Hộp thoại Cập nhật Trạng thái ====== -->
@@ -247,14 +288,16 @@
     </div>
 
     <script>
+      // ====== Gắn màu cho badge ======
       document.querySelectorAll(".badge").forEach((badge) => {
         const text = badge.textContent.trim();
-
         if (text === "Mới") badge.classList.add("moi");
         else if (text === "Đang xử lý") badge.classList.add("xuly");
         else if (text === "Đã giao") badge.classList.add("dagiao");
         else if (text === "Đã hủy") badge.classList.add("dahuy");
       });
+
+      // ====== Mở / đóng modal ======
       function updateStatus(id) {
         document.getElementById("modalOrderId").value = id;
         document.getElementById("statusModal").style.display = "flex";
@@ -264,6 +307,7 @@
         document.getElementById("statusModal").style.display = "none";
       }
 
+      // ====== Lưu trạng thái ======
       function saveStatus() {
         const id = document.getElementById("modalOrderId").value;
         const status = document.getElementById("newStatus").value;
@@ -273,7 +317,7 @@
           if (row.cells[0].textContent === id) {
             const badge = row.querySelector(".badge");
             badge.textContent = status;
-            badge.className = "badge"; // reset class
+            badge.className = "badge";
             if (status === "Mới") badge.classList.add("moi");
             if (status === "Đang xử lý") badge.classList.add("xuly");
             if (status === "Đã giao") badge.classList.add("dagiao");
@@ -285,14 +329,59 @@
         closeModal();
       }
 
-      // ====== Lọc ngẫu nhiên ======
+      // ====== Lọc ngẫu nhiên (đã sửa chống khựng) ======
       function filterRandom() {
-        const rows = document.querySelectorAll("#orderTable tr");
-        rows.forEach((row) => {
-          // 50% cơ hội bị ẩn ngẫu nhiên
-          row.style.display = Math.random() > 0.5 ? "none" : "";
-        });
+        const rows = Array.from(document.querySelectorAll("#orderTable tr"));
+
+        // Hiệu ứng nhẹ khi lọc
+        const table = document.querySelector("table");
+        table.style.opacity = "0.6";
+
+        // Dùng setTimeout để tránh block giao diện
+        setTimeout(() => {
+          rows.forEach((row) => {
+            // 60% cơ hội hiển thị, 40% ẩn (điều chỉnh được)
+            row.style.display = Math.random() < 0.6 ? "" : "none";
+          });
+
+          // Khôi phục hiệu ứng
+          table.style.opacity = "1";
+        }, 100);
       }
+
+      // ====== Giả lập phân trang (xáo trộn) ======
+      const pageBtns = document.querySelectorAll(".page-btn");
+      const table = document.querySelector("table");
+
+      pageBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+          // Không xáo trộn nếu đang bị ẩn do lọc — tránh khựng
+          const visibleRows = rows.filter((r) => r.style.display !== "none");
+          if (visibleRows.length === 0) return;
+
+          // Xáo trộn thứ tự dòng
+          for (let i = visibleRows.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            visibleRows[i].parentNode.insertBefore(
+              visibleRows[j],
+              visibleRows[i]
+            );
+          }
+
+          // Hiệu ứng đổi trang
+          table.style.opacity = "0.5";
+          setTimeout(() => (table.style.opacity = "1"), 150);
+
+          // Đánh dấu nút đang chọn
+          pageBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          // Cuộn lên đầu
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
     </script>
   </body>
 </html>

@@ -1,15 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chỉnh Sửa Phiếu Nhập Hàng</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/slim-select@2.7.0/dist/slimselect.min.css"
+      href="https://cdn.jsdelivr.net/npm/slim-select@2.8.2/dist/slimselect.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/slim-select@2.7.0/dist/slimselect.min.js"></script>
+
+    <style>
+      /* ===== CỐ ĐỊNH BẢNG & SLIM SELECT ===== */
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin-top: 10px;
+      }
+      .table th,
+      .table td {
+        border-bottom: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+        vertical-align: middle;
+      }
+      .table th:nth-child(1),
+      .table td:nth-child(1) {
+        width: 45%;
+      }
+      .table th:nth-child(2),
+      .table td:nth-child(2),
+      .table th:nth-child(3),
+      .table td:nth-child(3),
+      .table th:nth-child(4),
+      .table td:nth-child(4) {
+        width: 18%;
+      }
+
+      .ss-main {
+        width: 100% !important;
+        height: 38px !important;
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+        box-sizing: border-box;
+      }
+      .ss-single-selected {
+        font-size: 15px !important;
+        font-weight: normal !important;
+      }
+      .ss-single-selected .placeholder,
+      .ss-single-selected .ss-value {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .ss-main:focus-within {
+        border-color: #28a745 !important;
+        box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+      }
+
+      input.price {
+        text-align: right;
+      }
+      input:focus {
+        outline: none;
+        border-color: #28a745;
+        box-shadow: 0 0 4px rgba(40, 167, 69, 0.4);
+      }
+    </style>
   </head>
 
   <body>
@@ -23,12 +85,9 @@
           <a href="dashboard.html">Trang chủ</a>
           <a
             onclick="
-  if (document.referrer) {
-    window.history.back();
-  } else {
-    location.href = 'dashboard.html';
-  }
-"
+              if (document.referrer) window.history.back();
+              else location.href = 'dashboard.html';
+            "
           >
             ⬅️ Quay lại
           </a>
@@ -56,10 +115,8 @@
               <option value="Alpha Books">Alpha Books</option>
               <option value="NXB Trẻ">NXB Trẻ</option>
               <option value="Tân Việt Books">Tân Việt Books</option>
-              <option value="Kim Đồng Publisher">Nhà Xuất Bản Kim Đồng</option>
-              <option value="ADC Book Distributor">
-                Nhà Phân Phối Sách ADC
-              </option>
+              <option value="Kim Đồng Publisher">NXB Kim Đồng</option>
+              <option value="ADC Book Distributor">ADC Book Distributor</option>
             </select>
           </div>
 
@@ -76,14 +133,37 @@
           <tr>
             <th>Tên Sản Phẩm</th>
             <th>Số Lượng</th>
-            <th>Đơn Giá Nhập</th>
+            <th>Đơn Giá (₫)</th>
             <th>Thao Tác</th>
           </tr>
 
+          <!-- 10 sản phẩm -->
           <tr>
-            <td>Số Đỏ</td>
-            <td><input type="number" value="100" /></td>
-            <td><input type="number" value="85000" /></td>
+            <td>
+              <select class="product-select">
+                <option selected>Số đỏ</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
+            <td><input type="number" min="1" value="100" /></td>
+            <td><input type="text" class="price" value="85,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -95,9 +175,31 @@
             </td>
           </tr>
           <tr>
-            <td>Nỗi Buồn Chiến Tranh</td>
+            <td>
+              <select class="product-select">
+                <option selected>Đắc nhân tâm</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
             <td><input type="number" value="100" /></td>
-            <td><input type="number" value="90000" /></td>
+            <td><input type="text" class="price" value="95,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -109,9 +211,31 @@
             </td>
           </tr>
           <tr>
-            <td>Tuổi Trẻ Đáng Giá Bao Nhiêu</td>
+            <td>
+              <select class="product-select">
+                <option selected>Nhà giả kim</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
             <td><input type="number" value="100" /></td>
-            <td><input type="number" value="70000" /></td>
+            <td><input type="text" class="price" value="80,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -123,9 +247,31 @@
             </td>
           </tr>
           <tr>
-            <td>Đắc Nhân Tâm</td>
+            <td>
+              <select class="product-select">
+                <option selected>Tuổi trẻ đáng giá bao nhiêu</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
             <td><input type="number" value="100" /></td>
-            <td><input type="number" value="95000" /></td>
+            <td><input type="text" class="price" value="70,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -137,9 +283,31 @@
             </td>
           </tr>
           <tr>
-            <td>Nhà Giả Kim</td>
+            <td>
+              <select class="product-select">
+                <option selected>Hạt giống tâm hồn</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
             <td><input type="number" value="100" /></td>
-            <td><input type="number" value="80000" /></td>
+            <td><input type="text" class="price" value="65,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -151,9 +319,31 @@
             </td>
           </tr>
           <tr>
-            <td>Hạt Giống Tâm Hồn</td>
+            <td>
+              <select class="product-select">
+                <option selected>Thép đã tôi thế đấy</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
             <td><input type="number" value="100" /></td>
-            <td><input type="number" value="65000" /></td>
+            <td><input type="text" class="price" value="78,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -165,9 +355,31 @@
             </td>
           </tr>
           <tr>
-            <td>Thép Đã Tôi Thế Đấy</td>
+            <td>
+              <select class="product-select">
+                <option selected>Vũ trụ trong vỏ hạt dẻ</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
             <td><input type="number" value="100" /></td>
-            <td><input type="number" value="78000" /></td>
+            <td><input type="text" class="price" value="110,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -179,9 +391,31 @@
             </td>
           </tr>
           <tr>
-            <td>Vũ Trụ Trong Vỏ Hạt Dẻ</td>
+            <td>
+              <select class="product-select">
+                <option selected>Dế mèn phiêu lưu ký</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
             <td><input type="number" value="100" /></td>
-            <td><input type="number" value="110000" /></td>
+            <td><input type="text" class="price" value="60,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -193,9 +427,31 @@
             </td>
           </tr>
           <tr>
-            <td>Dế Mèn Phiêu Lưu Ký</td>
+            <td>
+              <select class="product-select">
+                <option selected>Harry Potter and the Sorcerer’s Stone</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
             <td><input type="number" value="100" /></td>
-            <td><input type="number" value="60000" /></td>
+            <td><input type="text" class="price" value="120,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -207,9 +463,31 @@
             </td>
           </tr>
           <tr>
-            <td>Harry Potter and the Sorcerer’s Stone</td>
+            <td>
+              <select class="product-select">
+                <option selected>Nỗi buồn chiến tranh</option>
+                <option value="Số đỏ">Số đỏ</option>
+                <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+                <option value="Nhà giả kim">Nhà giả kim</option>
+                <option value="Tuổi trẻ đáng giá bao nhiêu">
+                  Tuổi trẻ đáng giá bao nhiêu
+                </option>
+                <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+                <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+                <option value="Vũ trụ trong vỏ hạt dẻ">
+                  Vũ trụ trong vỏ hạt dẻ
+                </option>
+                <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+                <option value="Harry Potter and the Sorcerer’s Stone">
+                  Harry Potter and the Sorcerer’s Stone
+                </option>
+                <option value="Nỗi buồn chiến tranh">
+                  Nỗi buồn chiến tranh
+                </option>
+              </select>
+            </td>
             <td><input type="number" value="100" /></td>
-            <td><input type="number" value="120000" /></td>
+            <td><input type="text" class="price" value="90,000" /></td>
             <td>
               <button
                 class="btn ghost"
@@ -243,7 +521,7 @@
           <button
             type="button"
             class="btn ghost"
-            onclick="location.href='receiptconfirm.html'"
+            onclick="location.href='import.html'"
           >
             Hủy
           </button>
@@ -258,25 +536,79 @@
       </form>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/slim-select@2.8.2/dist/slimselect.min.js"></script>
+
     <script>
+      // === SLIM SELECT CHO NHÀ CUNG CẤP ===
       new SlimSelect({
         select: "#supplier-select",
-        settings: {
-          showSearch: true,
-          searchPlaceholder: "Tìm kiếm nhà cung cấp...",
-        },
+        searchPlaceholder: "Nhập để tìm...",
+        placeholder: "Chọn hoặc nhập nhà cung cấp",
+        showSearch: true,
       });
 
+      // === HÀM FORMAT GIÁ ===
+      function autoFormatCurrency(input) {
+        let value = input.value.replace(/\D/g, "");
+        if (!value) {
+          input.value = "";
+          return;
+        }
+        input.value = Number(value).toLocaleString("en-US");
+      }
+
+      document.querySelectorAll(".price").forEach((el) => {
+        el.addEventListener("input", () => autoFormatCurrency(el));
+      });
+
+      // === KHỞI TẠO CHO TẤT CẢ Ô SẢN PHẨM HIỆN CÓ ===
+      document.querySelectorAll(".product-select").forEach((select) => {
+        new SlimSelect({
+          select,
+          searchPlaceholder: "Nhập để tìm sản phẩm...",
+          placeholder: "Chọn hoặc nhập sản phẩm",
+          showSearch: true,
+        });
+      });
+
+      // === HÀM THÊM DÒNG MỚI ===
       function addRow() {
         const table = document.getElementById("productTable");
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td><input type="text" placeholder="Tên Sách" /></td>
+          <td>
+            <select class="product-select">
+              <option value="" disabled selected>Chọn hoặc nhập sản phẩm</option>
+              <option value="Số đỏ">Số đỏ</option>
+              <option value="Đắc nhân tâm">Đắc nhân tâm</option>
+              <option value="Nhà giả kim">Nhà giả kim</option>
+              <option value="Tuổi trẻ đáng giá bao nhiêu">Tuổi trẻ đáng giá bao nhiêu</option>
+              <option value="Hạt giống tâm hồn">Hạt giống tâm hồn</option>
+              <option value="Thép đã tôi thế đấy">Thép đã tôi thế đấy</option>
+              <option value="Vũ trụ trong vỏ hạt dẻ">Vũ trụ trong vỏ hạt dẻ</option>
+              <option value="Dế mèn phiêu lưu ký">Dế mèn phiêu lưu ký</option>
+              <option value="Harry Potter and the Sorcerer’s Stone">Harry Potter and the Sorcerer’s Stone</option>
+              <option value="Nỗi buồn chiến tranh">Nỗi buồn chiến tranh</option>
+            </select>
+          </td>
           <td><input type="number" min="1" placeholder="0" /></td>
-          <td><input type="number" min="0" placeholder="0" /></td>
+          <td><input type="text" class="price" placeholder="0" /></td>
           <td><button type="button" class="btn ghost" onclick="this.closest('tr').remove()">Xóa</button></td>
         `;
         table.appendChild(row);
+
+        // Gắn SlimSelect và format giá mới
+        new SlimSelect({
+          select: row.querySelector(".product-select"),
+          searchPlaceholder: "Nhập để tìm sản phẩm...",
+          placeholder: "Chọn hoặc nhập sản phẩm",
+          showSearch: true,
+        });
+
+        const priceInput = row.querySelector(".price");
+        priceInput.addEventListener("input", () =>
+          autoFormatCurrency(priceInput)
+        );
       }
     </script>
   </body>

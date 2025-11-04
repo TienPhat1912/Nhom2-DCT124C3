@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quản lí khách hàng</title>
+    <title>Quản lý khách hàng</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .table-wrapper {
+        min-height: 480px;
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -17,151 +23,231 @@
           <a href="dashboard.html">Trang chủ</a>
           <a
             onclick="
-  if (document.referrer) {
-    window.history.back();
-  } else {
-    location.href = 'dashboard.html';
-  }
-"
+              if (document.referrer) {
+                window.history.back();
+              } else {
+                location.href = 'dashboard.html';
+              }
+            "
           >
             ⬅️ Quay lại
           </a>
         </nav>
       </div>
     </header>
+
     <main class="container">
-      <h1 style="text-align: center; font-size: 36px">KHÁCH HÀNG</h1>
-      <table class="table">
-        <tr>
-          <th>ID</th>
-          <th>Tên</th>
-          <th>Lượt mua gần nhất</th>
-          <th>Trạng Thái</th>
-          <th></th>
-        </tr>
-        <tr>
-          <td>C001</td>
-          <td>Cao Thái Phương Thanh</td>
-          <td>2025-09-01</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>C002</td>
-          <td>Phan Tấn Quốc</td>
-          <td>2025-09-02</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>C003</td>
-          <td>Phạm Thế Bảo</td>
-          <td>2025-09-03</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>C004</td>
-          <td>Trịnh Tấn Đạt</td>
-          <td>2025-09-04</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>C005</td>
-          <td>Hoàng Mạnh Hà</td>
-          <td>2025-09-05</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>C006</td>
-          <td>Nguyễn Hòa</td>
-          <td>2025-09-06</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>C007</td>
-          <td>Đỗ Thị Như Loan</td>
-          <td>2025-09-07</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>C008</td>
-          <td>Huỳnh Minh Trí</td>
-          <td>2025-09-08</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>C009</td>
-          <td>Nguyễn Tiến Đăng</td>
-          <td>2025-09-09</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-        <tr>
-          <td>C010</td>
-          <td>Lê Thanh Sang</td>
-          <td>2025-09-10</td>
-          <td class="status">Đang hoạt động</td>
-          <td>
-            <a class="btn" href="customer_detail.html">Chi tiết</a>
-            <button class="btn" onclick="toggleStatus(this)">Khóa</button>
-          </td>
-        </tr>
-      </table>
+      <h2>Danh sách khách hàng</h2>
+
+      <div
+        class="search-bar"
+        style="display: flex; gap: 10px; max-width: 500px"
+      >
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Nhập mã hoặc tên khách hàng..."
+          style="flex: 1"
+        />
+        <button class="btn" id="searchBtn">Tìm</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="table">
+          <tr>
+            <th>ID</th>
+            <th>Tên khách hàng</th>
+            <th>Lượt mua gần nhất</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+          </tr>
+
+          <tr>
+            <td>C001</td>
+            <td>Cao Thái Phương Thanh</td>
+            <td>2025-09-01</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>C002</td>
+            <td>Phan Tấn Quốc</td>
+            <td>2025-09-02</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>C003</td>
+            <td>Phạm Thế Bảo</td>
+            <td>2025-09-03</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>C004</td>
+            <td>Trịnh Tấn Đạt</td>
+            <td>2025-09-04</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>C005</td>
+            <td>Hoàng Mạnh Hà</td>
+            <td>2025-09-05</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>C006</td>
+            <td>Nguyễn Hòa</td>
+            <td>2025-09-06</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>C007</td>
+            <td>Đỗ Thị Như Loan</td>
+            <td>2025-09-07</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>C008</td>
+            <td>Huỳnh Minh Trí</td>
+            <td>2025-09-08</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>C009</td>
+            <td>Nguyễn Tiến Đăng</td>
+            <td>2025-09-09</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>C010</td>
+            <td>Lê Thanh Sang</td>
+            <td>2025-09-10</td>
+            <td><span class="badge">Đang hoạt động</span></td>
+            <td>
+              <a class="btn" href="customer_detail.html">Chi tiết</a>
+              <button class="btn" onclick="toggleStatus(this)">Khóa</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button class="page-btn" data-page="1">&laquo;</button>
+        <button class="page-btn" data-page="1">1</button>
+        <button class="page-btn" data-page="2">2</button>
+        <button class="page-btn" data-page="3">3</button>
+        <button class="page-btn" data-page="4">4</button>
+        <button class="page-btn" data-page="5">5</button>
+        <button class="page-btn" data-page="5">&raquo;</button>
+      </div>
     </main>
+
     <script>
+      // Gán màu tự động khi tải trang
+      document.querySelectorAll(".badge").forEach((badge) => {
+        const text = badge.textContent.trim();
+        if (text === "Đang hoạt động") badge.classList.add("dagiao");
+        else if (text === "Đã khóa") badge.classList.add("dahuy");
+      });
+
+      // Đổi trạng thái khi bấm nút
       function toggleStatus(btn) {
         const row = btn.closest("tr");
-        const statusCell = row.querySelector(".status");
+        const statusCell = row.querySelector(".badge");
+        const text = statusCell.textContent.trim();
 
-        // Xác nhận hành động
-        const action =
-          statusCell.textContent === "Đang hoạt động" ? "khóa" : "mở khóa";
-        if (!confirm(`Bạn có chắc chắn muốn ${action} khách hàng này?`)) {
-          return; // Nếu nhấn Cancel, không làm gì cả
-        }
+        const isActive = text === "Đang hoạt động";
+        const action = isActive ? "khóa" : "mở khóa";
 
-        // Thay đổi trạng thái
-        if (statusCell.textContent === "Đang hoạt động") {
+        if (!confirm(`Bạn có chắc chắn muốn ${action} khách hàng này?`)) return;
+
+        statusCell.classList.remove("dagiao", "dahuy");
+
+        if (isActive) {
           statusCell.textContent = "Đã khóa";
+          statusCell.classList.add("dahuy");
           btn.textContent = "Mở khóa";
         } else {
           statusCell.textContent = "Đang hoạt động";
+          statusCell.classList.add("dagiao");
           btn.textContent = "Khóa";
         }
       }
+
+      // 🎲 Giả lập chuyển trang bằng cách xáo trộn các dòng
+      const pageBtns = document.querySelectorAll(".page-btn");
+      const table = document.querySelector("table");
+
+      pageBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const rows = Array.from(
+            table.querySelectorAll("tr:not(:first-child)")
+          );
+
+          // Xáo trộn mảng (thuật toán Fisher-Yates)
+          for (let i = rows.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [rows[i], rows[j]] = [rows[j], rows[i]];
+          }
+
+          // Xóa các dòng cũ rồi thêm lại theo thứ tự mới
+          rows.forEach((row) => table.appendChild(row));
+
+          // Làm hiệu ứng mượt như đổi trang thật
+          table.style.opacity = "0.5";
+          setTimeout(() => (table.style.opacity = "1"), 200);
+
+          // Đánh dấu nút đang chọn
+          pageBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          // 🆙 Cuộn về đầu trang
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
     </script>
   </body>
 </html>

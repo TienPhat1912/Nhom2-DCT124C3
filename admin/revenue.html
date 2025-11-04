@@ -5,6 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doanh thu - Hôm nay</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* ✅ Căn phải các cột số liệu trong bảng */
+      .table th:nth-child(2),
+      .table td:nth-child(2),
+      .table th:nth-child(3),
+      .table td:nth-child(3),
+      .table th:nth-child(4),
+      .table td:nth-child(4) {
+        text-align: right;
+      }
+
+      .table td:nth-child(3),
+      .table td:nth-child(4) {
+        font-weight: 500;
+      }
+
+      .table th:nth-child(1),
+      .table td:nth-child(1) {
+        text-align: left;
+      }
+
+      .total-footer {
+        text-align: right;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 10px;
+      }
+
+      /* ✅ Căn phải nội dung tiền trong thẻ tổng hợp (Tổng doanh thu & Lợi nhuận ước tính) */
+      .summary-card.card-yellow p,
+      .summary-card.card-purple p {
+        text-align: right;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      /* Cho các ô card hiển thị đều và đẹp */
+      .summary-card {
+        text-align: left;
+        padding: 16px;
+        border-radius: 10px;
+      }
+
+      .summary-card h3 {
+        margin-bottom: 6px;
+        font-size: 16px;
+      }
+    </style>
   </head>
 
   <body>

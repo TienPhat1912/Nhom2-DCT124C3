@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chi tiết đơn hàng</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* Căn phải các cột Số lượng, Đơn giá, Thành tiền */
+      .table th:nth-child(3),
+      .table td:nth-child(3),
+      .table th:nth-child(4),
+      .table td:nth-child(4),
+      .table th:nth-child(5),
+      .table td:nth-child(5) {
+        text-align: right;
+      }
+
+      /* Dòng tổng cộng */
+      .table tr:last-child td {
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <header class="header">

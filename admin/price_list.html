@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giá sản phẩm theo thể loại</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* ✅ Căn phải các cột có số liệu */
+      .table th:nth-child(3),
+      .table td:nth-child(3),
+      .table th:nth-child(4),
+      .table td:nth-child(4),
+      .table th:nth-child(5),
+      .table td:nth-child(5) {
+        text-align: right;
+      }
+
+      /* Làm nổi bật giá bán và lợi nhuận */
+      .table td:nth-child(4),
+      .table td:nth-child(5) {
+        font-weight: 500;
+      }
+    </style>
   </head>
 
   <body>
@@ -18,12 +35,12 @@
           <a href="dashboard.html">Trang chủ</a>
           <a
             onclick="
-  if (document.referrer) {
-    window.history.back();
-  } else {
-    location.href = 'dashboard.html';
-  }
-"
+    if (document.referrer) {
+      window.history.back();
+    } else {
+      location.href = 'dashboard.html';
+    }
+  "
           >
             ⬅️ Quay lại
           </a>
