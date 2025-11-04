@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Chi Tiết Đơn Hàng</title>
     <link rel="stylesheet" href="../css/user.css" />
+    <style>
+      /* ✅ Căn phải toàn bộ các cột tiền trong bảng chi tiết đơn hàng */
+      .table th:last-child,
+      .table td:last-child {
+        text-align: right;
+      }
+
+      /* ✅ Căn phải dòng tổng cộng cuối cùng */
+      .table tr:last-child td {
+        text-align: right;
+      }
+    </style>
   </head>
   <body>
     <header class="header">
