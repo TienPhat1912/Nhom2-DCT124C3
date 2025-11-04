@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kết quả Tra cứu Tồn kho</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="logo" onclick="location.href='dashboard.html'">
+          <img src="../img/logo.png" />
+          <h1>QUẢN LÝ NHÀ SÁCH</h1>
+        </div>
+        <nav class="nav">
+          <a href="dashboard.html">Trang chủ</a>
+          <a
+            onclick="
+  if (document.referrer) {
+    window.history.back();
+  } else {
+    location.href = 'dashboard.html';
+  }
+"
+          >
+            ⬅️ Quay lại
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Kết quả Tra cứu Tồn kho</h2>
+
+      <div style="margin-bottom: 16px">
+        <button class="btn ghost" onclick="location.href='import.html'">
+          Xem Phiếu nhập hàng
+        </button>
+      </div>
+
+      <h3>
+        Tìm thấy <b>10 sản phẩm</b> thuộc thể loại
+        <span style="color: blue">"Tiểu thuyết"</span> vào ngày
+        <span style="color: green">19/10/2025</span>
+      </h3>
+
+      <p style="text-align: right; font-weight: bold; margin-top: 12px">
+        Tổng số lượng tồn kho: 320 quyển
+      </p>
+
+      <table class="table">
+        <tr>
+          <th>Mã SP</th>
+          <th>Tên sản phẩm</th>
+          <th>Số lượng tồn</th>
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
+        </tr>
+
+        <tr>
+          <td>P001</td>
+          <td>Số Đỏ</td>
+          <td>80</td>
+          <td style="color: green; font-weight: bold">Còn hàng</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+
+        <tr>
+          <td>P002</td>
+          <td>Nỗi Buồn Chiến Tranh</td>
+          <td>10</td>
+          <td style="color: orange; font-weight: bold">Sắp hết</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+
+        <tr>
+          <td>P003</td>
+          <td>Tuổi Trẻ Đáng Giá Bao Nhiêu</td>
+          <td>50</td>
+          <td style="color: green; font-weight: bold">Còn hàng</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+
+        <tr>
+          <td>P004</td>
+          <td>Đắc Nhân Tâm</td>
+          <td>40</td>
+          <td style="color: green; font-weight: bold">Còn hàng</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+
+        <tr>
+          <td>P005</td>
+          <td>Nhà Giả Kim</td>
+          <td>5</td>
+          <td style="color: red; font-weight: bold">Hết hàng</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+
+        <tr>
+          <td>P006</td>
+          <td>Hạt Giống Tâm Hồn</td>
+          <td>30</td>
+          <td style="color: orange; font-weight: bold">Sắp hết</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+
+        <tr>
+          <td>P007</td>
+          <td>Thép Đã Tôi Thế Đấy</td>
+          <td>5</td>
+          <td style="color: red; font-weight: bold">Hết hàng</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+
+        <tr>
+          <td>P008</td>
+          <td>Vũ Trụ Trong Vỏ Hạt Dẻ</td>
+          <td>30</td>
+          <td style="color: orange; font-weight: bold">Sắp hết</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+
+        <tr>
+          <td>P009</td>
+          <td>Dế Mèn Phiêu Lưu Ký</td>
+          <td>20</td>
+          <td style="color: orange; font-weight: bold">Sắp hết</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+
+        <tr>
+          <td>P010</td>
+          <td>Harry Potter và Hòn Đá Phù Thủy</td>
+          <td>50</td>
+          <td style="color: green; font-weight: bold">Còn hàng</td>
+          <td><a class="btn" href="product_detail.html">Chi tiết</a></td>
+        </tr>
+      </table>
+    </main>
+  </body>
+</html>
